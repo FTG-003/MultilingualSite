@@ -1,48 +1,177 @@
 <!-- Search Component -->
-<div class="search-component">
-  <div class="search-toggle" id="search-toggle">
-    <i class="fas fa-search"></i>
-  </div>
+<div class="search-container" id="search-container">
+  <div class="search-overlay"></div>
   
-  <div class="search-container" id="search-container">
+  <div class="search-modal">
+    <div class="search-header">
+      <div class="search-logo">
+        <i class="fas fa-brain"></i>
+        <span>PeerGang</span>
+      </div>
+      
+      <button type="button" class="search-close" id="search-close" aria-label="Close search">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
     <form class="search-form" role="search">
       <div class="search-input-wrapper">
+        <i class="fas fa-search search-icon"></i>
         <input type="search" id="search-input" class="search-input" 
-               placeholder="{% if page.lang == 'it' %}Cerca nel handbook...{% else %}Search the handbook...{% endif %}">
-        <button type="submit" class="search-btn">
-          <i class="fas fa-search"></i>
-        </button>
-        <button type="button" class="search-close" id="search-close">
-          <i class="fas fa-times"></i>
+               placeholder="{% if page.lang == 'it' %}Cerca nel Manuale di Peeragogia...{% else %}Search the Peeragogy Handbook...{% endif %}"
+               autocomplete="off">
+        <button type="button" class="search-clear" id="search-clear" aria-label="Clear search">
+          <i class="fas fa-times-circle"></i>
         </button>
       </div>
     </form>
     
+    <div class="search-tags">
+      <span class="search-tag">#peeragogy</span>
+      <span class="search-tag">#learning</span>
+      <span class="search-tag">#collaboration</span>
+      <span class="search-tag">#AI</span>
+    </div>
+    
     <div class="search-results" id="search-results">
-      <!-- Search results will be populated here -->
-      <div class="search-results-message">
-        {% if page.lang == 'it' %}
-          <p>Inizia a digitare per cercare nel manuale di peeragogia.</p>
-        {% else %}
-          <p>Start typing to search the peeragogy handbook.</p>
-        {% endif %}
+      <div class="search-status">
+        <div class="search-status-icon">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <div class="search-prompt">
+          {% if page.lang == 'it' %}
+            <h3>Inizia la tua esplorazione</h3>
+            <p>Cerca concetti chiave, pattern di apprendimento o strumenti peeragogici.</p>
+          {% else %}
+            <h3>Start your exploration</h3>
+            <p>Search for key concepts, learning patterns, or peeragogical tools.</p>
+          {% endif %}
+        </div>
       </div>
       
-      <!-- Sample search results for demo purposes -->
-      <div class="search-results-list" style="display: none;">
-        <div class="search-result-item">
-          <a href="{{ '/chapters/en/chapter1/' | relative_url }}">
-            <h4>Getting Started with Peeragogy</h4>
-            <p>...implementing peeragogy in your learning community, classroom, or workplace begins with establishing the right conditions...</p>
-          </a>
-        </div>
-        <div class="search-result-item">
-          <a href="{{ '/chapters/en/chapter2/' | relative_url }}">
-            <h4>Patterns and Heuristics</h4>
-            <p>...recognizing common patterns in peeragogy can help you solve recurring challenges...</p>
-          </a>
-        </div>
-      </div>
+      <!-- This will be populated by JavaScript on search -->
+      <div class="search-results-list" id="results-list"></div>
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchContainer = document.getElementById('search-container');
+    const searchClose = document.getElementById('search-close');
+    const searchInput = document.getElementById('search-input');
+    const searchClear = document.getElementById('search-clear');
+    const searchResults = document.getElementById('search-results');
+    const resultsList = document.getElementById('results-list');
+    const searchStatus = document.querySelector('.search-status');
+    
+    // Close search when clicking close button
+    searchClose.addEventListener('click', function() {
+      searchContainer.classList.remove('active');
+      document.body.classList.remove('search-active');
+      searchInput.value = '';
+      showSearchPrompt();
+    });
+    
+    // Clear search input
+    searchClear.addEventListener('click', function() {
+      searchInput.value = '';
+      searchInput.focus();
+      showSearchPrompt();
+    });
+    
+    // Close search when clicking outside
+    document.addEventListener('click', function(event) {
+      const isClickInside = searchContainer.contains(event.target);
+      const isSearchToggle = event.target.closest('.search-toggle');
+      
+      if (!isClickInside && !isSearchToggle && searchContainer.classList.contains('active')) {
+        searchContainer.classList.remove('active');
+        document.body.classList.remove('search-active');
+      }
+    });
+    
+    // Prevent clicks in search modal from closing it
+    searchContainer.querySelector('.search-modal').addEventListener('click', function(event) {
+      event.stopPropagation();
+    });
+    
+    // Handle search input
+    searchInput.addEventListener('input', function() {
+      if (this.value.length > 0) {
+        searchClear.style.display = 'block';
+        performSearch(this.value);
+      } else {
+        searchClear.style.display = 'none';
+        showSearchPrompt();
+      }
+    });
+    
+    // Show search prompt
+    function showSearchPrompt() {
+      searchStatus.style.display = 'flex';
+      resultsList.style.display = 'none';
+      resultsList.innerHTML = '';
+    }
+    
+    // Mock search function (to be replaced with real search)
+    function performSearch(query) {
+      // This would be a real search using lunr.js or similar
+      searchStatus.style.display = 'none';
+      resultsList.style.display = 'block';
+      
+      // Mock results for demonstration
+      const results = [
+        {
+          title: 'About This Book',
+          url: '/chapters/en/about-this-book.html',
+          content: '...the Peeragogy Handbook, a resource for self-organizing peer learning...'
+        },
+        {
+          title: 'Peeragogy in a Nutshell',
+          url: '/chapters/en/peeragogy-in-a-nutshell.html',
+          content: '...addresses the challenge: how can people learn together without a teacher?...'
+        }
+      ];
+      
+      resultsList.innerHTML = '';
+      
+      if (query.length > 1) {
+        results.forEach(function(result) {
+          const resultItem = document.createElement('div');
+          resultItem.className = 'search-result-item';
+          
+          resultItem.innerHTML = `
+            <a href="${result.url}">
+              <h4>${result.title}</h4>
+              <p>${result.content}</p>
+            </a>
+          `;
+          
+          resultsList.appendChild(resultItem);
+        });
+      }
+    }
+    
+    // Handle keyboard shortcuts
+    document.addEventListener('keydown', function(event) {
+      // ESC key to close search
+      if (event.key === 'Escape' && searchContainer.classList.contains('active')) {
+        searchContainer.classList.remove('active');
+        document.body.classList.remove('search-active');
+      }
+      
+      // Ctrl+K or Command+K to open search
+      if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
+        event.preventDefault();
+        searchContainer.classList.add('active');
+        document.body.classList.add('search-active');
+        searchInput.focus();
+      }
+    });
+    
+    // Initial setup
+    searchClear.style.display = 'none';
+    showSearchPrompt();
+  });
+</script>

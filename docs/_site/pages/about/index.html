@@ -1,189 +1,447 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About - Peeragogy Handbook AI Edition</title>
   <meta name="description" content="An AI-enhanced version of the Peeragogy Handbook">
-  <link rel="stylesheet" href="/assets/css/styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <!-- SEO meta tags -->
+  <meta property="og:title" content="About - Peeragogy Handbook AI Edition">
+  <meta property="og:description" content="An AI-enhanced version of the Peeragogy Handbook">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://0.0.0.0:5000/pages/about/">
+  <meta property="og:image" content="http://0.0.0.0:5000/assets/images/og-image.jpg">
+  
+  <!-- Preload critical assets -->
+  <link rel="preload" href="/assets/css/styles.css" as="style">
+  <link rel="preload" href="/assets/js/main.js" as="script">
+  
+  <!-- Modern fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  
+  <!-- Favicon and theme color -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <meta name="theme-color" content="#4A90E2">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#3E63DD">
+  
+  <!-- Detect JS -->
+  <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
 </head>
-<body class="page-about">
 
-  <header class="site-header">
-  <div class="wrapper">
-    <div class="site-logo">
-      <a href="/">
-        <img src="/assets/images/logo.svg" alt="Peeragogy Handbook AI Edition" class="logo-image">
-        <span class="site-title">Peeragogy Handbook AI Edition</span>
+<body class="page-about lang-en preload">
+  <!-- Skip link for accessibility -->
+  <a class="skip-to-content" href="#main-content">
+    Skip to content
+  </a>
+
+  <div class="site-wrapper">
+    <header class="site-header">
+  <div class="header-container">
+    <div class="site-branding">
+      <a href="/" class="site-logo">
+        <div class="logo-mark">
+          <span class="logo-icon">
+            <i class="fas fa-brain"></i>
+          </span>
+          <span class="logo-text">PeerGang</span>
+        </div>
+        <span class="tagline">AI-Powered Learning</span>
       </a>
     </div>
     
     <nav class="site-nav">
-      <input type="checkbox" id="nav-trigger" class="nav-trigger">
-      <label for="nav-trigger">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-menu">
         <span class="menu-icon">
           <i class="fas fa-bars"></i>
         </span>
-      </label>
+        <span class="menu-text">Menu</span>
+      </button>
 
-      <div class="trigger">
+      <div class="nav-container" id="primary-menu">
+        <div class="nav-primary">
+          
+<nav class="main-navigation" aria-label="Primary Navigation">
+  <ul class="nav-links">
+    
+      <li class="nav-item  ">
         
-<ul class="nav-links">
-  
-    <li class="nav-item ">
-      <a href="/">Home</a>
-      
-      
-    </li>
-  
-    <li class="nav-item ">
-      <a href="/chapters/en/index/">Handbook</a>
-      
-      
-        <ul class="dropdown-menu">
+          <a href="/" class="nav-link ">
+            <span class="nav-icon">
+              
+                  <i class="fas fa-home"></i>
+                
+                  <i class="fas fa-home"></i>
+                
+            </span>
+            <span class="nav-text">Home</span>
+          </a>
+        
+      </li>
+    
+      <li class="nav-item  has-children">
+        
+          <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            <span class="nav-icon">
+              
+                  <i class="fas fa-book"></i>
+                
+            </span>
+            <span class="nav-text">Handbook</span>
+            <span class="dropdown-indicator">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </button>
           
-            <li class="dropdown-item">
-              <a href="/chapters/en/about-this-book.html">About This Book</a>
-            </li>
-          
-            <li class="dropdown-item">
-              <a href="/chapters/en/peeragogy-in-a-nutshell.html">Peeragogy in a Nutshell</a>
-            </li>
-          
-            <li class="dropdown-item">
-              <a href="/chapters/en/motivation.html">Motivation</a>
-            </li>
-          
-            <li class="dropdown-item">
-              <a href="/chapters/en/roadmap.html">Roadmap</a>
-            </li>
-          
-            <li class="dropdown-item">
-              <a href="/chapters/en/convening-a-group.html">Convening a Group</a>
-            </li>
-          
-            <li class="dropdown-item">
-              <a href="/chapters/en/organizing-a-learning-context.html">Organizing a Learning Context</a>
-            </li>
-          
-            <li class="dropdown-item">
-              <a href="/chapters/en/peer-learning.html">Peer Learning</a>
-            </li>
-          
-            <li class="dropdown-item">
-              <a href="/chapters/en/assessment.html">Assessment</a>
-            </li>
-          
-            <li class="dropdown-item">
-              <a href="/chapters/en/the-peeragogy-project.html">The Peeragogy Project</a>
-            </li>
-          
-            <li class="dropdown-item">
-              <a href="/chapters/en/resources.html">Resources</a>
-            </li>
-          
-        </ul>
-      
-    </li>
-  
-    <li class="nav-item active">
-      <a href="/pages/about/">About</a>
-      
-      
-    </li>
-  
-    <li class="nav-item ">
-      <a href="/pages/contact/">Contact</a>
-      
-      
-    </li>
-  
-</ul>
+          <ul class="dropdown-menu" aria-label="submenu">
+            
+              <li class="dropdown-item ">
+                <a href="/chapters/en/about-this-book.html" class="dropdown-link">
+                  <span class="item-icon">
+                    <i class="fas fa-chevron-right"></i>
+                  </span>
+                  <span class="item-text">About This Book</span>
+                </a>
+              </li>
+            
+              <li class="dropdown-item ">
+                <a href="/chapters/en/peeragogy-in-a-nutshell.html" class="dropdown-link">
+                  <span class="item-icon">
+                    <i class="fas fa-chevron-right"></i>
+                  </span>
+                  <span class="item-text">Peeragogy in a Nutshell</span>
+                </a>
+              </li>
+            
+              <li class="dropdown-item ">
+                <a href="/chapters/en/motivation.html" class="dropdown-link">
+                  <span class="item-icon">
+                    <i class="fas fa-chevron-right"></i>
+                  </span>
+                  <span class="item-text">Motivation</span>
+                </a>
+              </li>
+            
+              <li class="dropdown-item ">
+                <a href="/chapters/en/roadmap.html" class="dropdown-link">
+                  <span class="item-icon">
+                    <i class="fas fa-chevron-right"></i>
+                  </span>
+                  <span class="item-text">Roadmap</span>
+                </a>
+              </li>
+            
+              <li class="dropdown-item ">
+                <a href="/chapters/en/convening-a-group.html" class="dropdown-link">
+                  <span class="item-icon">
+                    <i class="fas fa-chevron-right"></i>
+                  </span>
+                  <span class="item-text">Convening a Group</span>
+                </a>
+              </li>
+            
+              <li class="dropdown-item ">
+                <a href="/chapters/en/organizing-a-learning-context.html" class="dropdown-link">
+                  <span class="item-icon">
+                    <i class="fas fa-chevron-right"></i>
+                  </span>
+                  <span class="item-text">Organizing a Learning Context</span>
+                </a>
+              </li>
+            
+              <li class="dropdown-item ">
+                <a href="/chapters/en/peer-learning.html" class="dropdown-link">
+                  <span class="item-icon">
+                    <i class="fas fa-chevron-right"></i>
+                  </span>
+                  <span class="item-text">Peer Learning</span>
+                </a>
+              </li>
+            
+              <li class="dropdown-item ">
+                <a href="/chapters/en/assessment.html" class="dropdown-link">
+                  <span class="item-icon">
+                    <i class="fas fa-chevron-right"></i>
+                  </span>
+                  <span class="item-text">Assessment</span>
+                </a>
+              </li>
+            
+              <li class="dropdown-item ">
+                <a href="/chapters/en/the-peeragogy-project.html" class="dropdown-link">
+                  <span class="item-icon">
+                    <i class="fas fa-chevron-right"></i>
+                  </span>
+                  <span class="item-text">The Peeragogy Project</span>
+                </a>
+              </li>
+            
+              <li class="dropdown-item ">
+                <a href="/chapters/en/resources.html" class="dropdown-link">
+                  <span class="item-icon">
+                    <i class="fas fa-chevron-right"></i>
+                  </span>
+                  <span class="item-text">Resources</span>
+                </a>
+              </li>
+            
+          </ul>
+        
+      </li>
+    
+      <li class="nav-item active ">
+        
+          <a href="/pages/about/" class="nav-link current">
+            <span class="nav-icon">
+              
+                  <i class="fas fa-info-circle"></i>
+                
+            </span>
+            <span class="nav-text">About</span>
+          </a>
+        
+      </li>
+    
+      <li class="nav-item  ">
+        
+          <a href="/pages/contact/" class="nav-link ">
+            <span class="nav-icon">
+              
+                  <i class="fas fa-envelope"></i>
+                
+            </span>
+            <span class="nav-text">Contact</span>
+          </a>
+        
+      </li>
+    
+  </ul>
+</nav>
 
-        <div class="language-selector">
-  <span class="current-lang">
-    <i class="fas fa-globe"></i>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
     
-      English
+    // Handle dropdown toggles
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        
+        // Close all other open dropdowns
+        dropdownToggles.forEach(otherToggle => {
+          if (otherToggle !== toggle && otherToggle.getAttribute('aria-expanded') === 'true') {
+            otherToggle.setAttribute('aria-expanded', 'false');
+            otherToggle.nextElementSibling.classList.remove('active');
+          }
+        });
+        
+        // Toggle this dropdown
+        const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+        this.setAttribute('aria-expanded', !expanded);
+        this.nextElementSibling.classList.toggle('active');
+      });
+    });
     
-  </span>
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+      dropdownToggles.forEach(toggle => {
+        if (toggle.getAttribute('aria-expanded') === 'true' && !toggle.contains(e.target)) {
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.nextElementSibling.classList.remove('active');
+        }
+      });
+    });
+    
+    // Handle keyboard navigation
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggle.click();
+        } else if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.nextElementSibling.classList.remove('active');
+        }
+      });
+    });
+  });
+</script>
+
+        </div>
+        
+        <div class="nav-actions">
+          <div class="search-toggle" aria-label="Search">
+            <i class="fas fa-search"></i>
+          </div>
+          <div class="language-selector">
+  <button class="language-dropdown-toggle" aria-expanded="false" aria-label="Select language">
+    <div class="selected-language">
+      <div class="language-icon">
+        <i class="fas fa-globe-americas"></i>
+      </div>
+      <span class="language-name">
+        
+          English
+        
+      </span>
+      <div class="dropdown-arrow">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+  </button>
+  
   <div class="language-dropdown">
     
     
     
+    <div class="dropdown-header">
+      <span>Select language</span>
+    </div>
     
+    <div class="language-options">
       
-        <a href="/chapters/en/index/" class="active">English</a>
-        <a href="/chapters/it/index/" >Italiano</a>
-      
-    
-  </div>
-</div>
-
-      </div>
-    </nav>
-  </div>
-</header>
-
-  
-  <!-- Search component -->
-  <!-- Search Component -->
-<div class="search-component">
-  <div class="search-toggle" id="search-toggle">
-    <i class="fas fa-search"></i>
-  </div>
-  
-  <div class="search-container" id="search-container">
-    <form class="search-form" role="search">
-      <div class="search-input-wrapper">
-        <input type="search" id="search-input" class="search-input" 
-               placeholder="Search the handbook...">
-        <button type="submit" class="search-btn">
-          <i class="fas fa-search"></i>
-        </button>
-        <button type="button" class="search-close" id="search-close">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-    </form>
-    
-    <div class="search-results" id="search-results">
-      <!-- Search results will be populated here -->
-      <div class="search-results-message">
         
-          <p>Start typing to search the peeragogy handbook.</p>
+          <a href="/chapters/en/index/" 
+             class="language-option active"
+             aria-label="Switch to English">
+            <div class="language-flag">
+              <span class="flag-icon">🇺🇸</span>
+            </div>
+            <div class="language-option-name">English</div>
+            
+              <div class="language-check">
+                <i class="fas fa-check"></i>
+              </div>
+            
+          </a>
+          
+          <a href="/chapters/it/index/" 
+             class="language-option "
+             aria-label="Switch to Italian">
+            <div class="language-flag">
+              <span class="flag-icon">🇮🇹</span>
+            </div>
+            <div class="language-option-name">Italiano</div>
+            
+          </a>
         
-      </div>
       
-      <!-- Sample search results for demo purposes -->
-      <div class="search-results-list" style="display: none;">
-        <div class="search-result-item">
-          <a href="/chapters/en/chapter1/">
-            <h4>Getting Started with Peeragogy</h4>
-            <p>...implementing peeragogy in your learning community, classroom, or workplace begins with establishing the right conditions...</p>
-          </a>
-        </div>
-        <div class="search-result-item">
-          <a href="/chapters/en/chapter2/">
-            <h4>Patterns and Heuristics</h4>
-            <p>...recognizing common patterns in peeragogy can help you solve recurring challenges...</p>
-          </a>
-        </div>
-      </div>
     </div>
   </div>
 </div>
 
-  <main class="page-content" aria-label="Content">
-    <div class="wrapper">
-      <h1 id="about-the-peeragogy-handbook-ai-edition">About the Peeragogy Handbook AI Edition</h1>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const langToggle = document.querySelector('.language-dropdown-toggle');
+    const langDropdown = document.querySelector('.language-dropdown');
+    
+    if (langToggle && langDropdown) {
+      // Toggle dropdown
+      langToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+        this.setAttribute('aria-expanded', !expanded);
+        langDropdown.classList.toggle('active');
+      });
+      
+      // Close when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!langDropdown.contains(e.target) && !langToggle.contains(e.target)) {
+          langToggle.setAttribute('aria-expanded', 'false');
+          langDropdown.classList.remove('active');
+        }
+      });
+      
+      // Keyboard navigation
+      langToggle.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          langToggle.click();
+        } else if (e.key === 'Escape' && langToggle.getAttribute('aria-expanded') === 'true') {
+          langToggle.setAttribute('aria-expanded', 'false');
+          langDropdown.classList.remove('active');
+        }
+      });
+    }
+  });
+</script>
+
+        </div>
+      </div>
+    </nav>
+  </div>
+  
+  <!-- Sticky header progress bar -->
+  <div class="header-progress">
+    <div class="progress-indicator" id="header-progress-bar"></div>
+  </div>
+</header>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Menu toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navContainer = document.querySelector('.nav-container');
+    
+    if (menuToggle && navContainer) {
+      menuToggle.addEventListener('click', function() {
+        const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+        this.setAttribute('aria-expanded', !expanded);
+        navContainer.classList.toggle('active');
+        document.body.classList.toggle('nav-active');
+      });
+    }
+    
+    // Header progress bar
+    const progressBar = document.getElementById('header-progress-bar');
+    if (progressBar) {
+      window.addEventListener('scroll', function() {
+        const scrollTop = window.scrollY;
+        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = (scrollTop / scrollHeight) * 100;
+        progressBar.style.width = scrolled + '%';
+      });
+    }
+    
+    // Search toggle
+    const searchToggle = document.querySelector('.search-toggle');
+    const searchContainer = document.querySelector('.search-container');
+    
+    if (searchToggle && searchContainer) {
+      searchToggle.addEventListener('click', function() {
+        searchContainer.classList.add('active');
+        searchContainer.querySelector('.search-input').focus();
+      });
+    }
+  });
+</script>
+
+    
+    <div class="site-content">
+      <!-- Progress bar for long-form content -->
+      <div class="reading-progress-container">
+        <div class="reading-progress-bar" id="reading-progress"></div>
+      </div>
+      
+      <div class="main-grid ">
+        <!-- Main Sidebar (TOC) -->
+        
+        
+        <!-- Mobile TOC toggle -->
+        
+        
+        <!-- Main content area -->
+        <main id="main-content" class="main-content " aria-label="Content">
+          <h1 id="about-the-peeragogy-handbook-ai-edition">About the Peeragogy Handbook AI Edition</h1>
 
 <h2 id="project-history">Project History</h2>
 
@@ -234,53 +492,704 @@
 
 <p>The Peeragogy Handbook AI Edition is licensed under a <a href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.</p>
 
+        </main>
+        
+        <!-- AI sidebar toggle -->
+        <button class="ai-toggle-button" id="ai-toggle" aria-label="Toggle AI Assistant" aria-expanded="false">
+          <i class="fas fa-brain"></i>
+          <span class="ai-toggle-text">AI</span>
+        </button>
+        
+        <!-- AI Sidebar -->
+        <aside class="sidebar sidebar-right" id="ai-sidebar">
+          <!-- AI Sidebar Component -->
+<div class="ai-sidebar">
+  <div class="ai-sidebar-header">
+    <div class="ai-sidebar-title">
+      <i class="fas fa-brain ai-icon"></i>
+      <h3>AI COMPANION</h3>
     </div>
-  </main>
-
-  <footer class="site-footer">
-  <div class="wrapper">
-    <div class="footer-content">
-      <div class="footer-col footer-about">
-        <h2 class="footer-heading">Peeragogy Handbook AI Edition</h2>
-        <p>An AI-enhanced version of the Peeragogy Handbook</p>
+    <div class="ai-sidebar-controls">
+      <button class="ai-sidebar-action ai-minimize" aria-label="Minimize">
+        <i class="fas fa-minus"></i>
+      </button>
+      <button class="toggle-ai-sidebar" aria-label="Close AI Sidebar">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  </div>
+  
+  <div class="ai-sidebar-content">
+    <div class="ai-modes">
+      <button class="ai-mode-btn active" data-mode="assistant">
+        <i class="fas fa-robot"></i>
+        <span>Assistant</span>
+      </button>
+      <button class="ai-mode-btn" data-mode="insights">
+        <i class="fas fa-lightbulb"></i>
+        <span>Insights</span>
+      </button>
+      <button class="ai-mode-btn" data-mode="summary">
+        <i class="fas fa-file-alt"></i>
+        <span>Summary</span>
+      </button>
+    </div>
+    
+    <div class="ai-assistant-intro">
+      <div class="ai-status-badge">
+        <span class="ai-status-indicator"></span>
+        <span class="ai-status-text">AI active</span>
       </div>
-
-      <div class="footer-col footer-links">
-        <h3>Quick Links</h3>
-        <ul class="footer-nav">
-          
-          
-            <li><a href="/">Home</a></li>
-          
-            <li><a href="/chapters/en/index/">Handbook</a></li>
-          
-            <li><a href="/pages/about/">About</a></li>
-          
-            <li><a href="/pages/contact/">Contact</a></li>
-          
-        </ul>
+      
+      <div class="ai-assistant-avatar">
+        <i class="fas fa-brain"></i>
       </div>
-
-      <div class="footer-col footer-social">
-        <h3>Connect</h3>
-        <div class="social-links">
-          <a href="https://github.com/ftg-003/peeragogy-ai-handbook" target="_blank" class="social-link">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://twitter.com/Peeragogy" target="_blank" class="social-link">
-            <i class="fab fa-twitter"></i>
-          </a>
+      
+      <h4 class="ai-assistant-name">PeerGang AI</h4>
+      
+      
+        <p class="ai-assistant-description">I'm your AI learning companion. I can help you navigate peeragogy concepts, provide practical examples, and personalize your learning journey.</p>
+      
+    </div>
+    
+    <div class="ai-interaction">
+      <div class="ai-message-container">
+        <div class="ai-messages" id="ai-messages">
+          <!-- AI messages will appear here -->
+          <div class="ai-message">
+            <div class="ai-message-avatar">
+              <i class="fas fa-brain"></i>
+            </div>
+            <div class="ai-message-content">
+              
+                <p>Hello! I'm here to facilitate your peeragogy journey. How can I assist you today?</p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="ai-tools">
+        <div class="ai-tool-buttons">
+          <button class="ai-tool-btn" title="Summarize this page">
+            <i class="fas fa-compress-alt"></i>
+          </button>
+          <button class="ai-tool-btn" title="Generate example">
+            <i class="fas fa-lightbulb"></i>
+          </button>
+          <button class="ai-tool-btn" title="Suggested questions">
+            <i class="fas fa-question-circle"></i>
+          </button>
+        </div>
+        
+        <div class="ai-input-container">
+          <textarea id="ai-user-input" 
+                    placeholder="Ask a question or request assistance..."
+                    rows="2"></textarea>
+          <button id="ai-send-button" aria-label="Send" class="ai-send-btn">
+            <i class="fas fa-paper-plane"></i>
+          </button>
         </div>
       </div>
     </div>
+  </div>
+  
+  <div class="ai-sidebar-footer">
+    <div class="ai-sidebar-brand">
+      <span>PeerGang™ AI</span>
+    </div>
+    <button class="ai-sidebar-help" aria-label="AI Help">
+      <i class="fas fa-question-circle"></i>
+    </button>
+  </div>
+</div>
 
-    <div class="footer-bottom">
-      <p>&copy; 2025 Peeragogy Project. Licensed under CC-BY-SA 4.0.</p>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Toggle AI sidebar
+    const aiToggleBtn = document.querySelector('.ai-toggle-button');
+    const aiSidebar = document.querySelector('.ai-sidebar');
+    const toggleSidebarBtn = document.querySelector('.toggle-ai-sidebar');
+    
+    if (aiToggleBtn && aiSidebar) {
+      aiToggleBtn.addEventListener('click', function() {
+        aiSidebar.classList.toggle('active');
+        document.body.classList.toggle('ai-sidebar-active');
+      });
+    }
+    
+    if (toggleSidebarBtn && aiSidebar) {
+      toggleSidebarBtn.addEventListener('click', function() {
+        aiSidebar.classList.remove('active');
+        document.body.classList.remove('ai-sidebar-active');
+      });
+    }
+    
+    // Mode switching
+    const modeBtns = document.querySelectorAll('.ai-mode-btn');
+    
+    modeBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        modeBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+    
+    // Minimize function
+    const minimizeBtn = document.querySelector('.ai-minimize');
+    
+    if (minimizeBtn && aiSidebar) {
+      minimizeBtn.addEventListener('click', function() {
+        aiSidebar.classList.toggle('minimized');
+      });
+    }
+    
+    // Send message function
+    const sendBtn = document.getElementById('ai-send-button');
+    const userInput = document.getElementById('ai-user-input');
+    const messagesContainer = document.getElementById('ai-messages');
+    
+    if (sendBtn && userInput && messagesContainer) {
+      sendBtn.addEventListener('click', function() {
+        const userMessage = userInput.value.trim();
+        
+        if (userMessage) {
+          // Add user message
+          const userMsgElement = document.createElement('div');
+          userMsgElement.className = 'ai-message user-message';
+          userMsgElement.innerHTML = `
+            <div class="ai-message-content">
+              <p>${userMessage}</p>
+            </div>
+          `;
+          messagesContainer.appendChild(userMsgElement);
+          
+          // Clear input
+          userInput.value = '';
+          
+          // Simulate AI response (for demo only)
+          setTimeout(() => {
+            const aiResponse = document.createElement('div');
+            aiResponse.className = 'ai-message';
+            aiResponse.innerHTML = `
+              <div class="ai-message-avatar">
+                <i class="fas fa-brain"></i>
+              </div>
+              <div class="ai-message-content">
+                <p>I understand you're asking about "${userMessage}". In the context of peeragogy, this relates to collaborative learning where peers work together to create and share knowledge.</p>
+              </div>
+            `;
+            messagesContainer.appendChild(aiResponse);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+          }, 1000);
+          
+          // Scroll to bottom
+          messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+      });
+      
+      // Allow Enter key to send message
+      userInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' && !event.shiftKey) {
+          event.preventDefault();
+          sendBtn.click();
+        }
+      });
+    }
+  });
+</script>
+        </aside>
+      </div>
+    </div>
+    
+    <footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-badge">
+      <div class="footer-badge-icon">
+        <i class="fas fa-brain"></i>
+      </div>
+      <div class="footer-badge-text">
+        <span>AI-Powered</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-main">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <!-- Brand section -->
+        <div class="footer-section footer-brand">
+          <div class="footer-logo">
+            <div class="footer-logo-mark">
+              <i class="fas fa-brain"></i>
+              <span>PeerGang</span>
+            </div>
+            <div class="footer-tagline">Revolutionizing Learning with AI</div>
+          </div>
+          
+          <div class="footer-description">
+            
+              <p>An innovative platform combining peeragogy with artificial intelligence to create more effective, collaborative, and personalized learning experiences.</p>
+            
+          </div>
+          
+          <div class="footer-newsletter">
+            <h4>Stay Updated</h4>
+            <form class="newsletter-form">
+              <div class="form-group">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">
+                  <i class="fas fa-paper-plane"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+        <!-- Quick links section -->
+        <div class="footer-section footer-links">
+          <h3>Quick Links</h3>
+          <ul class="footer-nav">
+            
+            
+              <li class="footer-nav-item">
+                <a href="/" class="footer-nav-link">
+                  <span class="nav-icon">
+                    
+                        <i class="fas fa-home"></i>
+                      
+                        <i class="fas fa-home"></i>
+                      
+                  </span>
+                  <span>Home</span>
+                </a>
+              </li>
+            
+              <li class="footer-nav-item">
+                <a href="/chapters/en/index/" class="footer-nav-link">
+                  <span class="nav-icon">
+                    
+                        <i class="fas fa-book"></i>
+                      
+                  </span>
+                  <span>Handbook</span>
+                </a>
+              </li>
+            
+              <li class="footer-nav-item">
+                <a href="/pages/about/" class="footer-nav-link">
+                  <span class="nav-icon">
+                    
+                        <i class="fas fa-info-circle"></i>
+                      
+                  </span>
+                  <span>About</span>
+                </a>
+              </li>
+            
+              <li class="footer-nav-item">
+                <a href="/pages/contact/" class="footer-nav-link">
+                  <span class="nav-icon">
+                    
+                        <i class="fas fa-envelope"></i>
+                      
+                  </span>
+                  <span>Contact</span>
+                </a>
+              </li>
+            
+          </ul>
+        </div>
+        
+        <!-- Resources section -->
+        <div class="footer-section footer-resources">
+          <h3>Resources</h3>
+          <ul class="footer-list">
+            <li>
+              <a href="#" class="footer-list-link">
+                <i class="fas fa-arrow-right"></i>
+                <span>Getting Started Guide</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-list-link">
+                <i class="fas fa-arrow-right"></i>
+                <span>Peeragogy Patterns</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-list-link">
+                <i class="fas fa-arrow-right"></i>
+                <span>FAQ</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="footer-list-link">
+                <i class="fas fa-arrow-right"></i>
+                <span>Contribute</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Connect section -->
+        <div class="footer-section footer-connect">
+          <h3>Connect</h3>
+          <div class="social-links">
+            <a href="https://github.com/ftg-003/peeragogy-ai-handbook" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://twitter.com/Peeragogy" target="_blank" rel="noopener" class="social-link" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Discord">
+              <i class="fab fa-discord"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+          
+          <div class="contact-info">
+            <h4>Contact Us</h4>
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:contact@peergang.io">contact@peergang.io</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <div class="footer-container">
+      <div class="footer-bottom-content">
+        <div class="copyright">
+          <p>&copy; 2025 PeerGang Initiative. All rights reserved.</p>
+        </div>
+        
+        <div class="legal-links">
+          <a href="/terms/">Terms of Service</a>
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="/license/">License</a>
+        </div>
+        
+        <div class="attribution">
+          <p>Based on the <a href="http://peeragogy.org" target="_blank" rel="noopener">Peeragogy Handbook</a>. Content licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC-BY-SA 4.0</a>.</p>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
 
+  </div>
+  
+  <!-- Search component -->
+  <!-- Search Component -->
+<div class="search-container" id="search-container">
+  <div class="search-overlay"></div>
+  
+  <div class="search-modal">
+    <div class="search-header">
+      <div class="search-logo">
+        <i class="fas fa-brain"></i>
+        <span>PeerGang</span>
+      </div>
+      
+      <button type="button" class="search-close" id="search-close" aria-label="Close search">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <form class="search-form" role="search">
+      <div class="search-input-wrapper">
+        <i class="fas fa-search search-icon"></i>
+        <input type="search" id="search-input" class="search-input" 
+               placeholder="Search the Peeragogy Handbook..."
+               autocomplete="off">
+        <button type="button" class="search-clear" id="search-clear" aria-label="Clear search">
+          <i class="fas fa-times-circle"></i>
+        </button>
+      </div>
+    </form>
+    
+    <div class="search-tags">
+      <span class="search-tag">#peeragogy</span>
+      <span class="search-tag">#learning</span>
+      <span class="search-tag">#collaboration</span>
+      <span class="search-tag">#AI</span>
+    </div>
+    
+    <div class="search-results" id="search-results">
+      <div class="search-status">
+        <div class="search-status-icon">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <div class="search-prompt">
+          
+            <h3>Start your exploration</h3>
+            <p>Search for key concepts, learning patterns, or peeragogical tools.</p>
+          
+        </div>
+      </div>
+      
+      <!-- This will be populated by JavaScript on search -->
+      <div class="search-results-list" id="results-list"></div>
+    </div>
+  </div>
+</div>
 
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchContainer = document.getElementById('search-container');
+    const searchClose = document.getElementById('search-close');
+    const searchInput = document.getElementById('search-input');
+    const searchClear = document.getElementById('search-clear');
+    const searchResults = document.getElementById('search-results');
+    const resultsList = document.getElementById('results-list');
+    const searchStatus = document.querySelector('.search-status');
+    
+    // Close search when clicking close button
+    searchClose.addEventListener('click', function() {
+      searchContainer.classList.remove('active');
+      document.body.classList.remove('search-active');
+      searchInput.value = '';
+      showSearchPrompt();
+    });
+    
+    // Clear search input
+    searchClear.addEventListener('click', function() {
+      searchInput.value = '';
+      searchInput.focus();
+      showSearchPrompt();
+    });
+    
+    // Close search when clicking outside
+    document.addEventListener('click', function(event) {
+      const isClickInside = searchContainer.contains(event.target);
+      const isSearchToggle = event.target.closest('.search-toggle');
+      
+      if (!isClickInside && !isSearchToggle && searchContainer.classList.contains('active')) {
+        searchContainer.classList.remove('active');
+        document.body.classList.remove('search-active');
+      }
+    });
+    
+    // Prevent clicks in search modal from closing it
+    searchContainer.querySelector('.search-modal').addEventListener('click', function(event) {
+      event.stopPropagation();
+    });
+    
+    // Handle search input
+    searchInput.addEventListener('input', function() {
+      if (this.value.length > 0) {
+        searchClear.style.display = 'block';
+        performSearch(this.value);
+      } else {
+        searchClear.style.display = 'none';
+        showSearchPrompt();
+      }
+    });
+    
+    // Show search prompt
+    function showSearchPrompt() {
+      searchStatus.style.display = 'flex';
+      resultsList.style.display = 'none';
+      resultsList.innerHTML = '';
+    }
+    
+    // Mock search function (to be replaced with real search)
+    function performSearch(query) {
+      // This would be a real search using lunr.js or similar
+      searchStatus.style.display = 'none';
+      resultsList.style.display = 'block';
+      
+      // Mock results for demonstration
+      const results = [
+        {
+          title: 'About This Book',
+          url: '/chapters/en/about-this-book.html',
+          content: '...the Peeragogy Handbook, a resource for self-organizing peer learning...'
+        },
+        {
+          title: 'Peeragogy in a Nutshell',
+          url: '/chapters/en/peeragogy-in-a-nutshell.html',
+          content: '...addresses the challenge: how can people learn together without a teacher?...'
+        }
+      ];
+      
+      resultsList.innerHTML = '';
+      
+      if (query.length > 1) {
+        results.forEach(function(result) {
+          const resultItem = document.createElement('div');
+          resultItem.className = 'search-result-item';
+          
+          resultItem.innerHTML = `
+            <a href="${result.url}">
+              <h4>${result.title}</h4>
+              <p>${result.content}</p>
+            </a>
+          `;
+          
+          resultsList.appendChild(resultItem);
+        });
+      }
+    }
+    
+    // Handle keyboard shortcuts
+    document.addEventListener('keydown', function(event) {
+      // ESC key to close search
+      if (event.key === 'Escape' && searchContainer.classList.contains('active')) {
+        searchContainer.classList.remove('active');
+        document.body.classList.remove('search-active');
+      }
+      
+      // Ctrl+K or Command+K to open search
+      if ((event.ctrlKey || event.metaKey) && event.key === 'k') {
+        event.preventDefault();
+        searchContainer.classList.add('active');
+        document.body.classList.add('search-active');
+        searchInput.focus();
+      }
+    });
+    
+    // Initial setup
+    searchClear.style.display = 'none';
+    showSearchPrompt();
+  });
+</script>
+  
+  <!-- Back to top button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  
+  <!-- Cookie consent banner -->
+  <div class="cookie-banner" id="cookie-banner">
+    <div class="cookie-content">
+      <div class="cookie-text">
+        
+          <p>We use cookies to enhance your experience. By continuing to browse, you accept our <a href="/privacy/">Privacy Policy</a>.</p>
+        
+      </div>
+      <div class="cookie-actions">
+        <button id="cookie-accept" class="cookie-btn cookie-accept">
+          Accept
+        </button>
+        <button id="cookie-decline" class="cookie-btn cookie-decline">
+          Decline
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Scripts -->
   <script src="/assets/js/main.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Toggle TOC sidebar on mobile
+      const tocToggle = document.getElementById('toc-toggle');
+      const tocSidebar = document.getElementById('table-of-contents');
+      const tocClose = document.getElementById('toc-close');
+      
+      if (tocToggle && tocSidebar) {
+        tocToggle.addEventListener('click', function() {
+          const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+          this.setAttribute('aria-expanded', !expanded);
+          tocSidebar.classList.toggle('active');
+          document.body.classList.toggle('sidebar-open');
+        });
+      }
+      
+      if (tocClose && tocSidebar) {
+        tocClose.addEventListener('click', function() {
+          tocSidebar.classList.remove('active');
+          document.body.classList.remove('sidebar-open');
+          if (tocToggle) {
+            tocToggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+      
+      // Toggle AI sidebar
+      const aiToggle = document.getElementById('ai-toggle');
+      const aiSidebar = document.getElementById('ai-sidebar');
+      
+      if (aiToggle && aiSidebar) {
+        aiToggle.addEventListener('click', function() {
+          const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+          this.setAttribute('aria-expanded', !expanded);
+          aiSidebar.classList.toggle('active');
+          document.body.classList.toggle('ai-sidebar-open');
+        });
+      }
+      
+      // Reading progress bar
+      const progressBar = document.getElementById('reading-progress');
+      
+      if (progressBar) {
+        window.addEventListener('scroll', function() {
+          const scrollTop = window.scrollY;
+          const docHeight = document.documentElement.scrollHeight;
+          const winHeight = window.innerHeight;
+          const scrollPercent = scrollTop / (docHeight - winHeight);
+          progressBar.style.transform = `scaleX(${scrollPercent})`;
+        });
+      }
+      
+      // Back to top button
+      const backToTopButton = document.getElementById('back-to-top');
+      
+      if (backToTopButton) {
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 300) {
+            backToTopButton.classList.add('visible');
+          } else {
+            backToTopButton.classList.remove('visible');
+          }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+      }
+      
+      // Cookie banner
+      const cookieBanner = document.getElementById('cookie-banner');
+      const cookieAccept = document.getElementById('cookie-accept');
+      const cookieDecline = document.getElementById('cookie-decline');
+      
+      if (cookieBanner && !localStorage.getItem('cookieConsent')) {
+        setTimeout(() => {
+          cookieBanner.classList.add('active');
+        }, 1000);
+      }
+      
+      if (cookieAccept) {
+        cookieAccept.addEventListener('click', function() {
+          localStorage.setItem('cookieConsent', 'accepted');
+          cookieBanner.classList.remove('active');
+        });
+      }
+      
+      if (cookieDecline) {
+        cookieDecline.addEventListener('click', function() {
+          localStorage.setItem('cookieConsent', 'declined');
+          cookieBanner.classList.remove('active');
+        });
+      }
+      
+      // Remove preload class after page loads
+      window.addEventListener('load', function() {
+        document.body.classList.remove('preload');
+      });
+    });
+  </script>
 </body>
 </html>

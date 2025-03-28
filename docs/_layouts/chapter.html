@@ -3,21 +3,192 @@ layout: default
 ---
 <article class="chapter">
   <header class="chapter-header">
-    <h1 class="chapter-title">{{ page.title }}</h1>
-    
-    <div class="chapter-meta">
-      {% if page.author %}
-      <span class="chapter-author">By {{ page.author }}</span>
-      {% endif %}
+    <div class="chapter-header-container">
+      <div class="chapter-header-content">
+        <div class="chapter-badge">
+          <span class="badge-icon"><i class="fas fa-brain"></i></span>
+          <span class="badge-text">PeerGang™</span>
+        </div>
+        
+        <h1 class="chapter-title">{{ page.title }}</h1>
+        
+        <div class="chapter-lead">
+          {% if page.description %}
+            <p class="chapter-description">{{ page.description }}</p>
+          {% endif %}
+        </div>
+        
+        <div class="chapter-meta">
+          <div class="meta-row">
+            {% if page.author %}
+            <div class="meta-item chapter-author">
+              <div class="meta-icon">
+                <i class="fas fa-user-edit"></i>
+              </div>
+              <div class="meta-text">
+                {% if page.lang == 'it' %}Scritto da{% else %}Written by{% endif %} <span class="meta-value">{{ page.author }}</span>
+              </div>
+            </div>
+            {% endif %}
+            
+            <div class="meta-item chapter-reading-time" id="reading-time">
+              <div class="meta-icon">
+                <i class="fas fa-book-reader"></i>
+              </div>
+              <div class="meta-text">
+                <span class="time">5</span> {% if page.lang == 'it' %}min di lettura{% else %}min read{% endif %}
+              </div>
+            </div>
+          </div>
+          
+          <div class="meta-row">
+            {% if page.date %}
+            <div class="meta-item chapter-date">
+              <div class="meta-icon">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+              <div class="meta-text">
+                {% if page.lang == 'it' %}
+                  Aggiornato il <span class="meta-value">{{ page.date | date: "%-d %B %Y" }}</span>
+                {% else %}
+                  Updated on <span class="meta-value">{{ page.date | date: "%B %-d, %Y" }}</span>
+                {% endif %}
+              </div>
+            </div>
+            {% endif %}
+            
+            {% if page.tags %}
+            <div class="meta-item chapter-tags">
+              <div class="meta-icon">
+                <i class="fas fa-tags"></i>
+              </div>
+              <div class="meta-text tags-list">
+                {% for tag in page.tags %}
+                  <span class="tag-item">{{ tag }}</span>
+                {% endfor %}
+              </div>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        
+        <div class="chapter-actions">
+          <button class="chapter-action-btn share-btn" title="{% if page.lang == 'it' %}Condividi{% else %}Share{% endif %}">
+            <i class="fas fa-share-alt"></i>
+            <span>{% if page.lang == 'it' %}Condividi{% else %}Share{% endif %}</span>
+          </button>
+          
+          <button class="chapter-action-btn save-btn" title="{% if page.lang == 'it' %}Salva{% else %}Save{% endif %}">
+            <i class="fas fa-bookmark"></i>
+            <span>{% if page.lang == 'it' %}Salva{% else %}Save{% endif %}</span>
+          </button>
+          
+          <button class="chapter-action-btn print-btn" title="{% if page.lang == 'it' %}Stampa{% else %}Print{% endif %}" onclick="window.print();">
+            <i class="fas fa-print"></i>
+            <span>{% if page.lang == 'it' %}Stampa{% else %}Print{% endif %}</span>
+          </button>
+          
+          <button class="chapter-action-btn tts-btn" title="{% if page.lang == 'it' %}Ascolta{% else %}Listen{% endif %}" id="tts-button">
+            <i class="fas fa-volume-up"></i>
+            <span>{% if page.lang == 'it' %}Ascolta{% else %}Listen{% endif %}</span>
+          </button>
+        </div>
+      </div>
       
-      {% if page.date %}
-      <span class="chapter-date">{{ page.date | date: "%B %d, %Y" }}</span>
+      {% if page.featured_image %}
+      <div class="chapter-featured-image">
+        <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}">
+      </div>
       {% endif %}
     </div>
   </header>
 
-  <div class="chapter-content">
-    {{ content }}
+  <div class="chapter-body">
+    <div class="chapter-outline">
+      <div class="outline-header">
+        <h3 class="outline-title">{% if page.lang == 'it' %}In questa pagina{% else %}On this page{% endif %}</h3>
+      </div>
+      <div class="outline-content" id="page-outline">
+        <!-- This will be populated by JavaScript -->
+      </div>
+    </div>
+    
+    <div class="chapter-content formatted-content">
+      {{ content }}
+    </div>
+    
+    <div class="content-engagement">
+      <div class="engagement-reactions">
+        <div class="reactions-label">{% if page.lang == 'it' %}Utile?{% else %}Helpful?{% endif %}</div>
+        <div class="reactions-buttons">
+          <button class="reaction-btn" data-reaction="helpful">
+            <i class="fas fa-thumbs-up"></i>
+            <span class="reaction-label">{% if page.lang == 'it' %}Sì{% else %}Yes{% endif %}</span>
+          </button>
+          <button class="reaction-btn" data-reaction="not-helpful">
+            <i class="fas fa-thumbs-down"></i>
+            <span class="reaction-label">{% if page.lang == 'it' %}No{% else %}No{% endif %}</span>
+          </button>
+        </div>
+      </div>
+      
+      <div class="engagement-share">
+        <div class="share-label">{% if page.lang == 'it' %}Condividi{% else %}Share{% endif %}</div>
+        <div class="share-buttons">
+          <a href="https://twitter.com/intent/tweet?url={{ page.url | absolute_url }}&text={{ page.title | url_encode }}" target="_blank" class="share-btn twitter" aria-label="Share on Twitter">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ page.url | absolute_url }}&title={{ page.title | url_encode }}" target="_blank" class="share-btn linkedin" aria-label="Share on LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url }}" target="_blank" class="share-btn facebook" aria-label="Share on Facebook">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <button class="share-btn copy-link" id="copy-link-btn" aria-label="Copy link">
+            <i class="fas fa-link"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chapter-related">
+    <h3 class="related-title">{% if page.lang == 'it' %}Contenuti Correlati{% else %}Related Content{% endif %}</h3>
+    <div class="related-grid">
+      <!-- This would ideally be populated dynamically based on tags -->
+      {% assign lang = page.lang | default: site.default_lang | default: 'en' %}
+      {% assign handbook_title = "Handbook" %}
+      {% if lang == "it" %}
+        {% assign handbook_title = "Manuale" %}
+      {% endif %}
+      {% assign handbook_nav = site.data.navigation[lang] | where: "title", handbook_title | first %}
+      {% assign current_url = page.url %}
+      {% assign displayed_count = 0 %}
+      
+      {% for chapter in handbook_nav.children %}
+        {% if chapter.url != current_url and displayed_count < 3 %}
+          <div class="related-item">
+            <a href="{{ chapter.url | relative_url }}" class="related-link">
+              <div class="related-content">
+                <h4 class="related-item-title">{{ chapter.title }}</h4>
+                <p class="related-item-excerpt">
+                  <!-- Excerpt would be populated dynamically -->
+                  {% if page.lang == 'it' %}
+                    Un altro capitolo interessante relativo a questo argomento.
+                  {% else %}
+                    Another interesting chapter related to this topic.
+                  {% endif %}
+                </p>
+              </div>
+              <div class="related-arrow">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </a>
+          </div>
+          {% assign displayed_count = displayed_count | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
 
   <nav class="chapter-navigation">
@@ -38,20 +209,38 @@ layout: default
         <div class="chapter-navigation-container">
           {% if prev_index >= 0 %}
             {% assign prev_chapter = handbook_nav.children[prev_index] %}
-            <a href="{{ prev_chapter.url | relative_url }}" class="prev-chapter">
-              <i class="fas fa-arrow-left"></i> {{ prev_chapter.title }}
+            <a href="{{ prev_chapter.url | relative_url }}" class="nav-link prev-chapter">
+              <div class="nav-direction">
+                <i class="fas fa-arrow-left"></i>
+                <span class="nav-label">{% if page.lang == 'it' %}Precedente{% else %}Previous{% endif %}</span>
+              </div>
+              <div class="nav-title">{{ prev_chapter.title }}</div>
+              <div class="nav-preview">
+                <!-- This would be populated dynamically with a short excerpt -->
+              </div>
             </a>
           {% else %}
-            <span class="nav-placeholder"></span>
+            <div class="nav-placeholder"></div>
           {% endif %}
+          
+          <div class="nav-chapter-indicator">
+            <div class="chapter-number">{{ current_index | plus: 1 }}/{{ handbook_nav.children.size }}</div>
+          </div>
           
           {% if next_index < handbook_nav.children.size %}
             {% assign next_chapter = handbook_nav.children[next_index] %}
-            <a href="{{ next_chapter.url | relative_url }}" class="next-chapter">
-              {{ next_chapter.title }} <i class="fas fa-arrow-right"></i>
+            <a href="{{ next_chapter.url | relative_url }}" class="nav-link next-chapter">
+              <div class="nav-direction">
+                <span class="nav-label">{% if page.lang == 'it' %}Prossimo{% else %}Next{% endif %}</span>
+                <i class="fas fa-arrow-right"></i>
+              </div>
+              <div class="nav-title">{{ next_chapter.title }}</div>
+              <div class="nav-preview">
+                <!-- This would be populated dynamically with a short excerpt -->
+              </div>
             </a>
           {% else %}
-            <span class="nav-placeholder"></span>
+            <div class="nav-placeholder"></div>
           {% endif %}
         </div>
         
@@ -60,13 +249,188 @@ layout: default
     {% endfor %}
   </nav>
   
-  <div class="chapter-toc">
-    <h3>{% if page.lang == 'it' %}Indice dei Capitoli{% else %}Chapters{% endif %}</h3>
-    {% include chapter-list.html lang=page.lang %}
-  </div>
-  
   {% include comments.html %}
 </article>
 
-<!-- AI Sidebar injection -->
-{% include ai-sidebar.html %}
+<!-- Additional JS for chapter functionality -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Calculate and display reading time
+    const content = document.querySelector('.chapter-content');
+    if (content) {
+      const text = content.textContent;
+      const wpm = 225; // Average reading speed
+      const words = text.trim().split(/\s+/).length;
+      const time = Math.ceil(words / wpm);
+      const timeDisplay = document.querySelector('.time');
+      if (timeDisplay) {
+        timeDisplay.textContent = time;
+      }
+    }
+    
+    // Generate page outline from h2 and h3 tags
+    const headings = document.querySelectorAll('.chapter-content h2, .chapter-content h3');
+    const outlineContainer = document.getElementById('page-outline');
+    
+    if (headings.length > 0 && outlineContainer) {
+      const outlineList = document.createElement('ul');
+      outlineList.className = 'outline-list';
+      
+      headings.forEach((heading, index) => {
+        // Add IDs to headings for anchor links if they don't have one
+        if (!heading.id) {
+          heading.id = 'heading-' + index;
+        }
+        
+        const listItem = document.createElement('li');
+        listItem.className = 'outline-item' + (heading.tagName === 'H3' ? ' outline-subitem' : '');
+        
+        const link = document.createElement('a');
+        link.href = '#' + heading.id;
+        link.className = 'outline-link';
+        link.textContent = heading.textContent;
+        
+        listItem.appendChild(link);
+        outlineList.appendChild(listItem);
+      });
+      
+      outlineContainer.appendChild(outlineList);
+      
+      // If there are no headings, hide the outline section
+      if (headings.length === 0) {
+        const outlineSection = document.querySelector('.chapter-outline');
+        if (outlineSection) {
+          outlineSection.style.display = 'none';
+        }
+      }
+    }
+    
+    // Highlight active section in outline based on scroll position
+    const outlineLinks = document.querySelectorAll('.outline-link');
+    if (outlineLinks.length > 0) {
+      window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+        
+        headings.forEach((heading, index) => {
+          const rect = heading.getBoundingClientRect();
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            outlineLinks.forEach(link => link.classList.remove('active'));
+            outlineLinks[index].classList.add('active');
+          }
+        });
+      });
+    }
+    
+    // Copy link button functionality
+    const copyLinkBtn = document.getElementById('copy-link-btn');
+    if (copyLinkBtn) {
+      copyLinkBtn.addEventListener('click', function() {
+        const currentUrl = window.location.href;
+        
+        // Create a temporary textarea to copy the URL
+        const textarea = document.createElement('textarea');
+        textarea.value = currentUrl;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'absolute';
+        textarea.style.left = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        
+        // Show feedback that the link was copied
+        const originalIcon = copyLinkBtn.innerHTML;
+        copyLinkBtn.innerHTML = '<i class="fas fa-check"></i>';
+        
+        setTimeout(() => {
+          copyLinkBtn.innerHTML = originalIcon;
+        }, 2000);
+      });
+    }
+    
+    // Reaction buttons functionality
+    const reactionButtons = document.querySelectorAll('.reaction-btn');
+    reactionButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // Remove active class from all reaction buttons
+        reactionButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        // In a real implementation, you would send this data to your backend
+        const reaction = this.dataset.reaction;
+        console.log('User reaction:', reaction);
+      });
+    });
+    
+    // Text-to-speech functionality
+    const ttsButton = document.getElementById('tts-button');
+    if (ttsButton && 'speechSynthesis' in window) {
+      let speaking = false;
+      let utterance;
+      
+      ttsButton.addEventListener('click', function() {
+        if (!speaking) {
+          // Get the content text
+          const contentText = content.textContent;
+          
+          // Create utterance
+          utterance = new SpeechSynthesisUtterance(contentText);
+          
+          // Set language based on page language
+          const pageLang = document.documentElement.lang;
+          utterance.lang = pageLang;
+          
+          // Start speaking
+          window.speechSynthesis.speak(utterance);
+          speaking = true;
+          ttsButton.innerHTML = '<i class="fas fa-pause"></i><span>{% if page.lang == "it" %}Pausa{% else %}Pause{% endif %}</span>';
+        } else {
+          // If already speaking, pause/resume
+          if (window.speechSynthesis.speaking) {
+            if (window.speechSynthesis.paused) {
+              window.speechSynthesis.resume();
+              ttsButton.innerHTML = '<i class="fas fa-pause"></i><span>{% if page.lang == "it" %}Pausa{% else %}Pause{% endif %}</span>';
+            } else {
+              window.speechSynthesis.pause();
+              ttsButton.innerHTML = '<i class="fas fa-play"></i><span>{% if page.lang == "it" %}Riprendi{% else %}Resume{% endif %}</span>';
+            }
+          }
+        }
+      });
+      
+      // Reset button when speech ends
+      utterance && utterance.addEventListener('end', function() {
+        speaking = false;
+        ttsButton.innerHTML = '<i class="fas fa-volume-up"></i><span>{% if page.lang == "it" %}Ascolta{% else %}Listen{% endif %}</span>';
+      });
+    } else if (ttsButton) {
+      // Hide the button if speech synthesis is not supported
+      ttsButton.style.display = 'none';
+    }
+    
+    // Share button functionality
+    const shareButton = document.querySelector('.share-btn');
+    if (shareButton && navigator.share) {
+      shareButton.addEventListener('click', async () => {
+        try {
+          await navigator.share({
+            title: document.title,
+            url: window.location.href
+          });
+        } catch (err) {
+          console.error('Share failed:', err);
+        }
+      });
+    } else if (shareButton) {
+      // If Web Share API is not supported, show custom share options
+      shareButton.addEventListener('click', function() {
+        const shareOptions = document.querySelector('.engagement-share');
+        if (shareOptions) {
+          shareOptions.classList.toggle('active');
+        }
+      });
+    }
+  });
+</script>

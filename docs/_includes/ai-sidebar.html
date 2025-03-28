@@ -1,51 +1,200 @@
 <!-- AI Sidebar Component -->
 <div class="ai-sidebar">
   <div class="ai-sidebar-header">
-    <h3>{% if page.lang == 'it' %}Assistente AI{% else %}AI Assistant{% endif %}</h3>
-    <button class="toggle-ai-sidebar" aria-label="Toggle AI Sidebar">
-      <i class="fas fa-robot"></i>
-    </button>
+    <div class="ai-sidebar-title">
+      <i class="fas fa-brain ai-icon"></i>
+      <h3>{% if page.lang == 'it' %}AI COMPANION{% else %}AI COMPANION{% endif %}</h3>
+    </div>
+    <div class="ai-sidebar-controls">
+      <button class="ai-sidebar-action ai-minimize" aria-label="Minimize">
+        <i class="fas fa-minus"></i>
+      </button>
+      <button class="toggle-ai-sidebar" aria-label="Close AI Sidebar">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
   </div>
   
   <div class="ai-sidebar-content">
+    <div class="ai-modes">
+      <button class="ai-mode-btn active" data-mode="assistant">
+        <i class="fas fa-robot"></i>
+        <span>{% if page.lang == 'it' %}Assistente{% else %}Assistant{% endif %}</span>
+      </button>
+      <button class="ai-mode-btn" data-mode="insights">
+        <i class="fas fa-lightbulb"></i>
+        <span>{% if page.lang == 'it' %}Spunti{% else %}Insights{% endif %}</span>
+      </button>
+      <button class="ai-mode-btn" data-mode="summary">
+        <i class="fas fa-file-alt"></i>
+        <span>{% if page.lang == 'it' %}Riassunto{% else %}Summary{% endif %}</span>
+      </button>
+    </div>
+    
     <div class="ai-assistant-intro">
+      <div class="ai-status-badge">
+        <span class="ai-status-indicator"></span>
+        <span class="ai-status-text">{% if page.lang == 'it' %}AI attiva{% else %}AI active{% endif %}</span>
+      </div>
+      
+      <div class="ai-assistant-avatar">
+        <i class="fas fa-brain"></i>
+      </div>
+      
+      <h4 class="ai-assistant-name">PeerGang AI</h4>
+      
       {% if page.lang == 'it' %}
-        <p>L'assistente AI può aiutarti con:</p>
-        <ul>
-          <li>Riassumere il contenuto</li>
-          <li>Rispondere a domande</li>
-          <li>Generare esempi pratici</li>
-          <li>Suggerire risorse aggiuntive</li>
-        </ul>
+        <p class="ai-assistant-description">Sono il tuo companion di apprendimento AI. Posso aiutarti a navigare i concetti di peeragogia, fornire esempi pratici e personalizzare il tuo percorso di apprendimento.</p>
       {% else %}
-        <p>The AI assistant can help you with:</p>
-        <ul>
-          <li>Summarizing content</li>
-          <li>Answering questions</li>
-          <li>Generating practical examples</li>
-          <li>Suggesting additional resources</li>
-        </ul>
+        <p class="ai-assistant-description">I'm your AI learning companion. I can help you navigate peeragogy concepts, provide practical examples, and personalize your learning journey.</p>
       {% endif %}
     </div>
     
     <div class="ai-interaction">
-      <div class="ai-messages" id="ai-messages">
-        <!-- AI messages will appear here -->
-        <div class="ai-message">
-          {% if page.lang == 'it' %}
-            <p>Ciao! Sono qui per aiutarti a comprendere meglio la peeragogia. Cosa vorresti sapere?</p>
-          {% else %}
-            <p>Hello! I'm here to help you better understand peeragogy. What would you like to know?</p>
-          {% endif %}
+      <div class="ai-message-container">
+        <div class="ai-messages" id="ai-messages">
+          <!-- AI messages will appear here -->
+          <div class="ai-message">
+            <div class="ai-message-avatar">
+              <i class="fas fa-brain"></i>
+            </div>
+            <div class="ai-message-content">
+              {% if page.lang == 'it' %}
+                <p>Ciao! Sono qui per facilitare il tuo viaggio nella peeragogia. Come posso assisterti oggi?</p>
+              {% else %}
+                <p>Hello! I'm here to facilitate your peeragogy journey. How can I assist you today?</p>
+              {% endif %}
+            </div>
+          </div>
         </div>
       </div>
       
-      <div class="ai-input-container">
-        <textarea id="ai-user-input" placeholder="{% if page.lang == 'it' %}Fai una domanda...{% else %}Ask a question...{% endif %}"></textarea>
-        <button id="ai-send-button" aria-label="Send">
-          <i class="fas fa-paper-plane"></i>
-        </button>
+      <div class="ai-tools">
+        <div class="ai-tool-buttons">
+          <button class="ai-tool-btn" title="{% if page.lang == 'it' %}Riassumi questa pagina{% else %}Summarize this page{% endif %}">
+            <i class="fas fa-compress-alt"></i>
+          </button>
+          <button class="ai-tool-btn" title="{% if page.lang == 'it' %}Genera esempio{% else %}Generate example{% endif %}">
+            <i class="fas fa-lightbulb"></i>
+          </button>
+          <button class="ai-tool-btn" title="{% if page.lang == 'it' %}Domande suggerite{% else %}Suggested questions{% endif %}">
+            <i class="fas fa-question-circle"></i>
+          </button>
+        </div>
+        
+        <div class="ai-input-container">
+          <textarea id="ai-user-input" 
+                    placeholder="{% if page.lang == 'it' %}Fai una domanda o chiedi assistenza...{% else %}Ask a question or request assistance...{% endif %}"
+                    rows="2"></textarea>
+          <button id="ai-send-button" aria-label="Send" class="ai-send-btn">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
+  
+  <div class="ai-sidebar-footer">
+    <div class="ai-sidebar-brand">
+      <span>PeerGang™ AI</span>
+    </div>
+    <button class="ai-sidebar-help" aria-label="AI Help">
+      <i class="fas fa-question-circle"></i>
+    </button>
+  </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Toggle AI sidebar
+    const aiToggleBtn = document.querySelector('.ai-toggle-button');
+    const aiSidebar = document.querySelector('.ai-sidebar');
+    const toggleSidebarBtn = document.querySelector('.toggle-ai-sidebar');
+    
+    if (aiToggleBtn && aiSidebar) {
+      aiToggleBtn.addEventListener('click', function() {
+        aiSidebar.classList.toggle('active');
+        document.body.classList.toggle('ai-sidebar-active');
+      });
+    }
+    
+    if (toggleSidebarBtn && aiSidebar) {
+      toggleSidebarBtn.addEventListener('click', function() {
+        aiSidebar.classList.remove('active');
+        document.body.classList.remove('ai-sidebar-active');
+      });
+    }
+    
+    // Mode switching
+    const modeBtns = document.querySelectorAll('.ai-mode-btn');
+    
+    modeBtns.forEach(btn => {
+      btn.addEventListener('click', function() {
+        modeBtns.forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+    
+    // Minimize function
+    const minimizeBtn = document.querySelector('.ai-minimize');
+    
+    if (minimizeBtn && aiSidebar) {
+      minimizeBtn.addEventListener('click', function() {
+        aiSidebar.classList.toggle('minimized');
+      });
+    }
+    
+    // Send message function
+    const sendBtn = document.getElementById('ai-send-button');
+    const userInput = document.getElementById('ai-user-input');
+    const messagesContainer = document.getElementById('ai-messages');
+    
+    if (sendBtn && userInput && messagesContainer) {
+      sendBtn.addEventListener('click', function() {
+        const userMessage = userInput.value.trim();
+        
+        if (userMessage) {
+          // Add user message
+          const userMsgElement = document.createElement('div');
+          userMsgElement.className = 'ai-message user-message';
+          userMsgElement.innerHTML = `
+            <div class="ai-message-content">
+              <p>${userMessage}</p>
+            </div>
+          `;
+          messagesContainer.appendChild(userMsgElement);
+          
+          // Clear input
+          userInput.value = '';
+          
+          // Simulate AI response (for demo only)
+          setTimeout(() => {
+            const aiResponse = document.createElement('div');
+            aiResponse.className = 'ai-message';
+            aiResponse.innerHTML = `
+              <div class="ai-message-avatar">
+                <i class="fas fa-brain"></i>
+              </div>
+              <div class="ai-message-content">
+                <p>I understand you're asking about "${userMessage}". In the context of peeragogy, this relates to collaborative learning where peers work together to create and share knowledge.</p>
+              </div>
+            `;
+            messagesContainer.appendChild(aiResponse);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+          }, 1000);
+          
+          // Scroll to bottom
+          messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+      });
+      
+      // Allow Enter key to send message
+      userInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' && !event.shiftKey) {
+          event.preventDefault();
+          sendBtn.click();
+        }
+      });
+    }
+  });
+</script>

@@ -1,0 +1,34 @@
+🧠 CONTEXT:
+The current UI of the Peeragogy Handbook AI Edition looks too basic and does not reflect the power, vision, or professionalism of the PeerGang initiative. It currently resembles a student project or a toy website.
+
+🎯 OBJECTIVE:
+Redesign the entire GUI to reflect a clean, elegant, powerful and future-ready AI platform for educational collaboration. The goal is to build something visually impressive and cognitively functional.
+
+💣 WE NEED:
+- A modern, clean, and professional layout
+- Excellent typography (spaced headings, readable paragraphs)
+- Sticky left sidebar for TOC (with scroll sync)
+- AI Sidebar component (placeholder for now, but visually structured)
+- Integrated feedback/comment box with smart UX
+- Search bar with elegant animation
+- Responsive layout for mobile/tablet
+- Dark mode ready (optional but appreciated)
+- Modular structure (ready for future AI, n8n, Flowise integration)
+
+📐 LAYOUT SUGGESTION:
++-------------------------------+
+| LOGO / HEADER / BADGE        |
++-------------------------------+
+| TOC Sidebar     |  Chapter    |
+| (Sticky + AI)   |  Content    |
++-------------------------------+
+| FOOTER          |            |
++-------------------------------+
+
+🔥 NOTES:
+Forget about language switches and translation for now.
+This is not a student site.
+This is PeerGang™. Build something worthy.
+
+🔥 GO:
+Refactor the layout. Upgrade the visuals. Make it look like it belongs to a global AI-powered education initiative. PeerGang demands it.

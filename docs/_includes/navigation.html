@@ -1,18 +1,115 @@
 {% assign navigation = site.data.navigation[page.lang] %}
-<ul class="nav-links">
-  {% for item in navigation %}
-    <li class="nav-item {% if page.url == item.url %}active{% endif %}">
-      <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
-      
-      {% if item.children %}
-        <ul class="dropdown-menu">
-          {% for child in item.children %}
-            <li class="dropdown-item">
-              <a href="{{ child.url | relative_url }}">{{ child.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    </li>
-  {% endfor %}
-</ul>
+<nav class="main-navigation" aria-label="Primary Navigation">
+  <ul class="nav-links">
+    {% for item in navigation %}
+      <li class="nav-item {% if page.url == item.url %}active{% endif %} {% if item.children %}has-children{% endif %}">
+        {% if item.children %}
+          <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            <span class="nav-icon">
+              {% case item.title %}
+                {% when "Home" or "Home" %}
+                  <i class="fas fa-home"></i>
+                {% when "Handbook" or "Manuale" %}
+                  <i class="fas fa-book"></i>
+                {% when "About" or "Chi Siamo" %}
+                  <i class="fas fa-info-circle"></i>
+                {% when "Resources" or "Risorse" %}
+                  <i class="fas fa-link"></i>
+                {% when "Contact" or "Contatti" %}
+                  <i class="fas fa-envelope"></i>
+                {% else %}
+                  <i class="fas fa-file-alt"></i>
+              {% endcase %}
+            </span>
+            <span class="nav-text">{{ item.title }}</span>
+            <span class="dropdown-indicator">
+              <i class="fas fa-chevron-down"></i>
+            </span>
+          </button>
+          
+          <ul class="dropdown-menu" aria-label="submenu">
+            {% for child in item.children %}
+              <li class="dropdown-item {% if page.url == child.url %}active{% endif %}">
+                <a href="{{ child.url | relative_url }}" class="dropdown-link">
+                  <span class="item-icon">
+                    <i class="fas fa-chevron-right"></i>
+                  </span>
+                  <span class="item-text">{{ child.title }}</span>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <a href="{{ item.url | relative_url }}" class="nav-link {% if page.url == item.url %}current{% endif %}">
+            <span class="nav-icon">
+              {% case item.title %}
+                {% when "Home" or "Home" %}
+                  <i class="fas fa-home"></i>
+                {% when "Handbook" or "Manuale" %}
+                  <i class="fas fa-book"></i>
+                {% when "About" or "Chi Siamo" %}
+                  <i class="fas fa-info-circle"></i>
+                {% when "Resources" or "Risorse" %}
+                  <i class="fas fa-link"></i>
+                {% when "Contact" or "Contatti" %}
+                  <i class="fas fa-envelope"></i>
+                {% else %}
+                  <i class="fas fa-file-alt"></i>
+              {% endcase %}
+            </span>
+            <span class="nav-text">{{ item.title }}</span>
+          </a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+    
+    // Handle dropdown toggles
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        
+        // Close all other open dropdowns
+        dropdownToggles.forEach(otherToggle => {
+          if (otherToggle !== toggle && otherToggle.getAttribute('aria-expanded') === 'true') {
+            otherToggle.setAttribute('aria-expanded', 'false');
+            otherToggle.nextElementSibling.classList.remove('active');
+          }
+        });
+        
+        // Toggle this dropdown
+        const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+        this.setAttribute('aria-expanded', !expanded);
+        this.nextElementSibling.classList.toggle('active');
+      });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+      dropdownToggles.forEach(toggle => {
+        if (toggle.getAttribute('aria-expanded') === 'true' && !toggle.contains(e.target)) {
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.nextElementSibling.classList.remove('active');
+        }
+      });
+    });
+    
+    // Handle keyboard navigation
+    dropdownToggles.forEach(toggle => {
+      toggle.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          toggle.click();
+        } else if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.nextElementSibling.classList.remove('active');
+        }
+      });
+    });
+  });
+</script>
