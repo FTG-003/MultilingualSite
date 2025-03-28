@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.default_lang | default: 'en' }}" class="no-js">
+<html lang="{{ page.lang | default: site.default_lang | default: 'en' }}">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,129 +7,48 @@
   <title>{% if page.title %}{{ page.title | escape }} - {% endif %}{{ site.title | escape }}</title>
   <meta name="description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
   
-  <!-- SEO meta tags -->
-  <meta property="og:title" content="{% if page.title %}{{ page.title | escape }} - {% endif %}{{ site.title | escape }}">
-  <meta property="og:description" content="{{ page.description | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:image" content="{{ '/assets/images/og-image.jpg' | absolute_url }}">
-  
-  <!-- Preload critical assets -->
-  <link rel="preload" href="{{ '/assets/css/styles.css' | relative_url }}" as="style">
-  <link rel="preload" href="{{ '/assets/js/main.js' | relative_url }}" as="script">
-  
-  <!-- Modern fonts -->
+  <!-- Fonts and styles -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome for icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Main stylesheet -->
   <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
   
-  <!-- Favicon and theme color -->
-  <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
-  <meta name="theme-color" content="#3E63DD">
-  
-  <!-- Detect JS -->
-  <script>document.documentElement.className = document.documentElement.className.replace('no-js', 'js');</script>
+  <!-- Favicon -->
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}">
 </head>
 
-<body class="page-{{ page.title | downcase | replace: ' ', '-' | default: 'home' }} lang-{{ page.lang | default: 'en' }} preload">
-  <!-- Skip link for accessibility -->
-  <a class="skip-to-content" href="#main-content">
-    {% if page.lang == 'it' %}Vai al contenuto principale{% else %}Skip to content{% endif %}
-  </a>
+<body class="{% if page.layout %}{{ page.layout }}{% endif %} lang-{{ page.lang | default: 'en' }}">
+  <!-- Skip to content link for accessibility -->
+  <a class="skip-to-content" href="#main-content">{% if page.lang == 'it' %}Vai al contenuto{% else %}Skip to content{% endif %}</a>
 
-  <div class="site-wrapper">
+  <div class="site-container">
     {% include header.html %}
     
-    <div class="site-content">
-      <!-- Progress bar for long-form content -->
-      <div class="reading-progress-container">
-        <div class="reading-progress-bar" id="reading-progress"></div>
-      </div>
+    <div class="main-container">
+      {% if page.layout == 'chapter' %}
+      <aside class="sidebar">
+        <div class="sidebar-inner">
+          <h3>{% if page.lang == 'it' %}Capitoli{% else %}Chapters{% endif %}</h3>
+          {% include chapter-list.html lang=page.lang %}
+        </div>
+      </aside>
+      {% endif %}
       
-      <div class="main-grid {% if page.layout == 'chapter' %}with-sidebar{% endif %}">
-        <!-- Main Sidebar (TOC) -->
-        {% if page.layout == 'chapter' %}
-        <aside class="sidebar sidebar-left" id="table-of-contents">
-          <div class="sidebar-sticky">
-            <div class="sidebar-header">
-              <div class="sidebar-title">
-                <i class="fas fa-book-open"></i>
-                <h3>{% if page.lang == 'it' %}Indice{% else %}Contents{% endif %}</h3>
-              </div>
-              <button class="sidebar-close" id="toc-close" aria-label="Close table of contents">
-                <i class="fas fa-times"></i>
-              </button>
-            </div>
-            
-            <div class="sidebar-content">
-              <div class="chapters-container">
-                {% include chapter-list.html lang=page.lang %}
-              </div>
-              
-              <div class="sidebar-actions">
-                <button class="sidebar-action expand-all">
-                  <i class="fas fa-plus-square"></i>
-                  <span>{% if page.lang == 'it' %}Espandi Tutto{% else %}Expand All{% endif %}</span>
-                </button>
-                <button class="sidebar-action collapse-all">
-                  <i class="fas fa-minus-square"></i>
-                  <span>{% if page.lang == 'it' %}Collassa Tutto{% else %}Collapse All{% endif %}</span>
-                </button>
-              </div>
-            </div>
-            
-            <div class="sidebar-footer">
-              <div class="progress-indicator">
-                <div class="progress-text">
-                  {% if page.lang == 'it' %}Progresso Lettura{% else %}Reading Progress{% endif %}
-                </div>
-                <div class="progress-bar-container">
-                  <div class="progress-bar" style="width: 25%"></div>
-                </div>
-                <div class="progress-percentage">25%</div>
-              </div>
-            </div>
-          </div>
-        </aside>
-        {% endif %}
-        
-        <!-- Mobile TOC toggle -->
-        {% if page.layout == 'chapter' %}
-        <button class="toc-toggle-btn" id="toc-toggle" aria-label="Toggle table of contents" aria-expanded="false">
-          <i class="fas fa-list"></i>
-          <span>{% if page.lang == 'it' %}Indice{% else %}Contents{% endif %}</span>
-        </button>
-        {% endif %}
-        
-        <!-- Main content area -->
-        <main id="main-content" class="main-content {% if page.layout == 'chapter' %}chapter-content{% endif %}" aria-label="Content">
-          {{ content }}
-        </main>
-        
-        <!-- AI sidebar toggle -->
-        <button class="ai-toggle-button" id="ai-toggle" aria-label="Toggle AI Assistant" aria-expanded="false">
-          <i class="fas fa-brain"></i>
-          <span class="ai-toggle-text">AI</span>
-        </button>
-        
-        <!-- AI Sidebar -->
-        <aside class="sidebar sidebar-right" id="ai-sidebar">
-          {% include ai-sidebar.html %}
-        </aside>
-      </div>
+      <main id="main-content" class="page-content">
+        {{ content }}
+      </main>
+      
+      <button id="ai-toggle" class="ai-toggle-button" aria-label="{% if page.lang == 'it' %}Mostra Assistente AI{% else %}Show AI Assistant{% endif %}">
+        <i class="fas fa-robot"></i>
+      </button>
+      
+      {% include ai-sidebar.html %}
     </div>
     
     {% include footer.html %}
   </div>
   
-  <!-- Search component -->
   {% include search.html %}
   
   <!-- Back to top button -->
@@ -137,131 +56,39 @@
     <i class="fas fa-arrow-up"></i>
   </button>
   
-  <!-- Cookie consent banner -->
-  <div class="cookie-banner" id="cookie-banner">
-    <div class="cookie-content">
-      <div class="cookie-text">
-        {% if page.lang == 'it' %}
-          <p>Utilizziamo i cookie per migliorare la tua esperienza. Continuando a navigare, accetti la nostra <a href="{{ site.baseurl }}/privacy/">Politica sulla Privacy</a>.</p>
-        {% else %}
-          <p>We use cookies to enhance your experience. By continuing to browse, you accept our <a href="{{ site.baseurl }}/privacy/">Privacy Policy</a>.</p>
-        {% endif %}
-      </div>
-      <div class="cookie-actions">
-        <button id="cookie-accept" class="cookie-btn cookie-accept">
-          {% if page.lang == 'it' %}Accetta{% else %}Accept{% endif %}
-        </button>
-        <button id="cookie-decline" class="cookie-btn cookie-decline">
-          {% if page.lang == 'it' %}Rifiuta{% else %}Decline{% endif %}
-        </button>
-      </div>
-    </div>
-  </div>
-  
-  <!-- Scripts -->
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
-  
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Toggle TOC sidebar on mobile
-      const tocToggle = document.getElementById('toc-toggle');
-      const tocSidebar = document.getElementById('table-of-contents');
-      const tocClose = document.getElementById('toc-close');
+      // AI Sidebar toggle
+      const aiToggleBtn = document.getElementById('ai-toggle');
+      const aiSidebar = document.querySelector('.ai-sidebar');
       
-      if (tocToggle && tocSidebar) {
-        tocToggle.addEventListener('click', function() {
-          const expanded = this.getAttribute('aria-expanded') === 'true' || false;
-          this.setAttribute('aria-expanded', !expanded);
-          tocSidebar.classList.toggle('active');
-          document.body.classList.toggle('sidebar-open');
-        });
-      }
-      
-      if (tocClose && tocSidebar) {
-        tocClose.addEventListener('click', function() {
-          tocSidebar.classList.remove('active');
-          document.body.classList.remove('sidebar-open');
-          if (tocToggle) {
-            tocToggle.setAttribute('aria-expanded', 'false');
-          }
-        });
-      }
-      
-      // Toggle AI sidebar
-      const aiToggle = document.getElementById('ai-toggle');
-      const aiSidebar = document.getElementById('ai-sidebar');
-      
-      if (aiToggle && aiSidebar) {
-        aiToggle.addEventListener('click', function() {
-          const expanded = this.getAttribute('aria-expanded') === 'true' || false;
-          this.setAttribute('aria-expanded', !expanded);
+      if (aiToggleBtn && aiSidebar) {
+        aiToggleBtn.addEventListener('click', function() {
           aiSidebar.classList.toggle('active');
-          document.body.classList.toggle('ai-sidebar-open');
-        });
-      }
-      
-      // Reading progress bar
-      const progressBar = document.getElementById('reading-progress');
-      
-      if (progressBar) {
-        window.addEventListener('scroll', function() {
-          const scrollTop = window.scrollY;
-          const docHeight = document.documentElement.scrollHeight;
-          const winHeight = window.innerHeight;
-          const scrollPercent = scrollTop / (docHeight - winHeight);
-          progressBar.style.transform = `scaleX(${scrollPercent})`;
+          this.classList.toggle('active');
         });
       }
       
       // Back to top button
-      const backToTopButton = document.getElementById('back-to-top');
+      const backToTopBtn = document.getElementById('back-to-top');
       
-      if (backToTopButton) {
+      if (backToTopBtn) {
         window.addEventListener('scroll', function() {
           if (window.scrollY > 300) {
-            backToTopButton.classList.add('visible');
+            backToTopBtn.classList.add('visible');
           } else {
-            backToTopButton.classList.remove('visible');
+            backToTopBtn.classList.remove('visible');
           }
         });
         
-        backToTopButton.addEventListener('click', function() {
+        backToTopBtn.addEventListener('click', function() {
           window.scrollTo({
             top: 0,
             behavior: 'smooth'
           });
         });
       }
-      
-      // Cookie banner
-      const cookieBanner = document.getElementById('cookie-banner');
-      const cookieAccept = document.getElementById('cookie-accept');
-      const cookieDecline = document.getElementById('cookie-decline');
-      
-      if (cookieBanner && !localStorage.getItem('cookieConsent')) {
-        setTimeout(() => {
-          cookieBanner.classList.add('active');
-        }, 1000);
-      }
-      
-      if (cookieAccept) {
-        cookieAccept.addEventListener('click', function() {
-          localStorage.setItem('cookieConsent', 'accepted');
-          cookieBanner.classList.remove('active');
-        });
-      }
-      
-      if (cookieDecline) {
-        cookieDecline.addEventListener('click', function() {
-          localStorage.setItem('cookieConsent', 'declined');
-          cookieBanner.classList.remove('active');
-        });
-      }
-      
-      // Remove preload class after page loads
-      window.addEventListener('load', function() {
-        document.body.classList.remove('preload');
-      });
     });
   </script>
 </body>

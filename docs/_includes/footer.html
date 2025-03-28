@@ -1,158 +1,36 @@
 <footer class="site-footer">
-  <div class="footer-top">
-    <div class="footer-badge">
-      <div class="footer-badge-icon">
-        <i class="fas fa-brain"></i>
+  <div class="wrapper">
+    <div class="footer-content">
+      <div class="footer-col footer-about">
+        <h2 class="footer-heading">Peeragogy Handbook</h2>
+        <p>{% if page.lang == 'it' %}Una risorsa per l'apprendimento auto-organizzato tra pari{% else %}A resource for self-organizing peer learning{% endif %}</p>
       </div>
-      <div class="footer-badge-text">
-        <span>{% if page.lang == 'it' %}Alimentato da IA{% else %}AI-Powered{% endif %}</span>
+
+      <div class="footer-col footer-links">
+        <h3>{% if page.lang == 'it' %}Collegamenti Rapidi{% else %}Quick Links{% endif %}</h3>
+        <ul class="footer-nav">
+          {% assign navigation = site.data.navigation[page.lang] %}
+          {% for item in navigation %}
+            <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
       </div>
-    </div>
-  </div>
-  
-  <div class="footer-main">
-    <div class="footer-container">
-      <div class="footer-grid">
-        <!-- Brand section -->
-        <div class="footer-section footer-brand">
-          <div class="footer-logo">
-            <div class="footer-logo-mark">
-              <i class="fas fa-brain"></i>
-              <span>PeerGang</span>
-            </div>
-            <div class="footer-tagline">{% if page.lang == 'it' %}Rivoluzionare l'apprendimento con l'IA{% else %}Revolutionizing Learning with AI{% endif %}</div>
-          </div>
-          
-          <div class="footer-description">
-            {% if page.lang == 'it' %}
-              <p>Una piattaforma innovativa che unisce la peeragogia con l'intelligenza artificiale per creare esperienze di apprendimento più efficaci, collaborative e personalizzate.</p>
-            {% else %}
-              <p>An innovative platform combining peeragogy with artificial intelligence to create more effective, collaborative, and personalized learning experiences.</p>
-            {% endif %}
-          </div>
-          
-          <div class="footer-newsletter">
-            <h4>{% if page.lang == 'it' %}Rimani Aggiornato{% else %}Stay Updated{% endif %}</h4>
-            <form class="newsletter-form">
-              <div class="form-group">
-                <input type="email" placeholder="{% if page.lang == 'it' %}Il tuo indirizzo email{% else %}Your email address{% endif %}" required>
-                <button type="submit">
-                  <i class="fas fa-paper-plane"></i>
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-        
-        <!-- Quick links section -->
-        <div class="footer-section footer-links">
-          <h3>{% if page.lang == 'it' %}Collegamenti Rapidi{% else %}Quick Links{% endif %}</h3>
-          <ul class="footer-nav">
-            {% assign navigation = site.data.navigation[page.lang] %}
-            {% for item in navigation %}
-              <li class="footer-nav-item">
-                <a href="{{ item.url | relative_url }}" class="footer-nav-link">
-                  <span class="nav-icon">
-                    {% case item.title %}
-                      {% when "Home" or "Home" %}
-                        <i class="fas fa-home"></i>
-                      {% when "Handbook" or "Manuale" %}
-                        <i class="fas fa-book"></i>
-                      {% when "About" or "Chi Siamo" %}
-                        <i class="fas fa-info-circle"></i>
-                      {% when "Resources" or "Risorse" %}
-                        <i class="fas fa-link"></i>
-                      {% when "Contact" or "Contatti" %}
-                        <i class="fas fa-envelope"></i>
-                      {% else %}
-                        <i class="fas fa-file-alt"></i>
-                    {% endcase %}
-                  </span>
-                  <span>{{ item.title }}</span>
-                </a>
-              </li>
-            {% endfor %}
-          </ul>
-        </div>
-        
-        <!-- Resources section -->
-        <div class="footer-section footer-resources">
-          <h3>{% if page.lang == 'it' %}Risorse{% else %}Resources{% endif %}</h3>
-          <ul class="footer-list">
-            <li>
-              <a href="#" class="footer-list-link">
-                <i class="fas fa-arrow-right"></i>
-                <span>{% if page.lang == 'it' %}Guida per Iniziare{% else %}Getting Started Guide{% endif %}</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="footer-list-link">
-                <i class="fas fa-arrow-right"></i>
-                <span>{% if page.lang == 'it' %}Pattern Peeragogici{% else %}Peeragogy Patterns{% endif %}</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="footer-list-link">
-                <i class="fas fa-arrow-right"></i>
-                <span>{% if page.lang == 'it' %}FAQ{% else %}FAQ{% endif %}</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" class="footer-list-link">
-                <i class="fas fa-arrow-right"></i>
-                <span>{% if page.lang == 'it' %}Contribuisci{% else %}Contribute{% endif %}</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-        
-        <!-- Connect section -->
-        <div class="footer-section footer-connect">
-          <h3>{% if page.lang == 'it' %}Connettiti{% else %}Connect{% endif %}</h3>
-          <div class="social-links">
-            <a href="https://github.com/ftg-003/peeragogy-ai-handbook" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="https://twitter.com/Peeragogy" target="_blank" rel="noopener" class="social-link" aria-label="Twitter">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="Discord">
-              <i class="fab fa-discord"></i>
-            </a>
-            <a href="#" class="social-link" aria-label="LinkedIn">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-          
-          <div class="contact-info">
-            <h4>{% if page.lang == 'it' %}Contattaci{% else %}Contact Us{% endif %}</h4>
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <a href="mailto:contact@peergang.io">contact@peergang.io</a>
-            </div>
-          </div>
+
+      <div class="footer-col footer-social">
+        <h3>{% if page.lang == 'it' %}Connettiti{% else %}Connect{% endif %}</h3>
+        <div class="social-links">
+          <a href="https://github.com/Peeragogy/Peeragogy.github.io" target="_blank" rel="noopener" class="social-link">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://twitter.com/Peeragogy" target="_blank" rel="noopener" class="social-link">
+            <i class="fab fa-twitter"></i>
+          </a>
         </div>
       </div>
     </div>
-  </div>
-  
-  <div class="footer-bottom">
-    <div class="footer-container">
-      <div class="footer-bottom-content">
-        <div class="copyright">
-          <p>&copy; {{ site.time | date: '%Y' }} PeerGang Initiative. {% if page.lang == 'it' %}Tutti i diritti riservati.{% else %}All rights reserved.{% endif %}</p>
-        </div>
-        
-        <div class="legal-links">
-          <a href="{{ site.baseurl }}{% if page.lang == 'it' %}/it{% endif %}/terms/">{% if page.lang == 'it' %}Termini di Servizio{% else %}Terms of Service{% endif %}</a>
-          <a href="{{ site.baseurl }}{% if page.lang == 'it' %}/it{% endif %}/privacy/">{% if page.lang == 'it' %}Privacy{% else %}Privacy Policy{% endif %}</a>
-          <a href="{{ site.baseurl }}{% if page.lang == 'it' %}/it{% endif %}/license/">{% if page.lang == 'it' %}Licenza{% else %}License{% endif %}</a>
-        </div>
-        
-        <div class="attribution">
-          <p>{% if page.lang == 'it' %}Basato sul{% else %}Based on the{% endif %} <a href="http://peeragogy.org" target="_blank" rel="noopener">Peeragogy Handbook</a>. {% if page.lang == 'it' %}Contenuto sotto licenza{% else %}Content licensed under{% endif %} <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC-BY-SA 4.0</a>.</p>
-        </div>
-      </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ site.time | date: '%Y' }} {% if page.lang == 'it' %}Progetto Peeragogy{% else %}Peeragogy Project{% endif %} &middot; <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC-BY-SA 4.0</a></p>
     </div>
   </div>
 </footer>

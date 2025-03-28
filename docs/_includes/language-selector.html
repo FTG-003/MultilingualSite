@@ -1,162 +1,18 @@
 <div class="language-selector">
-  <button class="language-dropdown-toggle" aria-expanded="false" aria-label="Select language">
-    <div class="selected-language">
-      <div class="language-icon">
-        <i class="fas fa-globe-americas"></i>
-      </div>
-      <span class="language-name">
-        {% if page.lang == 'en' %}
-          English
-        {% elsif page.lang == 'it' %}
-          Italiano
-        {% else %}
-          {{ page.lang | upcase }}
-        {% endif %}
-      </span>
-      <div class="dropdown-arrow">
-        <i class="fas fa-chevron-down"></i>
-      </div>
-    </div>
-  </button>
-  
-  <div class="language-dropdown">
-    {% assign pages = site.pages | where:"layout", page.layout | where:"name", page.name %}
-    {% assign chapters = site.chapters %}
-    
-    <div class="dropdown-header">
-      <span>{% if page.lang == 'it' %}Seleziona lingua{% else %}Select language{% endif %}</span>
-    </div>
-    
-    <div class="language-options">
-      {% if page.collection == "chapters" %}
-        {% assign en_path = page.path | replace_first: page.lang, "en" %}
-        {% assign it_path = page.path | replace_first: page.lang, "it" %}
-        
-        {% assign en_chapter = site.chapters | where:"path", en_path | first %}
-        {% assign it_chapter = site.chapters | where:"path", it_path | first %}
-        
-        <a href="{% if en_chapter %}{{ en_chapter.url | relative_url }}{% else %}{{ site.baseurl }}/chapters/en/index/{% endif %}" 
-           class="language-option {% if page.lang == 'en' %}active{% endif %}"
-           aria-label="Switch to English">
-          <div class="language-flag">
-            <span class="flag-icon">🇺🇸</span>
-          </div>
-          <div class="language-option-name">English</div>
-          {% if page.lang == 'en' %}
-            <div class="language-check">
-              <i class="fas fa-check"></i>
-            </div>
-          {% endif %}
-        </a>
-        
-        <a href="{% if it_chapter %}{{ it_chapter.url | relative_url }}{% else %}{{ site.baseurl }}/chapters/it/index/{% endif %}" 
-           class="language-option {% if page.lang == 'it' %}active{% endif %}"
-           aria-label="Switch to Italian">
-          <div class="language-flag">
-            <span class="flag-icon">🇮🇹</span>
-          </div>
-          <div class="language-option-name">Italiano</div>
-          {% if page.lang == 'it' %}
-            <div class="language-check">
-              <i class="fas fa-check"></i>
-            </div>
-          {% endif %}
-        </a>
-      {% else %}
-        {% if page.name == "index.md" %}
-          <a href="{{ site.baseurl }}/" 
-             class="language-option {% if page.lang == 'en' %}active{% endif %}"
-             aria-label="Switch to English">
-            <div class="language-flag">
-              <span class="flag-icon">🇺🇸</span>
-            </div>
-            <div class="language-option-name">English</div>
-            {% if page.lang == 'en' %}
-              <div class="language-check">
-                <i class="fas fa-check"></i>
-              </div>
-            {% endif %}
-          </a>
-          
-          <a href="{{ site.baseurl }}/it/" 
-             class="language-option {% if page.lang == 'it' %}active{% endif %}"
-             aria-label="Switch to Italian">
-            <div class="language-flag">
-              <span class="flag-icon">🇮🇹</span>
-            </div>
-            <div class="language-option-name">Italiano</div>
-            {% if page.lang == 'it' %}
-              <div class="language-check">
-                <i class="fas fa-check"></i>
-              </div>
-            {% endif %}
-          </a>
-        {% else %}
-          <a href="{{ site.baseurl }}/chapters/en/index/" 
-             class="language-option {% if page.lang == 'en' %}active{% endif %}"
-             aria-label="Switch to English">
-            <div class="language-flag">
-              <span class="flag-icon">🇺🇸</span>
-            </div>
-            <div class="language-option-name">English</div>
-            {% if page.lang == 'en' %}
-              <div class="language-check">
-                <i class="fas fa-check"></i>
-              </div>
-            {% endif %}
-          </a>
-          
-          <a href="{{ site.baseurl }}/chapters/it/index/" 
-             class="language-option {% if page.lang == 'it' %}active{% endif %}"
-             aria-label="Switch to Italian">
-            <div class="language-flag">
-              <span class="flag-icon">🇮🇹</span>
-            </div>
-            <div class="language-option-name">Italiano</div>
-            {% if page.lang == 'it' %}
-              <div class="language-check">
-                <i class="fas fa-check"></i>
-              </div>
-            {% endif %}
-          </a>
-        {% endif %}
-      {% endif %}
-    </div>
-  </div>
+  <span class="current-lang">
+    <i class="fas fa-globe"></i>
+    {% if page.lang == 'en' %}
+      <a href="{{ site.baseurl }}/" title="Switch to English" class="{% if page.lang == 'en' %}active{% endif %}">English</a>
+    {% elsif page.lang == 'it' %}
+      <a href="{{ site.baseurl }}/it/" title="Switch to Italian" class="{% if page.lang == 'it' %}active{% endif %}">Italiano</a>
+    {% else %}
+      <a href="{{ site.baseurl }}/" title="Switch to English">{{ page.lang | upcase }}</a>
+    {% endif %}
+    |
+    {% if page.lang == 'en' %}
+      <a href="{{ site.baseurl }}/it/" title="Switch to Italian">Italiano</a>
+    {% else %}
+      <a href="{{ site.baseurl }}/" title="Switch to English">English</a>
+    {% endif %}
+  </span>
 </div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const langToggle = document.querySelector('.language-dropdown-toggle');
-    const langDropdown = document.querySelector('.language-dropdown');
-    
-    if (langToggle && langDropdown) {
-      // Toggle dropdown
-      langToggle.addEventListener('click', function(e) {
-        e.stopPropagation();
-        const expanded = this.getAttribute('aria-expanded') === 'true' || false;
-        this.setAttribute('aria-expanded', !expanded);
-        langDropdown.classList.toggle('active');
-      });
-      
-      // Close when clicking outside
-      document.addEventListener('click', function(e) {
-        if (!langDropdown.contains(e.target) && !langToggle.contains(e.target)) {
-          langToggle.setAttribute('aria-expanded', 'false');
-          langDropdown.classList.remove('active');
-        }
-      });
-      
-      // Keyboard navigation
-      langToggle.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          langToggle.click();
-        } else if (e.key === 'Escape' && langToggle.getAttribute('aria-expanded') === 'true') {
-          langToggle.setAttribute('aria-expanded', 'false');
-          langDropdown.classList.remove('active');
-        }
-      });
-    }
-  });
-</script>

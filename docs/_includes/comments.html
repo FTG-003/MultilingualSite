@@ -1,210 +1,104 @@
 <!-- Comments Component -->
 <section class="comments-section" id="comments">
   <div class="comments-header">
-    <div class="comments-header-left">
-      <div class="comments-icon">
-        <i class="fas fa-comments"></i>
-      </div>
-      <h2>{% if page.lang == 'it' %}Discussione{% else %}Discussion{% endif %}</h2>
-    </div>
-    <div class="comments-stats">
-      <span class="comment-count">1</span>
-      <span class="comment-label">{% if page.lang == 'it' %}commento{% else %}comment{% endif %}</span>
-    </div>
-  </div>
-  
-  <div class="comments-tabs">
-    <button class="comments-tab active" data-tab="all">
-      {% if page.lang == 'it' %}Tutti{% else %}All{% endif %}
-    </button>
-    <button class="comments-tab" data-tab="questions">
-      {% if page.lang == 'it' %}Domande{% else %}Questions{% endif %}
-    </button>
-    <button class="comments-tab" data-tab="insights">
-      {% if page.lang == 'it' %}Spunti{% else %}Insights{% endif %}
-    </button>
+    <h2>{% if page.lang == 'it' %}Commenti{% else %}Comments{% endif %} (1)</h2>
   </div>
   
   <div class="comments-container">
-    <!-- Hidden initially but toggleable -->
-    <div class="no-comments-message" style="display: none;">
-      <div class="empty-state">
-        <div class="empty-icon">
-          <i class="fas fa-comment-slash"></i>
-        </div>
-        {% if page.lang == 'it' %}
-          <h3>Nessun commento ancora</h3>
-          <p>Inizia la conversazione condividendo le tue idee o domande su questo capitolo.</p>
-        {% else %}
-          <h3>No comments yet</h3>
-          <p>Start the conversation by sharing your thoughts or questions about this chapter.</p>
-        {% endif %}
-      </div>
-    </div>
-    
-    <!-- Sample comment with modern styling -->
+    <!-- Sample comment -->
     <div class="comment">
-      <div class="comment-header">
-        <div class="comment-author-info">
-          <div class="comment-avatar">
-            <div class="avatar-icon">AJ</div>
-          </div>
-          <div class="comment-meta">
-            <div class="comment-author">Alex Johnson</div>
-            <div class="comment-details">
-              <span class="comment-date">Mar 15, 2025</span>
-              <span class="comment-badge insight">Insight</span>
-            </div>
-          </div>
-        </div>
-        <div class="comment-actions-menu">
-          <button class="comment-menu-button" aria-label="Comment actions">
-            <i class="fas fa-ellipsis-v"></i>
-          </button>
+      <div class="comment-author">
+        <span class="avatar">AJ</span>
+        <div class="author-info">
+          <div class="author-name">Alex Johnson</div>
+          <div class="comment-date">March 15, 2025</div>
         </div>
       </div>
       
-      <div class="comment-body">
+      <div class="comment-content">
         {% if page.lang == 'it' %}
-          <p>Questo capitolo mi ha davvero aiutato a capire come iniziare con un progetto di peeragogia nel mio dipartimento. Ho implementato la struttura di peer-learning descritta e i risultati sono stati immediati!</p>
+          <p>Questo capitolo mi ha davvero aiutato a capire come iniziare con un progetto di peeragogia nel mio dipartimento. Grazie per le informazioni chiare!</p>
         {% else %}
-          <p>This chapter really helped me understand how to start a peeragogy project in my department. I implemented the peer-learning structure described and the results were immediate!</p>
+          <p>This chapter really helped me understand how to start a peeragogy project in my department. Thanks for the clear information!</p>
         {% endif %}
       </div>
       
       <div class="comment-footer">
-        <div class="comment-reactions">
-          <button class="reaction-button" data-reaction="like">
-            <i class="fas fa-thumbs-up"></i>
-            <span class="reaction-count">4</span>
-          </button>
-          <button class="reaction-button" data-reaction="insightful">
-            <i class="fas fa-lightbulb"></i>
-            <span class="reaction-count">2</span>
-          </button>
-        </div>
-        <div class="comment-actions">
-          <button class="comment-reply-btn">
-            <i class="fas fa-reply"></i>
-            <span>{% if page.lang == 'it' %}Rispondi{% else %}Reply{% endif %}</span>
-          </button>
-          <button class="comment-share-btn">
-            <i class="fas fa-share-alt"></i>
-            <span>{% if page.lang == 'it' %}Condividi{% else %}Share{% endif %}</span>
-          </button>
-        </div>
+        <button class="btn-like">
+          <i class="fas fa-thumbs-up"></i> 
+          <span>4</span>
+        </button>
+        <button class="btn-reply">
+          <i class="fas fa-reply"></i> 
+          <span>{% if page.lang == 'it' %}Rispondi{% else %}Reply{% endif %}</span>
+        </button>
       </div>
     </div>
   </div>
   
-  <div class="comment-form-container">
-    <div class="comment-form-header">
-      <h3>{% if page.lang == 'it' %}Unisciti alla discussione{% else %}Join the discussion{% endif %}</h3>
-    </div>
-    
+  <div class="comment-form-wrapper">
+    <h3>{% if page.lang == 'it' %}Lascia un commento{% else %}Leave a comment{% endif %}</h3>
     <form id="comment-form" class="comment-form">
-      <div class="comment-form-author">
-        <div class="author-avatar">
-          <div class="avatar-placeholder">
-            <i class="fas fa-user"></i>
-          </div>
-        </div>
-        <div class="author-fields">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="comment-name" class="sr-only">{% if page.lang == 'it' %}Nome{% else %}Name{% endif %}</label>
-              <input type="text" id="comment-name" name="name" placeholder="{% if page.lang == 'it' %}Nome{% else %}Name{% endif %}" required>
-            </div>
-            <div class="form-group">
-              <label for="comment-email" class="sr-only">Email</label>
-              <input type="email" id="comment-email" name="email" placeholder="Email" required>
-            </div>
-          </div>
-        </div>
+      <div class="form-group">
+        <label for="comment-name">{% if page.lang == 'it' %}Nome{% else %}Name{% endif %}</label>
+        <input type="text" id="comment-name" name="name" required>
       </div>
       
-      <div class="form-group comment-content-group">
-        <label for="comment-text" class="sr-only">{% if page.lang == 'it' %}Il tuo commento{% else %}Your comment{% endif %}</label>
-        <textarea id="comment-text" name="comment" 
-                  placeholder="{% if page.lang == 'it' %}Condividi i tuoi pensieri, domande o spunti...{% else %}Share your thoughts, questions or insights...{% endif %}" 
-                  rows="4" required></textarea>
+      <div class="form-group">
+        <label for="comment-email">Email</label>
+        <input type="email" id="comment-email" name="email" required>
       </div>
       
-      <div class="comment-form-footer">
-        <div class="comment-type">
-          <button type="button" class="comment-type-btn active" data-type="comment">
-            <i class="fas fa-comment"></i>
-            <span>{% if page.lang == 'it' %}Commento{% else %}Comment{% endif %}</span>
-          </button>
-          <button type="button" class="comment-type-btn" data-type="question">
-            <i class="fas fa-question-circle"></i>
-            <span>{% if page.lang == 'it' %}Domanda{% else %}Question{% endif %}</span>
-          </button>
-          <button type="button" class="comment-type-btn" data-type="insight">
-            <i class="fas fa-lightbulb"></i>
-            <span>{% if page.lang == 'it' %}Spunto{% else %}Insight{% endif %}</span>
-          </button>
-        </div>
-        
-        <div class="form-actions">
-          <button type="button" class="comment-cancel-btn">{% if page.lang == 'it' %}Annulla{% else %}Cancel{% endif %}</button>
-          <button type="submit" class="comment-submit-btn">{% if page.lang == 'it' %}Pubblica{% else %}Post{% endif %}</button>
-        </div>
+      <div class="form-group">
+        <label for="comment-text">{% if page.lang == 'it' %}Commento{% else %}Comment{% endif %}</label>
+        <textarea id="comment-text" name="comment" rows="4" required></textarea>
       </div>
+      
+      <button type="submit" class="btn-submit">
+        {% if page.lang == 'it' %}Invia commento{% else %}Submit comment{% endif %}
+      </button>
     </form>
   </div>
 </section>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // Comment tabs functionality
-    const commentTabs = document.querySelectorAll('.comments-tab');
+    // Like button functionality
+    const likeButton = document.querySelector('.btn-like');
     
-    commentTabs.forEach(tab => {
-      tab.addEventListener('click', function() {
-        // Remove active class from all tabs
-        commentTabs.forEach(t => t.classList.remove('active'));
+    if (likeButton) {
+      likeButton.addEventListener('click', function() {
+        const countElement = this.querySelector('span');
+        let count = parseInt(countElement.textContent);
         
-        // Add active class to clicked tab
-        this.classList.add('active');
+        if (this.classList.contains('active')) {
+          count--;
+          this.classList.remove('active');
+        } else {
+          count++;
+          this.classList.add('active');
+        }
         
-        // Here you would filter comments by tab type
-        // For demo, we'll just log the tab type
-        console.log('Tab selected:', this.dataset.tab);
+        countElement.textContent = count;
       });
-    });
+    }
     
-    // Comment type selection
-    const commentTypeBtns = document.querySelectorAll('.comment-type-btn');
+    // Comment form submission
+    const commentForm = document.getElementById('comment-form');
     
-    commentTypeBtns.forEach(btn => {
-      btn.addEventListener('click', function() {
-        commentTypeBtns.forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
+    if (commentForm) {
+      commentForm.addEventListener('submit', function(e) {
+        e.preventDefault();
         
-        // Here you would set a hidden input with the comment type
-        document.querySelector('#comment-form').dataset.commentType = this.dataset.type;
-      });
-    });
-    
-    // Reaction buttons
-    const reactionButtons = document.querySelectorAll('.reaction-button');
-    
-    reactionButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        this.classList.toggle('active');
-        const currentCount = parseInt(this.querySelector('.reaction-count').textContent);
-        const newCount = this.classList.contains('active') ? currentCount + 1 : currentCount - 1;
-        this.querySelector('.reaction-count').textContent = newCount;
-      });
-    });
-    
-    // Cancel button
-    const cancelButton = document.querySelector('.comment-cancel-btn');
-    
-    if (cancelButton) {
-      cancelButton.addEventListener('click', function() {
-        document.getElementById('comment-form').reset();
+        // In a real implementation, you would send the data to your backend
+        const name = document.getElementById('comment-name').value;
+        const email = document.getElementById('comment-email').value;
+        const comment = document.getElementById('comment-text').value;
+        
+        alert('Comment submission is not implemented in this demo.');
+        
+        // Reset form
+        this.reset();
       });
     }
   });

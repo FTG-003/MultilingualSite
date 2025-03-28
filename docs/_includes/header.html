@@ -1,63 +1,40 @@
 <header class="site-header">
-  <div class="header-container">
-    <div class="site-branding">
-      <a href="{{ site.baseurl }}/" class="site-logo">
-        <div class="logo-mark">
-          <span class="logo-icon">
-            <i class="fas fa-brain"></i>
-          </span>
-          <span class="logo-text">PeerGang</span>
-        </div>
-        <span class="tagline">AI-Powered Learning</span>
+  <div class="wrapper">
+    <div class="site-logo">
+      <a href="{{ site.baseurl }}/">
+        <i class="fas fa-brain"></i>
+        <span class="site-title">Peeragogy Handbook</span>
       </a>
     </div>
     
     <nav class="site-nav">
-      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-menu">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger">
+      <label for="nav-trigger">
         <span class="menu-icon">
           <i class="fas fa-bars"></i>
         </span>
-        <span class="menu-text">Menu</span>
-      </button>
+      </label>
 
-      <div class="nav-container" id="primary-menu">
-        <div class="nav-primary">
-          {% include navigation.html %}
-        </div>
-        
-        <div class="nav-actions">
-          <div class="search-toggle" aria-label="Search">
-            <i class="fas fa-search"></i>
-          </div>
+      <div class="trigger">
+        {% include navigation.html %}
+        <div class="nav-right">
+          <a href="#" class="search-button"><i class="fas fa-search"></i></a>
           {% include language-selector.html %}
         </div>
       </div>
     </nav>
   </div>
   
-  <!-- Sticky header progress bar -->
-  <div class="header-progress">
-    <div class="progress-indicator" id="header-progress-bar"></div>
+  <!-- Simple reading progress bar -->
+  <div class="reading-progress">
+    <div class="progress-bar" id="reading-progress-bar"></div>
   </div>
 </header>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    // Menu toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navContainer = document.querySelector('.nav-container');
-    
-    if (menuToggle && navContainer) {
-      menuToggle.addEventListener('click', function() {
-        const expanded = this.getAttribute('aria-expanded') === 'true' || false;
-        this.setAttribute('aria-expanded', !expanded);
-        navContainer.classList.toggle('active');
-        document.body.classList.toggle('nav-active');
-      });
-    }
-    
-    // Header progress bar
-    const progressBar = document.getElementById('header-progress-bar');
+    // Reading progress bar
+    const progressBar = document.getElementById('reading-progress-bar');
     if (progressBar) {
       window.addEventListener('scroll', function() {
         const scrollTop = window.scrollY;
@@ -67,14 +44,18 @@
       });
     }
     
-    // Search toggle
-    const searchToggle = document.querySelector('.search-toggle');
+    // Search button
+    const searchButton = document.querySelector('.search-button');
     const searchContainer = document.querySelector('.search-container');
     
-    if (searchToggle && searchContainer) {
-      searchToggle.addEventListener('click', function() {
+    if (searchButton && searchContainer) {
+      searchButton.addEventListener('click', function(e) {
+        e.preventDefault();
         searchContainer.classList.add('active');
-        searchContainer.querySelector('.search-input').focus();
+        const searchInput = searchContainer.querySelector('.search-input');
+        if (searchInput) {
+          searchInput.focus();
+        }
       });
     }
   });
