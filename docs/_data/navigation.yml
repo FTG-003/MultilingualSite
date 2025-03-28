@@ -1,15 +1,29 @@
 en:
   - title: Home
     url: /
-  - title: Chapters
+  - title: Handbook
     url: /chapters/en/index/
     children:
-      - title: Introduction
-        url: /chapters/en/index/
-      - title: Chapter 1
-        url: /chapters/en/chapter1/
-      - title: Chapter 2
-        url: /chapters/en/chapter2/
+      - title: About This Book
+        url: /chapters/en/about-this-book.html
+      - title: Peeragogy in a Nutshell
+        url: /chapters/en/peeragogy-in-a-nutshell.html
+      - title: Motivation
+        url: /chapters/en/motivation.html
+      - title: Roadmap
+        url: /chapters/en/roadmap.html
+      - title: Convening a Group
+        url: /chapters/en/convening-a-group.html
+      - title: Organizing a Learning Context
+        url: /chapters/en/organizing-a-learning-context.html
+      - title: Peer Learning
+        url: /chapters/en/peer-learning.html
+      - title: Assessment
+        url: /chapters/en/assessment.html
+      - title: The Peeragogy Project
+        url: /chapters/en/the-peeragogy-project.html
+      - title: Resources
+        url: /chapters/en/resources.html
   - title: About
     url: /pages/about/
   - title: Contact
@@ -18,15 +32,29 @@ en:
 it:
   - title: Home
     url: /it/
-  - title: Capitoli
+  - title: Manuale
     url: /chapters/it/index/
     children:
-      - title: Introduzione
-        url: /chapters/it/index/
-      - title: Capitolo 1
-        url: /chapters/it/capitolo1/
-      - title: Capitolo 2
-        url: /chapters/it/capitolo2/
+      - title: Informazioni sul Libro
+        url: /chapters/it/about-this-book.html
+      - title: Peeragogia in Breve
+        url: /chapters/it/peeragogy-in-a-nutshell.html
+      - title: Motivazione
+        url: /chapters/it/motivation.html
+      - title: Tabella di Marcia
+        url: /chapters/it/roadmap.html
+      - title: Convocare un Gruppo
+        url: /chapters/it/convening-a-group.html
+      - title: Organizzare un Contesto di Apprendimento
+        url: /chapters/it/organizing-a-learning-context.html
+      - title: Apprendimento tra Pari
+        url: /chapters/it/peer-learning.html
+      - title: Valutazione
+        url: /chapters/it/assessment.html
+      - title: Il Progetto Peeragogia
+        url: /chapters/it/the-peeragogy-project.html
+      - title: Risorse
+        url: /chapters/it/resources.html
   - title: Info
     url: /pages/about/
   - title: Contatti

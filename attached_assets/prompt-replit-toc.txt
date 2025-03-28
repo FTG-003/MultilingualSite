@@ -1,0 +1,30 @@
+🧠 CONTEXT:
+You're working on the GUI for the Peeragogy Handbook AI Edition in the MultilingualSite repo. The handbook has a set of real chapters that match the official table of contents from https://peeragogy.org (see list below). Each chapter will exist as a separate `.html` file inside `/chapters/en/`.
+
+🎯 OBJECTIVE:
+Update the layout to reflect the real table of contents. The chapter list component should dynamically or statically reflect the order and names below (no numbering, just titles). Prepare the layout to eventually support `/chapters/it/` as well (Italian translation layer).
+
+📚 TABLE OF CONTENTS (in order):
+- About This Book
+- Peeragogy in a Nutshell
+- Motivation
+- Roadmap
+- Convening a Group
+- Organizing a Learning Context
+- Peer Learning
+- Assessment
+- The Peeragogy Project
+- Resources
+
+✅ TASK LIST:
+- [ ] Replace any placeholder TOC with this ordered list
+- [ ] Adjust sidebar, mobile nav or TOC component to reflect these titles
+- [ ] Make sure each chapter links to `/chapters/en/{slug}.html` (e.g. `peer-learning.html`)
+- [ ] Prepare code for future localization (`/chapters/it/`)
+- [ ] Optional: highlight the active chapter
+
+🛠 TECH NOTES:
+HTML or Jekyll-compatible static site. No JS routing required for now. Use clean semantic markup (ul/li or nav + a).
+
+🔥 GO:
+Build the interface like it's going to host the future of peer learning. Powered by PeerGang. Let's roll.
