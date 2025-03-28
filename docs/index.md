@@ -23,7 +23,7 @@ Peeragogy is the study and practice of peer learning and peer production. The ap
 Browse through our handbook chapters to learn more about implementing peeragogy in your own learning environments.
 
 <div class="chapter-list">
-  {% include chapter-list.html %}
+  {% include chapter-list.html lang="en" %}
 </div>
 
 <div class="cta-container">

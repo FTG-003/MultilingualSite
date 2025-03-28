@@ -1,10 +1,8 @@
-{% assign chapters = site.chapters | where:"lang", page.lang | sort: "order" %}
-<ul class="chapter-list">
-  {% for chapter in chapters %}
-    <li class="chapter-item {% if page.url == chapter.url %}active{% endif %}">
-      <a href="{{ chapter.url | relative_url }}" class="chapter-link">
-        {% if chapter.order %}{{ chapter.order }}. {% endif %}{{ chapter.title }}
-      </a>
-    </li>
-  {% endfor %}
-</ul>
+{% assign chapters = site.chapters | where: "lang", include.lang | sort: "order" %}
+<div class="chapter-list">
+  <ul>
+    {% for chapter in chapters %}
+      <li><a href="{{ chapter.url | relative_url }}">{{ chapter.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
