@@ -25,23 +25,21 @@
   <div class="site-container">
     <header class="site-header">
   <div class="wrapper">
-    <div class="site-logo">
-      <a href="/">
+    <div class="site-branding">
+      <a href="/" class="site-logo">
         <i class="fas fa-brain"></i>
-        <span class="site-title">Peeragogy Handbook</span>
+        <span class="site-title">Peeragogy</span>
       </a>
     </div>
     
-    <nav class="site-nav">
-      <input type="checkbox" id="nav-trigger" class="nav-trigger">
-      <label for="nav-trigger">
-        <span class="menu-icon">
-          <i class="fas fa-bars"></i>
-        </span>
-      </label>
-
-      <div class="trigger">
-        
+    <button class="mobile-menu-toggle" aria-label="Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    
+    <div class="site-navigation">
+      
 <ul class="nav-links">
   
     <li class="nav-item active">
@@ -155,9 +153,13 @@
   });
 </script>
 
-        <div class="nav-right">
-          <a href="#" class="search-button"><i class="fas fa-search"></i></a>
-          <div class="language-selector">
+      
+      <div class="nav-actions">
+        <button id="search-toggle" class="search-toggle" aria-label="Search">
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <div class="language-selector">
   <span class="current-lang">
     <i class="fas fa-globe"></i>
     
@@ -170,46 +172,13 @@
   </span>
 </div>
 
-        </div>
       </div>
-    </nav>
+    </div>
   </div>
   
-  <!-- Simple reading progress bar -->
-  <div class="reading-progress">
-    <div class="progress-bar" id="reading-progress-bar"></div>
-  </div>
+  <!-- Reading progress bar for chapter pages -->
+  
 </header>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // Reading progress bar
-    const progressBar = document.getElementById('reading-progress-bar');
-    if (progressBar) {
-      window.addEventListener('scroll', function() {
-        const scrollTop = window.scrollY;
-        const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const scrolled = (scrollTop / scrollHeight) * 100;
-        progressBar.style.width = scrolled + '%';
-      });
-    }
-    
-    // Search button
-    const searchButton = document.querySelector('.search-button');
-    const searchContainer = document.querySelector('.search-container');
-    
-    if (searchButton && searchContainer) {
-      searchButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        searchContainer.classList.add('active');
-        const searchInput = searchContainer.querySelector('.search-input');
-        if (searchInput) {
-          searchInput.focus();
-        }
-      });
-    }
-  });
-</script>
 
     
     <div class="main-container">

@@ -24,7 +24,7 @@ body {
   margin: 0 auto;
   padding: 0 $spacing-unit;
   @media screen and (max-width: $content-width) {
-    padding: 0 ($spacing-unit / 2);
+    padding: 0 calc($spacing-unit / 2);
   }
 }
 
