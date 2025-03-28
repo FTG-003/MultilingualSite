@@ -1,0 +1,149 @@
+Creazione di un progetto GitHub Pages da zero
+
+Introduzione: Ciao R, ti chiedo di creare un sito web partendo da zero utilizzando GitHub Pages. L'obiettivo è avere un sito con una struttura simile a quella di peeragogy.org, ma con uno stile più moderno e una configurazione ottimizzata per l'uso di Jekyll. Il sito dovrà essere multilingue (inglese e italiano) e ottimizzato per una navigazione fluida e visivamente accattivante.
+
+Requisiti generali:
+
+Struttura di cartelle:
+
+Usa una struttura di directory simile a quella di peeragogy.org con le seguenti cartelle principali:
+
+pgsql
+Copia
+docs/
+├── _data/
+├── _includes/
+├── _layouts/
+├── _sass/
+├── assets/
+├── pages/
+├── _chapters/
+└── index.md
+Ogni cartella avrà la funzione specificata in seguito.
+
+Multilingua:
+
+Il sito dovrà supportare due lingue principali: inglese (default) e italiano.
+
+Implementa un selettore di lingua visibile in tutte le pagine.
+
+La struttura dei contenuti dovrà essere organizzata come segue:
+
+_chapters/en/ per i capitoli in inglese
+
+_chapters/it/ per i capitoli in italiano
+
+Usa il file _data/languages.yml per definire le lingue.
+
+Jekyll Configurazione (config.yml):
+
+Usa la configurazione di Jekyll per configurare la lingua predefinita, le collezioni e i temi.
+
+Le sezioni principali da includere nel file config.yml:
+
+yaml
+Copia
+title: Peeragogy Handbook AI Edition
+description: An AI-enhanced version of the Peeragogy Handbook
+baseurl: "/peeragogy-ai-handbook"
+url: "https://ftg-003.github.io"
+
+# Multilingual settings
+languages: ["en", "it"]
+default_lang: "en"
+exclude_from_localization: ["assets", "css", "js", "images"]
+parallel_localization: true
+
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+collections:
+  chapters:
+    output: true
+    permalink: /:collection/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "chapters"
+    values:
+      layout: "chapter"
+      ai_processable: true
+  
+  - scope:
+      path: "_chapters/en"
+    values:
+      lang: "en"
+  
+  - scope:
+      path: "_chapters/it"
+    values:
+      lang: "it"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git
+Temi e Stile Moderno:
+
+Utilizza il tema minima come base, ma personalizzalo per adattarlo ad uno stile moderno e accattivante.
+
+Imposta una struttura di layout chiara, pulita e responsiva per tutti i dispositivi (mobile, tablet, desktop).
+
+Utilizza SASS per il CSS, creando una base di stili moderna che include:
+
+Tipografia leggibile
+
+Colori moderni, neutri e di facile lettura
+
+Navigazione fluida e chiara
+
+Effetti di hover interattivi
+
+Animazioni leggere per un’interazione utente più dinamica.
+
+Contenuti:
+
+Crea dei template per i capitoli con il layout chapter.
+
+Ogni capitolo sarà un file markdown che si troverà all'interno della cartella _chapters/.
+
+La home page (index.md) dovrà avere una breve introduzione al progetto, con link ai vari capitoli del manuale Peeragogy.
+
+Navigazione:
+
+Implementa una barra di navigazione superiore che includa:
+
+Il titolo del sito
+
+Il selettore di lingua
+
+Link alle principali sezioni del sito (Home, Capitoli, Contatti, etc.)
+
+La barra di navigazione deve essere visibile su tutte le pagine.
+
+SEO e Ottimizzazione:
+
+Aggiungi il plugin jekyll-seo-tag per gestire i metadati e ottimizzare il sito per i motori di ricerca.
+
+Aggiungi un file sitemap.xml per la corretta indicizzazione.
+
+Integrazione con GitHub Pages:
+
+Configura il sito per essere facilmente pubblicato su GitHub Pages utilizzando il branch gh-pages.
+
+Il sito deve essere completamente funzionante e visibile a livello di pubblico tramite https://ftg-003.github.io/peeragogy-ai-handbook.
+
+Aggiornamenti e Manutenzione:
+
+Organizza un flusso di lavoro per mantenere i contenuti aggiornati.
+
+Integra un sistema di revisione dei contenuti che consenta ai membri del team di contribuire facilmente al progetto.
+
+Conclusione: Crea un progetto Jekyll con tutte le specifiche di cui sopra e assicurati che la struttura e i contenuti siano pronti per la pubblicazione su GitHub Pages. Concentrati su una navigazione fluida, un design moderno e la gestione efficace dei contenuti in più lingue.
+
