@@ -1,0 +1,53 @@
+title: Peeragogy Handbook AI Edition
+description: An AI-enhanced version of the Peeragogy Handbook
+baseurl: ""
+url: "http://localhost:5000"
+
+# Multilingual settings
+languages: ["en", "it"]
+default_lang: "en"
+exclude_from_localization: ["assets", "css", "js", "images"]
+parallel_localization: true
+
+markdown: kramdown
+# theme removed to avoid dependency issues
+plugins: []
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+collections:
+  chapters:
+    output: true
+    permalink: /:collection/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "chapters"
+    values:
+      layout: "chapter"
+      ai_processable: true
+  
+  - scope:
+      path: "_chapters/en"
+    values:
+      lang: "en"
+  
+  - scope:
+      path: "_chapters/it"
+    values:
+      lang: "it"
+
+  - scope:
+      path: "pages"
+    values:
+      layout: "default"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .git

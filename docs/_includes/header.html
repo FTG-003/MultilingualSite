@@ -1,0 +1,24 @@
+<header class="site-header">
+  <div class="wrapper">
+    <div class="site-logo">
+      <a href="{{ site.baseurl }}/">
+        <img src="{{ site.baseurl }}/assets/images/logo.svg" alt="{{ site.title }}" class="logo-image">
+        <span class="site-title">{{ site.title }}</span>
+      </a>
+    </div>
+    
+    <nav class="site-nav">
+      <input type="checkbox" id="nav-trigger" class="nav-trigger">
+      <label for="nav-trigger">
+        <span class="menu-icon">
+          <i class="fas fa-bars"></i>
+        </span>
+      </label>
+
+      <div class="trigger">
+        {% include navigation.html %}
+        {% include language-selector.html %}
+      </div>
+    </nav>
+  </div>
+</header>

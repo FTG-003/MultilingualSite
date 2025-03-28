@@ -1,0 +1,36 @@
+<footer class="site-footer">
+  <div class="wrapper">
+    <div class="footer-content">
+      <div class="footer-col footer-about">
+        <h2 class="footer-heading">{{ site.title }}</h2>
+        <p>{{ site.description }}</p>
+      </div>
+
+      <div class="footer-col footer-links">
+        <h3>Quick Links</h3>
+        <ul class="footer-nav">
+          {% assign navigation = site.data.navigation[page.lang] %}
+          {% for item in navigation %}
+            <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-social">
+        <h3>Connect</h3>
+        <div class="social-links">
+          <a href="https://github.com/ftg-003/peeragogy-ai-handbook" target="_blank" class="social-link">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://twitter.com/Peeragogy" target="_blank" class="social-link">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ site.time | date: '%Y' }} Peeragogy Project. Licensed under CC-BY-SA 4.0.</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,38 @@
+modules = ["ruby"]
+
+[nix]
+channel = "stable-24_05"
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Custom Jekyll Server"
+
+[[workflows.workflow]]
+name = "Custom Jekyll Server"
+author = "agent"
+
+[workflows.workflow.metadata]
+agentRequireRestartOnSave = false
+
+[[workflows.workflow.tasks]]
+task = "packager.installForAll"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd docs && /nix/store/snkd36lkgkkvrwkd123zkj2q05gdz4mn-jekyll-4.3.3/bin/jekyll serve --host 0.0.0.0 --port 5000"
+waitForPort = 5000
+
+[deployment]
+run = ["sh", "-c", "cd docs && bundle install && bundle exec jekyll serve --host 0.0.0.0 --port 5000"]
+
+[[ports]]
+localPort = 5000
+externalPort = 80

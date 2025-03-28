@@ -1,0 +1,33 @@
+en:
+  - title: Home
+    url: /
+  - title: Chapters
+    url: /chapters/en/index/
+    children:
+      - title: Introduction
+        url: /chapters/en/index/
+      - title: Chapter 1
+        url: /chapters/en/chapter1/
+      - title: Chapter 2
+        url: /chapters/en/chapter2/
+  - title: About
+    url: /pages/about/
+  - title: Contact
+    url: /pages/contact/
+
+it:
+  - title: Home
+    url: /it/
+  - title: Capitoli
+    url: /chapters/it/index/
+    children:
+      - title: Introduzione
+        url: /chapters/it/index/
+      - title: Capitolo 1
+        url: /chapters/it/capitolo1/
+      - title: Capitolo 2
+        url: /chapters/it/capitolo2/
+  - title: Info
+    url: /pages/about/
+  - title: Contatti
+    url: /pages/contact/

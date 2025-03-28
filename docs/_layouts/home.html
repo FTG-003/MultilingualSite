@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<div class="home">
+  <div class="hero-section">
+    <div class="hero-content">
+      {{ content }}
+    </div>
+  </div>
+  
+  <div class="featured-chapters">
+    <h2>Featured Chapters</h2>
+    <div class="chapter-grid">
+      {% assign featured_chapters = site.chapters | where:"lang", page.lang | where:"featured", true | limit: 3 %}
+      {% for chapter in featured_chapters %}
+        <div class="chapter-card">
+          <h3><a href="{{ chapter.url | relative_url }}">{{ chapter.title }}</a></h3>
+          <p>{{ chapter.excerpt | strip_html | truncatewords: 30 }}</p>
+          <a href="{{ chapter.url | relative_url }}" class="read-more">Read More</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  
+  <div class="about-section">
+    <h2>About This Project</h2>
+    <p>The Peeragogy Handbook AI Edition combines the collective wisdom of peer learning practitioners with cutting-edge AI-enhanced learning methodologies. This open-source project welcomes contributions from educators, learners, and technology enthusiasts.</p>
+    <a href="{{ site.baseurl }}/pages/about/" class="learn-more-button">Learn More</a>
+  </div>
+</div>
