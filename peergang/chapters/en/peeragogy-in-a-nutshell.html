@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peeragogy in a Nutshell - PeerGang</title>
+  <meta name="description" content="An overview of the core concepts and principles of peeragogy - peer learning and teaching approaches for collaborative knowledge creation.">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Peeragogy in a Nutshell - PeerGang">
+  <meta property="og:description" content="An overview of the core concepts and principles of peeragogy - peer learning and teaching approaches for collaborative knowledge creation.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://peergang.org/chapters/en/peeragogy-in-a-nutshell.html">
+  <meta property="og:image" content="https://peergang.org/assets/images/og-image.jpg">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="../../assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="../../assets/images/favicon.png" type="image/png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+  <link rel="stylesheet" href="../../assets/css/chapter.css">
+</head>
+<body class="chapter-page">
+  <!-- Import Header Component -->
+  <div id="header-container"></div>
+  
+  <div class="page-container">
+    <!-- Sidebar with TOC -->
+    <aside class="sidebar">
+      <div class="sidebar-heading">
+        <h3>Table of Contents</h3>
+      </div>
+      <nav class="chapter-nav">
+        <ul class="chapter-nav-list">
+          <li class="chapter-nav-item">
+            <a href="#introduction" class="chapter-nav-link">Introduction</a>
+          </li>
+          <li class="chapter-nav-item">
+            <a href="#what-is-peeragogy" class="chapter-nav-link">What is Peeragogy?</a>
+          </li>
+          <li class="chapter-nav-item">
+            <a href="#brief-history" class="chapter-nav-link">A Brief History</a>
+          </li>
+          <li class="chapter-nav-item">
+            <a href="#core-principles" class="chapter-nav-link">Core Principles</a>
+            <ul class="chapter-nav-sublist">
+              <li class="chapter-nav-subitem">
+                <a href="#principle-1" class="chapter-nav-sublink">Peer Learning</a>
+              </li>
+              <li class="chapter-nav-subitem">
+                <a href="#principle-2" class="chapter-nav-sublink">Openness</a>
+              </li>
+              <li class="chapter-nav-subitem">
+                <a href="#principle-3" class="chapter-nav-sublink">Full-spectrum Learning</a>
+              </li>
+              <li class="chapter-nav-subitem">
+                <a href="#principle-4" class="chapter-nav-sublink">Distributed Leadership</a>
+              </li>
+              <li class="chapter-nav-subitem">
+                <a href="#principle-5" class="chapter-nav-sublink">Cooperation</a>
+              </li>
+            </ul>
+          </li>
+          <li class="chapter-nav-item">
+            <a href="#peeragogy-vs-pedagogy" class="chapter-nav-link">Peeragogy vs. Pedagogy</a>
+          </li>
+          <li class="chapter-nav-item">
+            <a href="#peeragogy-patterns" class="chapter-nav-link">Peeragogy Patterns</a>
+          </li>
+          <li class="chapter-nav-item">
+            <a href="#implementing" class="chapter-nav-link">Implementing Peeragogy</a>
+          </li>
+          <li class="chapter-nav-item">
+            <a href="#ai-enhancement" class="chapter-nav-link">AI Enhancement</a>
+          </li>
+          <li class="chapter-nav-item">
+            <a href="#summary" class="chapter-nav-link">Summary</a>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="chapter-navigation-buttons">
+        <a href="about-this-book.html" class="nav-button prev-chapter">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.8333 10H4.16667M4.16667 10L10 4.16667M4.16667 10L10 15.8333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Previous: About This Book</span>
+        </a>
+        <a href="pattern-catalog.html" class="nav-button next-chapter">
+          <span>Next: Pattern Catalog</span>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.16667 10H15.8333M15.8333 10L10 4.16667M15.8333 10L10 15.8333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+      <article class="chapter">
+        <header class="chapter-header">
+          <h1 class="chapter-title">Peeragogy in a Nutshell</h1>
+          
+          <div class="chapter-metadata">
+            <div class="chapter-date">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.66667 5H16.6667M6.66667 10H16.6667M6.66667 15H16.6667M3.33333 5V5.00833M3.33333 10V10.0083M3.33333 15V15.0083" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>Chapter 2</span>
+            </div>
+            <div class="chapter-read-time">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 6.66667V10L12.5 12.5M17.5 10C17.5 14.1421 14.1421 17.5 10 17.5C5.85786 17.5 2.5 14.1421 2.5 10C2.5 5.85786 5.85786 2.5 10 2.5C14.1421 2.5 17.5 5.85786 17.5 10Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>12 min read</span>
+            </div>
+          </div>
+        </header>
+        
+        <section class="chapter-section" id="introduction">
+          <h2>Introduction</h2>
+          <p>The concept of peer learning has been around for as long as humans have been learning together. However, the formal study and intentional application of peer learning principles—what we now call "peeragogy"—is a relatively recent development. This chapter provides a concise overview of peeragogy, its fundamental principles, and how it differs from traditional educational approaches.</p>
+          <p>In an age where information is abundant and easily accessible, the role of education is shifting from content delivery to facilitating meaningful learning experiences. Peeragogy offers a framework for creating collaborative, adaptive, and self-organized learning environments where participants learn with and from each other.</p>
+        </section>
+        
+        <section class="chapter-section" id="what-is-peeragogy">
+          <h2>What is Peeragogy?</h2>
+          <p>Peeragogy—sometimes called paragogy—is a theory of peer-to-peer learning and teaching that addresses the challenge of peer-producing a useful and supportive context for self-directed learning. The term was coined as a play on "pedagogy" (the art and science of teaching children) and "andragogy" (teaching adults).</p>
+          <p>At its core, peeragogy recognizes that in a connected and information-rich world, learners don't necessarily need traditional teachers to learn effectively. Instead, they can learn from and with peers who are co-travelers on the learning journey. It emphasizes that learning is not just about acquiring information but about participating in communities where knowledge is collaboratively constructed, critiqued, and refined.</p>
+          <blockquote class="chapter-quote">
+            <p>"Paragogy is a theory of peer-to-peer learning and teaching that attempts to make the best use of the knowledge and power of groups of self-motivated learners."</p>
+            <cite>— Joseph Corneli and Charles Jeffrey Danoff</cite>
+          </blockquote>
+          <p>Peeragogy is particularly relevant in the digital age, where networked technologies enable unprecedented forms of collaboration across geographical, institutional, and disciplinary boundaries. It provides a theoretical framework and practical strategies for designing and facilitating effective peer learning experiences in both formal and informal contexts.</p>
+        </section>
+        
+        <section class="chapter-section" id="brief-history">
+          <h2>A Brief History</h2>
+          <p>The term "paragogy" was first proposed by Joe Corneli and Charles Jeffrey Danoff in 2009, drawing on their experiences with collaborative learning in online communities. They were inspired by the peer production models exemplified by projects like Wikipedia and open-source software development.</p>
+          <p>In 2011, Howard Rheingold, a pioneer in the study of virtual communities, used the term "peeragogy" in his UC Berkeley and Stanford University courses. This led to the formation of the Peeragogy Project, a global volunteer effort to create a handbook for peer learning and peer production. The first edition of the Peeragogy Handbook was published in 2012, with subsequent editions refining and expanding the concept.</p>
+          <p>The development of peeragogy has been influenced by various educational theories and practices, including:</p>
+          <ul>
+            <li>Constructivism (Jean Piaget, Lev Vygotsky)</li>
+            <li>Connectivism (George Siemens, Stephen Downes)</li>
+            <li>Communities of Practice (Etienne Wenger)</li>
+            <li>Rhizomatic Learning (Dave Cormier)</li>
+            <li>Open Education and OER movements</li>
+          </ul>
+          <p>Today, peeragogy continues to evolve through the collaborative efforts of educators, researchers, and practitioners around the world who are exploring and applying its principles in diverse learning contexts.</p>
+        </section>
+        
+        <section class="chapter-section" id="core-principles">
+          <h2>Core Principles</h2>
+          <p>While peeragogy is adaptive and context-dependent, several core principles underlie its approach to learning and collaboration:</p>
+          
+          <div class="principle-card" id="principle-1">
+            <div class="principle-number">01</div>
+            <h3>Peer Learning</h3>
+            <p>Learning happens among peers, not just from designated experts. Everyone in a peeragogical community is both a learner and a teacher, sharing knowledge, providing feedback, and supporting others' learning processes.</p>
+          </div>
+          
+          <div class="principle-card" id="principle-2">
+            <div class="principle-number">02</div>
+            <h3>Openness</h3>
+            <p>Peeragogy thrives on transparency, inclusivity, and the free exchange of ideas. Learning resources, processes, and outcomes are openly shared, enabling broader participation and continuous improvement.</p>
+          </div>
+          
+          <div class="principle-card" id="principle-3">
+            <div class="principle-number">03</div>
+            <h3>Full-spectrum Learning</h3>
+            <p>Peeragogy embraces formal and informal learning, tacit and explicit knowledge, theoretical understanding and practical application. Learning pathways are diverse and personalized.</p>
+          </div>
+          
+          <div class="principle-card" id="principle-4">
+            <div class="principle-number">04</div>
+            <h3>Distributed Leadership</h3>
+            <p>Rather than centralizing authority, leadership functions are distributed throughout the community. Different individuals may lead different aspects of the learning process based on their strengths and interests.</p>
+          </div>
+          
+          <div class="principle-card" id="principle-5">
+            <div class="principle-number">05</div>
+            <h3>Cooperation</h3>
+            <p>Peeragogy emphasizes cooperation over competition. Learners work together to achieve shared goals while supporting individual learning trajectories.</p>
+          </div>
+        </section>
+        
+        <section class="chapter-section" id="peeragogy-vs-pedagogy">
+          <h2>Peeragogy vs. Pedagogy</h2>
+          <p>To understand peeragogy more clearly, it's helpful to contrast it with traditional pedagogy:</p>
+          
+          <div class="comparison-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Dimension</th>
+                  <th>Traditional Pedagogy</th>
+                  <th>Peeragogy</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Knowledge Flow</td>
+                  <td>Primarily one-way (teacher to student)</td>
+                  <td>Multi-directional among all participants</td>
+                </tr>
+                <tr>
+                  <td>Authority Structure</td>
+                  <td>Hierarchical (teacher as authority)</td>
+                  <td>Distributed (shifting based on context and expertise)</td>
+                </tr>
+                <tr>
+                  <td>Curriculum</td>
+                  <td>Pre-determined, standardized</td>
+                  <td>Emergent, co-created, adaptable</td>
+                </tr>
+                <tr>
+                  <td>Learning Goals</td>
+                  <td>Typically defined by institution/teacher</td>
+                  <td>Negotiated among participants, personally meaningful</td>
+                </tr>
+                <tr>
+                  <td>Assessment</td>
+                  <td>Often summative, conducted by authority</td>
+                  <td>Formative, reflective, peer-based</td>
+                </tr>
+                <tr>
+                  <td>Role of Technology</td>
+                  <td>Often for content delivery</td>
+                  <td>For connection, collaboration, co-creation</td>
+                </tr>
+                <tr>
+                  <td>Physical Space</td>
+                  <td>Typically classroom-centered</td>
+                  <td>Distributed, flexible, often virtual</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+          <p>It's important to note that peeragogy doesn't reject traditional educational approaches wholesale but offers a complementary framework that is particularly suited to certain learning contexts and goals.</p>
+        </section>
+        
+        <section class="chapter-section" id="peeragogy-patterns">
+          <h2>Peeragogy Patterns</h2>
+          <p>One of the key contributions of the peeragogy community has been the identification and refinement of "patterns"—reusable solutions to common challenges in peer learning. These patterns provide practical guidance for implementing peeragogical principles in diverse contexts.</p>
+          <p>Some core peeragogy patterns include:</p>
+          
+          <div class="pattern-preview">
+            <div class="pattern-card">
+              <h4>Wrapper</h4>
+              <p>Summarizing, interpreting, and sharing content to make it more accessible and valuable to the community.</p>
+            </div>
+            
+            <div class="pattern-card">
+              <h4>Heartbeat</h4>
+              <p>Maintaining a regular rhythm of activity to sustain engagement and progress in a peer learning project.</p>
+            </div>
+            
+            <div class="pattern-card">
+              <h4>Roadmap</h4>
+              <p>Creating a flexible, evolving plan that guides collaborative work while adapting to emergent opportunities and challenges.</p>
+            </div>
+            
+            <div class="pattern-link">
+              <a href="pattern-catalog.html" class="pattern-more">
+                View all patterns
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.16667 10H15.8333M15.8333 10L10 4.16667M15.8333 10L10 15.8333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+        
+        <section class="chapter-section" id="implementing">
+          <h2>Implementing Peeragogy</h2>
+          <p>Applying peeragogical principles in practice requires intentional design and ongoing reflection. Here are some key considerations for implementing peeragogy:</p>
+          
+          <div class="implementation-steps">
+            <div class="step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h4>Start with Real Needs</h4>
+                <p>Begin with authentic learning needs and interests rather than pre-determined curriculum. Allow participants to articulate what they want to learn and why it matters to them.</p>
+              </div>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h4>Co-create the Learning Environment</h4>
+                <p>Involve all participants in designing the learning space, selecting tools, establishing norms, and defining success criteria. This builds ownership and alignment with diverse needs.</p>
+              </div>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h4>Foster Connections</h4>
+                <p>Create opportunities for meaningful interaction and relationship-building among participants. Strong social connections support knowledge sharing and collaborative problem-solving.</p>
+              </div>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h4>Balance Structure and Emergence</h4>
+                <p>Provide enough structure to prevent chaos but remain flexible enough to adapt to emergent interests and opportunities. The right balance will depend on context and participant needs.</p>
+              </div>
+            </div>
+            
+            <div class="step">
+              <div class="step-number">5</div>
+              <div class="step-content">
+                <h4>Practice Reflective Learning</h4>
+                <p>Build in regular opportunities for individual and collective reflection. This helps participants make meaning from their experiences and continuously improve the learning process.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <section class="chapter-section" id="ai-enhancement">
+          <h2>AI Enhancement</h2>
+          <p>As artificial intelligence technologies evolve, they offer new possibilities for enhancing peeragogical approaches. AI can support peer learning in several ways:</p>
+          
+          <div class="ai-applications">
+            <div class="ai-app">
+              <div class="ai-icon">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 21C21.3137 21 24 18.3137 24 15C24 11.6863 21.3137 9 18 9C14.6863 9 12 11.6863 12 15C12 18.3137 14.6863 21 18 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M18 3V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M18 24V27" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8.56445 8.56445L10.6858 10.6858" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M25.3145 25.3145L27.4358 27.4358" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M3 15H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M30 15H33" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8.56445 21.4355L10.6858 19.3142" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M25.3145 4.68555L27.4358 2.56421" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="ai-app-content">
+                <h4>Personalized Support</h4>
+                <p>AI can provide tailored resources, feedback, and learning pathways based on individual needs, enabling more personalized learning experiences within a collective context.</p>
+              </div>
+            </div>
+            
+            <div class="ai-app">
+              <div class="ai-icon">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 21C19.6569 21 21 19.6569 21 18C21 16.3431 19.6569 15 18 15C16.3431 15 15 16.3431 15 18C15 19.6569 16.3431 21 18 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M4.5 18C4.5 18 9 9 18 9C27 9 31.5 18 31.5 18C31.5 18 27 27 18 27C9 27 4.5 18 4.5 18Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="ai-app-content">
+                <h4>Knowledge Discovery</h4>
+                <p>AI tools can help peers discover relevant resources, connections, and patterns that might otherwise remain hidden, enriching the collective knowledge base.</p>
+              </div>
+            </div>
+            
+            <div class="ai-app">
+              <div class="ai-icon">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18 6V18L27 22.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M18 33C26.2843 33 33 26.2843 33 18C33 9.71573 26.2843 3 18 3C9.71573 3 3 9.71573 3 18C3 26.2843 9.71573 33 18 33Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="ai-app-content">
+                <h4>Automation of Routine Tasks</h4>
+                <p>AI can handle administrative and logistical aspects of peer learning, freeing up human energy for more meaningful interactions and higher-order thinking.</p>
+              </div>
+            </div>
+            
+            <div class="ai-app">
+              <div class="ai-icon">
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M16.5 16.5L31.5 9M16.5 16.5L9 31.5M16.5 16.5L4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="ai-app-content">
+                <h4>Learning Analytics</h4>
+                <p>AI can analyze patterns of interaction and learning outcomes, providing insights that help peers understand and improve their collaborative processes.</p>
+              </div>
+            </div>
+          </div>
+          
+          <p>The integration of AI into peeragogical contexts should be approached thoughtfully, ensuring that technology serves human-centered learning goals rather than constraining or displacing valuable human interactions.</p>
+        </section>
+        
+        <section class="chapter-section" id="summary">
+          <h2>Summary</h2>
+          <p>Peeragogy offers a powerful framework for learning in the 21st century, emphasizing collaboration, distributed expertise, and self-direction. By recognizing that knowledge is socially constructed and that learning is fundamentally relational, peeragogy provides both theoretical insights and practical strategies for creating more effective, engaging, and equitable learning environments.</p>
+          <p>As we navigate an increasingly complex and rapidly changing world, the ability to learn with and from peers becomes ever more valuable. Peeragogy equips us with the mindsets and methods to harness the collective intelligence of communities, whether in formal educational settings, professional development contexts, or informal learning networks.</p>
+          <div class="next-chapter-prompt">
+            <p>In the next chapter, we'll explore the <a href="pattern-catalog.html">Pattern Catalog</a>, a collection of reusable solutions to common challenges in peer learning that can help you implement peeragogical principles in your own context.</p>
+          </div>
+        </section>
+      </article>
+      
+      <!-- Import Comments Component -->
+      <div id="comments-container"></div>
+    </main>
+  </div>
+  
+  <!-- Import Footer Component -->
+  <div id="footer-container"></div>
+  
+  <!-- Import AI Sidebar Component -->
+  <div id="ai-sidebar-container"></div>
+  
+  <!-- Import Search Component -->
+  <div id="search-container"></div>
+  
+  <!-- JavaScript -->
+  <script src="../../assets/js/main.js"></script>
+  <script>
+    // Load components
+    document.addEventListener('DOMContentLoaded', function() {
+      // Load header
+      fetch('../../components/header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-container').innerHTML = data;
+        });
+      
+      // Load footer
+      fetch('../../components/footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-container').innerHTML = data;
+        });
+      
+      // Load AI sidebar
+      fetch('../../components/ai-sidebar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('ai-sidebar-container').innerHTML = data;
+        });
+      
+      // Load search
+      fetch('../../components/search.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('search-container').innerHTML = data;
+        });
+      
+      // Load comments
+      fetch('../../components/comments.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('comments-container').innerHTML = data;
+        });
+        
+      // Highlight active section in TOC based on scroll position
+      const sections = document.querySelectorAll('.chapter-section');
+      const navLinks = document.querySelectorAll('.chapter-nav-link');
+      
+      function highlightNavigation() {
+        const scrollPosition = window.scrollY;
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 100;
+          const sectionBottom = sectionTop + section.offsetHeight;
+          
+          if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+            const id = section.getAttribute('id');
+            
+            navLinks.forEach(link => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }
+      
+      window.addEventListener('scroll', highlightNavigation);
+      
+      // Initially highlight the first nav item
+      if (navLinks.length > 0) {
+        navLinks[0].classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<div class="search-overlay" id="search-overlay">
+  <div class="search-container">
+    <div class="search-header">
+      <h2 class="search-title">Search</h2>
+      <button type="button" class="search-close" id="search-close" aria-label="Close search">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="search-input-container">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" class="search-icon">
+        <path d="M17.5 17.5L13.875 13.875M15.8333 9.16667C15.8333 12.8486 12.8486 15.8333 9.16667 15.8333C5.48477 15.8333 2.5 12.8486 2.5 9.16667C2.5 5.48477 5.48477 2.5 9.16667 2.5C12.8486 2.5 15.8333 5.48477 15.8333 9.16667Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <input type="text" id="search-input" class="search-input" placeholder="Search for anything..." autofocus>
+    </div>
+    
+    <div class="search-tabs">
+      <button type="button" class="search-tab active" data-tab="all">All Results</button>
+      <button type="button" class="search-tab" data-tab="chapters">Chapters</button>
+      <button type="button" class="search-tab" data-tab="patterns">Patterns</button>
+      <button type="button" class="search-tab" data-tab="resources">Resources</button>
+    </div>
+    
+    <div class="search-results" id="search-results">
+      <div class="search-empty">
+        <p>Start typing to search</p>
+      </div>
+      
+      <!-- Search results will be dynamically added here -->
+    </div>
+    
+    <div class="search-footer">
+      <div class="search-shortcuts">
+        <div class="search-shortcut">
+          <kbd>↑</kbd>
+          <kbd>↓</kbd>
+          <span>Navigate</span>
+        </div>
+        <div class="search-shortcut">
+          <kbd>Enter</kbd>
+          <span>Open</span>
+        </div>
+        <div class="search-shortcut">
+          <kbd>Esc</kbd>
+          <span>Close</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

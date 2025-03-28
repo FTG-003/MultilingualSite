@@ -1,0 +1,79 @@
+<div class="ai-sidebar" id="ai-sidebar">
+  <div class="ai-sidebar-header">
+    <div class="ai-sidebar-title">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 13.3333C11.8409 13.3333 13.3333 11.8409 13.3333 10C13.3333 8.15905 11.8409 6.66667 10 6.66667C8.15905 6.66667 6.66667 8.15905 6.66667 10C6.66667 11.8409 8.15905 13.3333 10 13.3333Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M18.3333 10H16.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M3.33333 10H1.66667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10 3.33333V1.66667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10 18.3333V16.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.8919 4.10833L14.6502 5.35" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M5.34994 14.65L4.1084 15.8917" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M15.8919 15.8917L14.6502 14.65" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M5.34994 5.35L4.1084 4.10833" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h3>AI Assistant</h3>
+    </div>
+    <button type="button" class="ai-sidebar-close" id="ai-sidebar-close" aria-label="Close AI sidebar">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </div>
+  
+  <div class="ai-sidebar-content">
+    <div class="ai-messages" id="ai-messages">
+      <div class="ai-message ai-message-assistant">
+        <div class="ai-message-avatar">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="16" fill="#4F46E5"/>
+            <path d="M16 18.6667C18.9455 18.6667 21.3333 16.2789 21.3333 13.3333C21.3333 10.3878 18.9455 8 16 8C13.0545 8 10.6667 10.3878 10.6667 13.3333C10.6667 16.2789 13.0545 18.6667 16 18.6667Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10.6667 18.6667C10.6667 22.3486 13.0545 25.3333 16 25.3333C18.9455 25.3333 21.3333 22.3486 21.3333 18.6667" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="ai-message-content">
+          <p>Hi there! I'm your PeerGang AI assistant. How can I help you with peer learning or peeragogy today?</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ai-toolbar">
+      <div class="ai-tools">
+        <button type="button" class="ai-tool" data-action="explain" aria-label="Ask for an explanation">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 18.3333C14.6024 18.3333 18.3334 14.6024 18.3334 10C18.3334 5.39763 14.6024 1.66667 10 1.66667C5.39765 1.66667 1.66669 5.39763 1.66669 10C1.66669 14.6024 5.39765 18.3333 10 18.3333Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 13.3333V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 6.66667H10.0083" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Explain</span>
+        </button>
+        <button type="button" class="ai-tool" data-action="summarize" aria-label="Get a summary">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.83331 5H16.6666M5.83331 10H16.6666M5.83331 15H16.6666M2.5 5V5.00833M2.5 10V10.0083M2.5 15V15.0083" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Summarize</span>
+        </button>
+        <button type="button" class="ai-tool" data-action="examples" aria-label="Show examples">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.5 5.83333L5.83333 2.5L9.16667 5.83333L12.5 2.5L15.8333 5.83333L17.5 4.16667V15.8333L15.8333 14.1667L12.5 17.5L9.16667 14.1667L5.83333 17.5L2.5 14.1667L0.833336 15.8333V4.16667L2.5 5.83333Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 10L17.5 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 5L15 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 15L15 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Examples</span>
+        </button>
+      </div>
+    </div>
+    
+    <div class="ai-input-container">
+      <textarea id="ai-input" placeholder="Ask me anything about peeragogy..." rows="1" class="ai-textarea"></textarea>
+      <button type="button" id="ai-send" class="ai-send-button" aria-label="Send message">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.3333 1.66667L9.16667 10.8333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M18.3333 1.66667L12.5 18.3333L9.16667 10.8333L1.66667 7.5L18.3333 1.66667Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>

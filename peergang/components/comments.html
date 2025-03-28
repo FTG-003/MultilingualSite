@@ -1,0 +1,135 @@
+<section class="comments-section">
+  <div class="comments-container">
+    <h2 class="comments-title">Discussion</h2>
+    
+    <div class="comment-form-container">
+      <form class="comment-form" id="comment-form">
+        <div class="comment-form-avatar">
+          <img src="/assets/images/avatar-placeholder.svg" alt="Avatar" width="48" height="48">
+        </div>
+        <div class="comment-form-content">
+          <textarea class="comment-textarea" id="comment-textarea" placeholder="Share your thoughts, questions, or insights..." rows="3"></textarea>
+          <div class="comment-form-actions">
+            <button type="button" class="btn-link comment-format-help">Formatting help</button>
+            <button type="submit" class="btn btn-primary">Post Comment</button>
+          </div>
+        </div>
+      </form>
+      
+      <div class="comment-guidelines">
+        <p>Please keep discussions respectful and on-topic. For more details, see our <a href="/community-guidelines.html">Community Guidelines</a>.</p>
+      </div>
+    </div>
+    
+    <div class="comments-filters">
+      <div class="comments-sort">
+        <label for="comment-sort">Sort by:</label>
+        <select id="comment-sort" class="comment-sort-select">
+          <option value="newest">Newest</option>
+          <option value="oldest">Oldest</option>
+          <option value="most-voted">Most Upvoted</option>
+        </select>
+      </div>
+      
+      <div class="comments-count">
+        <span id="comments-count-number">2</span> comments
+      </div>
+    </div>
+    
+    <div class="comments-list" id="comments-list">
+      <!-- Example comment - these will be dynamically generated in production -->
+      <div class="comment">
+        <div class="comment-avatar">
+          <img src="/assets/images/avatar-placeholder.svg" alt="Avatar" width="48" height="48">
+        </div>
+        <div class="comment-content">
+          <div class="comment-header">
+            <div class="comment-author">
+              <span class="comment-author-name">Alex Taylor</span>
+              <span class="comment-author-badge">Contributor</span>
+            </div>
+            <span class="comment-date">March 15, 2025</span>
+          </div>
+          <div class="comment-body">
+            <p>This is a really clear explanation of peeragogy! I particularly appreciate the comparison table between traditional pedagogy and peeragogy - it helps to situate the concept within the broader educational landscape.</p>
+            <p>One question I have is about the implementation of peeragogy in more formal educational settings like universities. Has anyone had experience with this?</p>
+          </div>
+          <div class="comment-actions">
+            <button type="button" class="btn-link comment-action" data-action="upvote">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 10L8 6L12 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="vote-count">5</span>
+            </button>
+            <button type="button" class="btn-link comment-action" data-action="reply">Reply</button>
+            <button type="button" class="btn-link comment-action" data-action="share">Share</button>
+          </div>
+          
+          <!-- Example nested reply -->
+          <div class="comment-replies">
+            <div class="comment reply">
+              <div class="comment-avatar">
+                <img src="/assets/images/avatar-placeholder.svg" alt="Avatar" width="40" height="40">
+              </div>
+              <div class="comment-content">
+                <div class="comment-header">
+                  <div class="comment-author">
+                    <span class="comment-author-name">Morgan Chen</span>
+                    <span class="comment-author-badge">Editor</span>
+                  </div>
+                  <span class="comment-date">March 16, 2025</span>
+                </div>
+                <div class="comment-body">
+                  <p>Great question, Alex! I've been implementing peeragogical approaches in my graduate seminars at University of Toronto. It's been quite successful, though it does require reframing expectations and assessment methods.</p>
+                  <p>Happy to share more details if you're interested!</p>
+                </div>
+                <div class="comment-actions">
+                  <button type="button" class="btn-link comment-action" data-action="upvote">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4 10L8 6L12 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="vote-count">3</span>
+                  </button>
+                  <button type="button" class="btn-link comment-action" data-action="reply">Reply</button>
+                  <button type="button" class="btn-link comment-action" data-action="share">Share</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="comment">
+        <div class="comment-avatar">
+          <img src="/assets/images/avatar-placeholder.svg" alt="Avatar" width="48" height="48">
+        </div>
+        <div class="comment-content">
+          <div class="comment-header">
+            <div class="comment-author">
+              <span class="comment-author-name">Jordan Rivera</span>
+            </div>
+            <span class="comment-date">March 20, 2025</span>
+          </div>
+          <div class="comment-body">
+            <p>I love the section on AI enhancement! It's fascinating to think about how AI tools can support peer learning while keeping humans at the center of the experience.</p>
+            <p>Has anyone experimented with specific AI tools to enhance their peeragogy practice? I'd be curious to hear what's working well.</p>
+          </div>
+          <div class="comment-actions">
+            <button type="button" class="btn-link comment-action" data-action="upvote">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 10L8 6L12 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span class="vote-count">2</span>
+            </button>
+            <button type="button" class="btn-link comment-action" data-action="reply">Reply</button>
+            <button type="button" class="btn-link comment-action" data-action="share">Share</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="comments-pagination">
+      <button type="button" class="btn-link comments-load-more">Load More Comments</button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,42 @@
+We're starting from scratch.
+
+Forget Jekyll. Forget Markdown. We are done with static site generators. We need a powerful, clean, futuristic website built entirely with HTML, CSS, and JavaScript – no frameworks, no complications – designed to host an AI-powered peer learning revolution: PeerGang.
+
+This is not a blog. Not a school page. It's a digital command center for AI-enhanced learning.
+
+🎯 OBJECTIVE:
+Design and build a modular, clean, fully HTML-based site that represents the PeerGang initiative. It must be elegant, responsive, and capable of hosting embedded AI Agents (OpenAI, Flowise, n8n, etc.) as sidebars, chat widgets, advisors, and more.
+
+This is a flagship project. Think big.
+
+💣 DESIGN PRINCIPLES:
+- Modern and sharp layout (header, footer, sidebar, clean sectioning)
+- Responsive by default (mobile/tablet/desktop)
+- Typography-focused for readability
+- Dark/light mode switch (optional, but cleanly implemented)
+- Visually distinct AI areas (assistant/sidebar/chat/feedback panel)
+- Navigation based on real TOC structure of the Peeragogy Handbook (but content can be placeholder for now)
+- HTML modularity (each chapter = a clean standalone .html page)
+- Each page includes TOC, main content, AI Sidebar, comment box
+- Smooth scroll, anchor sync for TOC
+- Custom UI for feedback or interaction logging (even if dummy)
+
+🧱 FILE STRUCTURE SUGGESTION:
+/index.html
+/chapters/en/about-this-book.html
+/chapters/en/peeragogy-in-a-nutshell.html
+/assets/css/
+/assets/js/
+/assets/images/
+/components/ (optional includes: toc.html, ai-sidebar.html, etc.)
+
+🔍 AI FUNCTIONALITY (Future-Ready):
+- Sidebar space ready for embedded AI (iframe or JS widget)
+- Page IDs or slugs ready for content embedding
+- Dummy comment system that can evolve into an AI feedback advisor
+- Search input ready for vector search (placeholder)
+
+🔥 GO:
+No more frameworks. No more CMS logic. This is HTML-first, AI-ready, learning-focused and visually elite. Launch a design that speaks for a cognitive revolution.
+
+This is PeerGang. Make it worthy."""

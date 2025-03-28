@@ -1,0 +1,97 @@
+<header class="site-header">
+  <div class="container">
+    <div class="header-content">
+      <div class="header-logo">
+        <a href="/" class="logo-link">
+          <span class="logo-text">PeerGang</span>
+        </a>
+      </div>
+      
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+          <li class="nav-item dropdown">
+            <a href="/chapters/en/" class="nav-link">Handbook</a>
+            <ul class="dropdown-menu">
+              <li><a href="/chapters/en/about-this-book.html" class="dropdown-link">About this Book</a></li>
+              <li><a href="/chapters/en/peeragogy-in-a-nutshell.html" class="dropdown-link">Peeragogy in a Nutshell</a></li>
+              <li><a href="/chapters/en/pattern-catalog.html" class="dropdown-link">Pattern Catalog</a></li>
+              <li><a href="/chapters/en/motivation.html" class="dropdown-link">Motivation</a></li>
+              <li><a href="/chapters/en/ai-in-peer-learning.html" class="dropdown-link">AI in Peer Learning</a></li>
+              <li><a href="/chapters/en/" class="dropdown-link view-all">View All Chapters</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="/patterns.html" class="nav-link">Patterns</a></li>
+          <li class="nav-item"><a href="/community.html" class="nav-link">Community</a></li>
+          <li class="nav-item"><a href="/about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+      
+      <div class="header-actions">
+        <button type="button" class="btn-icon" id="search-toggle" aria-label="Open search">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 21L16.65 16.65M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        
+        <button type="button" class="btn-icon" id="theme-toggle" aria-label="Toggle dark mode">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-sun">
+            <path d="M12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 1V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 21V23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4.22021 4.22L5.64021 5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18.3599 18.36L19.7799 19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M1 12H3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M21 12H23" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4.22021 19.78L5.64021 18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18.3599 5.64L19.7799 4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-moon">
+            <path d="M21 12.79C20.8427 14.4922 20.2039 16.1144 19.1582 17.4668C18.1126 18.8192 16.7035 19.8458 15.0957 20.4265C13.4879 21.0073 11.7475 21.1181 10.0797 20.7461C8.41196 20.3741 6.88975 19.5345 5.67516 18.3199C4.46058 17.1053 3.62087 15.5831 3.24885 13.9153C2.87683 12.2476 2.98765 10.5071 3.56843 8.89939C4.14921 7.29163 5.17575 5.88257 6.52814 4.83692C7.88053 3.79128 9.50273 3.15245 11.205 3C10.124 4.34827 9.64037 6.00945 9.85407 7.68141C10.0678 9.35338 10.9584 10.8855 12.3236 11.9777C13.6888 13.07 15.4203 13.6382 17.1921 13.5621C18.964 13.4859 20.6455 12.7699 21.9 11.545C21.9347 11.957 21.9518 12.3716 21.95 12.786L21 12.79Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        
+        <div class="language-selector">
+          <button type="button" class="language-toggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 12H22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="current-language">English</span>
+          </button>
+          <ul class="language-dropdown">
+            <li><a href="#" class="language-option active" data-lang="en">English</a></li>
+            <li><a href="#" class="language-option" data-lang="es">Español</a></li>
+            <li><a href="#" class="language-option" data-lang="fr">Français</a></li>
+            <li><a href="#" class="language-option" data-lang="de">Deutsch</a></li>
+            <li><a href="#" class="language-option" data-lang="it">Italiano</a></li>
+            <li><a href="#" class="language-option" data-lang="pt">Português</a></li>
+          </ul>
+        </div>
+        
+        <button type="button" class="btn-icon" id="ai-toggle" aria-label="Toggle AI assistant">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 12H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 12H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 4V2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 22V20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M19.0703 4.93005L17.6603 6.34005" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6.34 17.6599L4.93 19.0699" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M19.0703 19.07L17.6603 17.66" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6.34 6.34005L4.93 4.93005" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        
+        <button type="button" class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 6H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>

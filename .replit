@@ -1,4 +1,4 @@
-modules = ["ruby"]
+modules = ["ruby", "nodejs-20"]
 
 [nix]
 channel = "stable-24_05"
@@ -13,10 +13,10 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "Custom Jekyll Server"
+args = "PeerGang Server"
 
 [[workflows.workflow]]
-name = "Custom Jekyll Server"
+name = "PeerGang Server"
 author = "agent"
 
 [workflows.workflow.metadata]
@@ -27,7 +27,7 @@ task = "packager.installForAll"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "cd docs && /nix/store/snkd36lkgkkvrwkd123zkj2q05gdz4mn-jekyll-4.3.3/bin/jekyll serve --host 0.0.0.0 --port 5000"
+args = "cd peergang && node server.js"
 waitForPort = 5000
 
 [deployment]
