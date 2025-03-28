@@ -11,6 +11,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#4A90E2">
 </head>
 <body class="page-sostenere-le-comunità-di-apprendimento-tra-pari">
 
@@ -111,6 +113,54 @@
   </div>
 </header>
 
+  
+  <!-- Search component -->
+  <!-- Search Component -->
+<div class="search-component">
+  <div class="search-toggle" id="search-toggle">
+    <i class="fas fa-search"></i>
+  </div>
+  
+  <div class="search-container" id="search-container">
+    <form class="search-form" role="search">
+      <div class="search-input-wrapper">
+        <input type="search" id="search-input" class="search-input" 
+               placeholder="Cerca nel handbook...">
+        <button type="submit" class="search-btn">
+          <i class="fas fa-search"></i>
+        </button>
+        <button type="button" class="search-close" id="search-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </form>
+    
+    <div class="search-results" id="search-results">
+      <!-- Search results will be populated here -->
+      <div class="search-results-message">
+        
+          <p>Inizia a digitare per cercare nel manuale di peeragogia.</p>
+        
+      </div>
+      
+      <!-- Sample search results for demo purposes -->
+      <div class="search-results-list" style="display: none;">
+        <div class="search-result-item">
+          <a href="/chapters/en/chapter1/">
+            <h4>Getting Started with Peeragogy</h4>
+            <p>...implementing peeragogy in your learning community, classroom, or workplace begins with establishing the right conditions...</p>
+          </a>
+        </div>
+        <div class="search-result-item">
+          <a href="/chapters/en/chapter2/">
+            <h4>Patterns and Heuristics</h4>
+            <p>...recognizing common patterns in peeragogy can help you solve recurring challenges...</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
   <main class="page-content" aria-label="Content">
     <div class="wrapper">
@@ -293,7 +343,7 @@
   </nav>
   
   <div class="chapter-toc">
-    <h3>Table of Contents</h3>
+    <h3>Indice</h3>
     
 <div class="chapter-list">
   <ul>
@@ -301,7 +351,106 @@
   </ul>
 </div>
   </div>
+  
+  <!-- Comments Component -->
+<section class="comments-section" id="comments">
+  <div class="comments-header">
+    <h2>Commenti</h2>
+  </div>
+  
+  <div class="comments-container">
+    <!-- Existing comments would appear here -->
+    <div class="no-comments-message">
+      
+        <p>Non ci sono ancora commenti. Sii il primo a commentare!</p>
+      
+    </div>
+    
+    <!-- Sample comment to show structure -->
+    <div class="comment sample-comment">
+      <div class="comment-avatar">
+        <img src="/assets/images/avatar-placeholder.svg" alt="User avatar">
+      </div>
+      <div class="comment-content">
+        <div class="comment-header">
+          <span class="comment-author">Alex Johnson</span>
+          <span class="comment-date">2025-03-15</span>
+        </div>
+        <div class="comment-text">
+          
+            <p>Questo capitolo mi ha davvero aiutato a capire come iniziare con un progetto di peeragogia nel mio dipartimento. Grazie per le informazioni chiare!</p>
+          
+        </div>
+        <div class="comment-actions">
+          <button class="comment-reply-btn">Rispondi</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="comment-form">
+    <h3>Lascia un commento</h3>
+    <form id="comment-form">
+      <div class="form-group">
+        <label for="comment-name">Nome</label>
+        <input type="text" id="comment-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="comment-email">Email</label>
+        <input type="email" id="comment-email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="comment-text">Commento</label>
+        <textarea id="comment-text" name="comment" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="comment-submit-btn">Invia commento</button>
+    </form>
+  </div>
+</section>
 </article>
+
+<!-- AI Sidebar injection -->
+<!-- AI Sidebar Component -->
+<div class="ai-sidebar">
+  <div class="ai-sidebar-header">
+    <h3>Assistente AI</h3>
+    <button class="toggle-ai-sidebar" aria-label="Toggle AI Sidebar">
+      <i class="fas fa-robot"></i>
+    </button>
+  </div>
+  
+  <div class="ai-sidebar-content">
+    <div class="ai-assistant-intro">
+      
+        <p>L'assistente AI può aiutarti con:</p>
+        <ul>
+          <li>Riassumere il contenuto</li>
+          <li>Rispondere a domande</li>
+          <li>Generare esempi pratici</li>
+          <li>Suggerire risorse aggiuntive</li>
+        </ul>
+      
+    </div>
+    
+    <div class="ai-interaction">
+      <div class="ai-messages" id="ai-messages">
+        <!-- AI messages will appear here -->
+        <div class="ai-message">
+          
+            <p>Ciao! Sono qui per aiutarti a comprendere meglio la peeragogia. Cosa vorresti sapere?</p>
+          
+        </div>
+      </div>
+      
+      <div class="ai-input-container">
+        <textarea id="ai-user-input" placeholder="Fai una domanda..."></textarea>
+        <button id="ai-send-button" aria-label="Send">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 
     </div>
   </main>

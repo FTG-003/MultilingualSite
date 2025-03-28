@@ -11,6 +11,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#4A90E2">
 </head>
 <body class="page-home">
 
@@ -102,6 +104,54 @@
   </div>
 </header>
 
+  
+  <!-- Search component -->
+  <!-- Search Component -->
+<div class="search-component">
+  <div class="search-toggle" id="search-toggle">
+    <i class="fas fa-search"></i>
+  </div>
+  
+  <div class="search-container" id="search-container">
+    <form class="search-form" role="search">
+      <div class="search-input-wrapper">
+        <input type="search" id="search-input" class="search-input" 
+               placeholder="Search the handbook...">
+        <button type="submit" class="search-btn">
+          <i class="fas fa-search"></i>
+        </button>
+        <button type="button" class="search-close" id="search-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </form>
+    
+    <div class="search-results" id="search-results">
+      <!-- Search results will be populated here -->
+      <div class="search-results-message">
+        
+          <p>Start typing to search the peeragogy handbook.</p>
+        
+      </div>
+      
+      <!-- Sample search results for demo purposes -->
+      <div class="search-results-list" style="display: none;">
+        <div class="search-result-item">
+          <a href="/chapters/en/chapter1/">
+            <h4>Getting Started with Peeragogy</h4>
+            <p>...implementing peeragogy in your learning community, classroom, or workplace begins with establishing the right conditions...</p>
+          </a>
+        </div>
+        <div class="search-result-item">
+          <a href="/chapters/en/chapter2/">
+            <h4>Patterns and Heuristics</h4>
+            <p>...recognizing common patterns in peeragogy can help you solve recurring challenges...</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
   <main class="page-content" aria-label="Content">
     <div class="wrapper">

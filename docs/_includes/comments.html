@@ -1,0 +1,59 @@
+<!-- Comments Component -->
+<section class="comments-section" id="comments">
+  <div class="comments-header">
+    <h2>{% if page.lang == 'it' %}Commenti{% else %}Comments{% endif %}</h2>
+  </div>
+  
+  <div class="comments-container">
+    <!-- Existing comments would appear here -->
+    <div class="no-comments-message">
+      {% if page.lang == 'it' %}
+        <p>Non ci sono ancora commenti. Sii il primo a commentare!</p>
+      {% else %}
+        <p>There are no comments yet. Be the first to comment!</p>
+      {% endif %}
+    </div>
+    
+    <!-- Sample comment to show structure -->
+    <div class="comment sample-comment">
+      <div class="comment-avatar">
+        <img src="{{ '/assets/images/avatar-placeholder.svg' | relative_url }}" alt="User avatar">
+      </div>
+      <div class="comment-content">
+        <div class="comment-header">
+          <span class="comment-author">Alex Johnson</span>
+          <span class="comment-date">2025-03-15</span>
+        </div>
+        <div class="comment-text">
+          {% if page.lang == 'it' %}
+            <p>Questo capitolo mi ha davvero aiutato a capire come iniziare con un progetto di peeragogia nel mio dipartimento. Grazie per le informazioni chiare!</p>
+          {% else %}
+            <p>This chapter really helped me understand how to start a peeragogy project in my department. Thanks for the clear information!</p>
+          {% endif %}
+        </div>
+        <div class="comment-actions">
+          <button class="comment-reply-btn">{% if page.lang == 'it' %}Rispondi{% else %}Reply{% endif %}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="comment-form">
+    <h3>{% if page.lang == 'it' %}Lascia un commento{% else %}Leave a comment{% endif %}</h3>
+    <form id="comment-form">
+      <div class="form-group">
+        <label for="comment-name">{% if page.lang == 'it' %}Nome{% else %}Name{% endif %}</label>
+        <input type="text" id="comment-name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="comment-email">Email</label>
+        <input type="email" id="comment-email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="comment-text">{% if page.lang == 'it' %}Commento{% else %}Comment{% endif %}</label>
+        <textarea id="comment-text" name="comment" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="comment-submit-btn">{% if page.lang == 'it' %}Invia commento{% else %}Submit comment{% endif %}</button>
+    </form>
+  </div>
+</section>

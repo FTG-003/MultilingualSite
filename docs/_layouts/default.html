@@ -11,10 +11,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <meta name="theme-color" content="#4A90E2">
 </head>
 <body class="page-{{ page.title | downcase | replace: ' ', '-' }}">
 
   {% include header.html %}
+  
+  <!-- Search component -->
+  {% include search.html %}
 
   <main class="page-content" aria-label="Content">
     <div class="wrapper">

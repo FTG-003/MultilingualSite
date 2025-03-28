@@ -46,7 +46,12 @@ layout: default
   </nav>
   
   <div class="chapter-toc">
-    <h3>Table of Contents</h3>
+    <h3>{% if page.lang == 'it' %}Indice{% else %}Table of Contents{% endif %}</h3>
     {% include chapter-list.html %}
   </div>
+  
+  {% include comments.html %}
 </article>
+
+<!-- AI Sidebar injection -->
+{% include ai-sidebar.html %}

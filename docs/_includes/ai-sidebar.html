@@ -1,0 +1,51 @@
+<!-- AI Sidebar Component -->
+<div class="ai-sidebar">
+  <div class="ai-sidebar-header">
+    <h3>{% if page.lang == 'it' %}Assistente AI{% else %}AI Assistant{% endif %}</h3>
+    <button class="toggle-ai-sidebar" aria-label="Toggle AI Sidebar">
+      <i class="fas fa-robot"></i>
+    </button>
+  </div>
+  
+  <div class="ai-sidebar-content">
+    <div class="ai-assistant-intro">
+      {% if page.lang == 'it' %}
+        <p>L'assistente AI può aiutarti con:</p>
+        <ul>
+          <li>Riassumere il contenuto</li>
+          <li>Rispondere a domande</li>
+          <li>Generare esempi pratici</li>
+          <li>Suggerire risorse aggiuntive</li>
+        </ul>
+      {% else %}
+        <p>The AI assistant can help you with:</p>
+        <ul>
+          <li>Summarizing content</li>
+          <li>Answering questions</li>
+          <li>Generating practical examples</li>
+          <li>Suggesting additional resources</li>
+        </ul>
+      {% endif %}
+    </div>
+    
+    <div class="ai-interaction">
+      <div class="ai-messages" id="ai-messages">
+        <!-- AI messages will appear here -->
+        <div class="ai-message">
+          {% if page.lang == 'it' %}
+            <p>Ciao! Sono qui per aiutarti a comprendere meglio la peeragogia. Cosa vorresti sapere?</p>
+          {% else %}
+            <p>Hello! I'm here to help you better understand peeragogy. What would you like to know?</p>
+          {% endif %}
+        </div>
+      </div>
+      
+      <div class="ai-input-container">
+        <textarea id="ai-user-input" placeholder="{% if page.lang == 'it' %}Fai una domanda...{% else %}Ask a question...{% endif %}"></textarea>
+        <button id="ai-send-button" aria-label="Send">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Peeragogy Favicon</title>
+    <g id="favicon" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="background" fill="#4A90E2" cx="8" cy="8" r="8"></circle>
+        <path d="M4,12 L4,4 L8,4 C9.1045695,4 10,4.8954305 10,6 C10,7.1045695 9.1045695,8 8,8 L6,8 L6,12 L4,12 Z M6,6 L6,6.5 L7.5,6.5 C7.77614237,6.5 8,6.27614237 8,6 C8,5.72385763 7.77614237,5.5 7.5,5.5 L6,5.5 L6,6 Z" id="P" fill="#FFFFFF" fill-rule="nonzero"></path>
+        <g id="connections" transform="translate(10.000000, 8.000000)" fill="#FFFFFF">
+            <circle id="dot3" cx="1.5" cy="3.5" r="1.5"></circle>
+            <circle id="dot2" cx="1.5" cy="0.5" r="1.5"></circle>
+        </g>
+    </g>
+</svg>
