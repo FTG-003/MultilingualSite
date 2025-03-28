@@ -1,0 +1,15 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "PeerGang is a digital command center for AI-enhanced learning, built with pure HTML, CSS, and JavaScript. The platform combines the principles of peeragogy (peer-to-peer learning) with cutting-edge AI technology to create more effective, collaborative, and personalized learning experiences.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
