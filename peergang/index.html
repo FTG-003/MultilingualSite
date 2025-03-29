@@ -1,388 +1,742 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PeerGang - AI-Enhanced Peer Learning Platform</title>
-  <meta name="description" content="PeerGang is a revolutionary platform combining peeragogy with artificial intelligence to create more effective, collaborative, and personalized learning experiences.">
-  
-  <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="PeerGang - AI-Enhanced Peer Learning Platform">
-  <meta property="og:description" content="Revolutionizing learning through AI-enhanced peer collaboration">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://peergang.org">
-  <meta property="og:image" content="https://peergang.org/assets/images/og-image.jpg">
-  
-  <!-- Favicon -->
-  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="assets/images/favicon.png" type="image/png">
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- CSS -->
-  <link rel="stylesheet" href="assets/css/styles.css">
-</head>
-<body>
-  <!-- Import Header Component -->
-  <div id="header-container"></div>
-  
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="container">
-      <div class="hero-content">
-        <h1 class="hero-title">Revolutionizing Learning with <span class="text-gradient">AI-Enhanced</span> Peer Collaboration</h1>
-        <p class="hero-tagline">A digital command center for a new kind of education: peer-driven, AI-augmented, and radically collaborative.</p>
-        <div class="hero-cta">
-          <a href="chapters/en/about-this-book.html" class="btn btn-primary">Explore the Handbook</a>
-          <a href="#about" class="btn btn-secondary">Learn More</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pyragogy - AI-Enhanced Peer Learning Platform</title>
+    <meta
+      name="description"
+      content="Pyragogy is a revolutionary platform combining peeragogy with artificial intelligence to create more effective, collaborative, and personalized learning experiences."
+    />
+
+    <!-- Open Graph / Social Media -->
+    <meta
+      property="og:title"
+      content="Pyragogy - AI-Enhanced Peer Learning Platform"
+    />
+    <meta
+      property="og:description"
+      content="Revolutionizing learning through AI-enhanced peer collaboration"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pyragogy.org" />
+    <meta
+      property="og:image"
+      content="https://pyragogy.org/assets/images/og-image.jpg"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/images/favicon.png" type="image/png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <!-- Import Header Component -->
+    <div id="header-container"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Revolutionizing Learning with
+            <span class="text-gradient">AI-Enhanced</span> Peer Collaboration
+          </h1>
+          <p class="hero-tagline">
+            A digital command center for a new kind of education: peer-driven,
+            AI-augmented, and radically collaborative.
+          </p>
+          <div class="hero-cta">
+            <a href="chapters/en/about-this-book.html" class="btn btn-primary"
+              >Explore the Handbook</a
+            >
+            <a href="#about" class="btn btn-secondary">Learn More</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-circle"></div>
+          <div class="network-nodes">
+            <div class="node node-1"></div>
+            <div class="node node-2"></div>
+            <div class="node node-3"></div>
+            <div class="node node-4"></div>
+            <div class="node node-5"></div>
+            <div class="node node-6"></div>
+            <div class="connection conn-1-2"></div>
+            <div class="connection conn-1-3"></div>
+            <div class="connection conn-2-4"></div>
+            <div class="connection conn-3-5"></div>
+            <div class="connection conn-4-6"></div>
+            <div class="connection conn-5-6"></div>
+          </div>
         </div>
       </div>
-      
-      <div class="hero-visual">
-        <div class="hero-circle"></div>
-        <div class="network-nodes">
-          <div class="node node-1"></div>
-          <div class="node node-2"></div>
-          <div class="node node-3"></div>
-          <div class="node node-4"></div>
-          <div class="node node-5"></div>
-          <div class="node node-6"></div>
-          <div class="connection conn-1-2"></div>
-          <div class="connection conn-1-3"></div>
-          <div class="connection conn-2-4"></div>
-          <div class="connection conn-3-5"></div>
-          <div class="connection conn-4-6"></div>
-          <div class="connection conn-5-6"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+      <div class="container">
+        <div class="section-header">
+          <h2>Where Peers and AI Converge</h2>
+          <p>
+            Pyragogy reimagines learning through a synergy of human
+            collaboration and artificial intelligence.
+          </p>
         </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Features Section -->
-  <section class="features-section" id="features">
-    <div class="container">
-      <div class="section-header">
-        <h2>Where Peers and AI Converge</h2>
-        <p>PeerGang reimagines learning through a synergy of human collaboration and artificial intelligence.</p>
-      </div>
-      
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.5 9C4.5 7.34315 5.84315 6 7.5 6H28.5C30.1569 6 31.5 7.34315 31.5 9V27C31.5 28.6569 30.1569 30 28.5 30H7.5C5.84315 30 4.5 28.6569 4.5 27V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M13.5 30.0001L21.5415 19.9643C21.8311 19.5906 22.4604 19.5739 22.7677 19.9304L31.5 30.0001" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3>Interactive Handbook</h3>
-          <p>A comprehensive, dynamic guide to the principles and practices of peeragogy, continuously updated by our community.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 21C21.3137 21 24 18.3137 24 15C24 11.6863 21.3137 9 18 9C14.6863 9 12 11.6863 12 15C12 18.3137 14.6863 21 18 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M18 3V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M18 24V27" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M8.56445 8.56445L10.6858 10.6858" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M25.3145 25.3145L27.4358 27.4358" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M3 15H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M30 15H33" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M8.56445 21.4355L10.6858 19.3142" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M25.3145 4.68555L27.4358 2.56421" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3>AI-Enhanced Learning</h3>
-          <p>Powerful artificial intelligence tools that adapt to your learning style, answer questions, and provide personalized guidance.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 21C19.6569 21 21 19.6569 21 18C21 16.3431 19.6569 15 18 15C16.3431 15 15 16.3431 15 18C15 19.6569 16.3431 21 18 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M4.5 18C4.5 18 9 9 18 9C27 9 31.5 18 31.5 18C31.5 18 27 27 18 27C9 27 4.5 18 4.5 18Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3>Pattern Library</h3>
-          <p>A curated collection of proven patterns for effective peer learning, helping you structure your collaborative activities.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16.5 16.5L31.5 9M16.5 16.5L9 31.5M16.5 16.5L4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3>Community Hub</h3>
-          <p>Connect with peers, share experiences, and engage in deep learning conversations with a global community of practice.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- About Section -->
-  <section class="about-section" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-content">
-          <h2>What is PeerGang?</h2>
-          <p>PeerGang represents a paradigm shift in education—a movement that combines the power of peer-to-peer learning with cutting-edge AI technology to create learning experiences that are more engaging, effective, and accessible.</p>
-          <p>We believe that the future of education lies not in traditional hierarchical structures, but in horizontally organized communities where learners collaboratively build knowledge while being supported by AI tools that enhance human capabilities.</p>
-          
-          <div class="about-stats">
-            <div class="stat-item">
-              <div class="stat-number">100+</div>
-              <div class="stat-label">Learning Patterns</div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.5 9C4.5 7.34315 5.84315 6 7.5 6H28.5C30.1569 6 31.5 7.34315 31.5 9V27C31.5 28.6569 30.1569 30 28.5 30H7.5C5.84315 30 4.5 28.6569 4.5 27V9Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M13.5 30.0001L21.5415 19.9643C21.8311 19.5906 22.4604 19.5739 22.7677 19.9304L31.5 30.0001"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </div>
-            <div class="stat-item">
-              <div class="stat-number">5000+</div>
-              <div class="stat-label">Active Learners</div>
+            <h3>Interactive Handbook</h3>
+            <p>
+              A comprehensive, dynamic guide to the principles and practices of
+              peeragogy, continuously updated by our community.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18 21C21.3137 21 24 18.3137 24 15C24 11.6863 21.3137 9 18 9C14.6863 9 12 11.6863 12 15C12 18.3137 14.6863 21 18 21Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M18 3V6"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M18 24V27"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8.56445 8.56445L10.6858 10.6858"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M25.3145 25.3145L27.4358 27.4358"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M3 15H6"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M30 15H33"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M8.56445 21.4355L10.6858 19.3142"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M25.3145 4.68555L27.4358 2.56421"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </div>
-            <div class="stat-item">
-              <div class="stat-number">42</div>
-              <div class="stat-label">Countries</div>
+            <h3>AI-Enhanced Learning</h3>
+            <p>
+              Powerful artificial intelligence tools that adapt to your learning
+              style, answer questions, and provide personalized guidance.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18 21C19.6569 21 21 19.6569 21 18C21 16.3431 19.6569 15 18 15C16.3431 15 15 16.3431 15 18C15 19.6569 16.3431 21 18 21Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M4.5 18C4.5 18 9 9 18 9C27 9 31.5 18 31.5 18C31.5 18 27 27 18 27C9 27 4.5 18 4.5 18Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
             </div>
+            <h3>Pattern Library</h3>
+            <p>
+              A curated collection of proven patterns for effective peer
+              learning, helping you structure your collaborative activities.
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">
+              <svg
+                width="36"
+                height="36"
+                viewBox="0 0 36 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16.5 16.5L31.5 9M16.5 16.5L9 31.5M16.5 16.5L4.5 4.5"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <h3>Community Hub</h3>
+            <p>
+              Connect with peers, share experiences, and engage in deep learning
+              conversations with a global community of practice.
+            </p>
           </div>
         </div>
-        
-        <div class="about-image">
-          <img src="assets/images/about-illustration.svg" alt="Illustration showing people learning together with AI assistance" width="450" height="380">
-        </div>
       </div>
-    </div>
-  </section>
-  
-  <!-- Chapters Preview Section -->
-  <section class="chapters-section">
-    <div class="container">
-      <div class="section-header">
-        <h2>Explore the Handbook</h2>
-        <p>Dive into our comprehensive guide to peeragogy, organized into easy-to-navigate chapters.</p>
-      </div>
-      
-      <div class="chapters-grid">
-        <a href="chapters/en/about-this-book.html" class="chapter-card">
-          <div class="chapter-number">01</div>
-          <h3>About This Book</h3>
-          <p>An introduction to the handbook, its purpose, and how to use it effectively.</p>
-          <div class="chapter-arrow">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.16667 10H15.8333M15.8333 10L10 4.16667M15.8333 10L10 15.8333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </a>
-        
-        <a href="chapters/en/peeragogy-in-a-nutshell.html" class="chapter-card">
-          <div class="chapter-number">02</div>
-          <h3>Peeragogy in a Nutshell</h3>
-          <p>The core concepts and principles of peer learning and collaboration.</p>
-          <div class="chapter-arrow">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.16667 10H15.8333M15.8333 10L10 4.16667M15.8333 10L10 15.8333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </a>
-        
-        <a href="chapters/en/pattern-catalog.html" class="chapter-card">
-          <div class="chapter-number">03</div>
-          <h3>Pattern Catalog</h3>
-          <p>A comprehensive collection of proven patterns for effective peer learning.</p>
-          <div class="chapter-arrow">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.16667 10H15.8333M15.8333 10L10 4.16667M15.8333 10L10 15.8333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </a>
-        
-        <a href="chapters/en/motivation.html" class="chapter-card">
-          <div class="chapter-number">04</div>
-          <h3>Motivation</h3>
-          <p>Understanding what drives engagement in peer learning environments.</p>
-          <div class="chapter-arrow">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.16667 10H15.8333M15.8333 10L10 4.16667M15.8333 10L10 15.8333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </a>
-        
-        <a href="chapters/en/ai-in-peer-learning.html" class="chapter-card">
-          <div class="chapter-number">05</div>
-          <h3>AI in Peer Learning</h3>
-          <p>How artificial intelligence can enhance and support peer learning environments.</p>
-          <div class="chapter-arrow">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.16667 10H15.8333M15.8333 10L10 4.16667M15.8333 10L10 15.8333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </a>
-        
-        <a href="chapters/en/index.html" class="chapter-card view-all">
-          <h3>View All Chapters</h3>
-          <div class="chapter-arrow">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.16667 10H15.8333M15.8333 10L10 4.16667M15.8333 10L10 15.8333" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-  
-  <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="container">
-      <div class="cta-content">
-        <h2>Ready to transform how you learn?</h2>
-        <p>Join our community of peer learners and discover the power of AI-enhanced collaboration.</p>
-        <div class="cta-buttons">
-          <a href="chapters/en/about-this-book.html" class="btn btn-primary">Get Started</a>
-          <a href="#contact" class="btn btn-secondary">Contact Us</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Contact Section -->
-  <section class="contact-section" id="contact">
-    <div class="container">
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h2>Get in Touch</h2>
-          <p>Have questions about PeerGang or want to get involved? We'd love to hear from you!</p>
-          
-          <div class="contact-methods">
-            <div class="contact-method">
-              <div class="contact-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M22 12C22 10.6868 21.7413 9.38647 21.2388 8.1732C20.7363 6.95991 19.9997 5.85752 19.0711 4.92893C18.1425 4.00035 17.0401 3.26375 15.8268 2.7612C14.6135 2.25866 13.3132 2 12 2C10.6868 2 9.38647 2.25866 8.1732 2.7612C6.95991 3.26375 5.85752 4.00035 4.92893 4.92893C3.05357 6.8043 2 9.34784 2 12C2 16.4183 4.94668 20.2272 9 21.5M19 16V21M16.5 18.5H21.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M16.5 7.5C16.5 8.32843 15.8284 9 15 9C14.1716 9 13.5 8.32843 13.5 7.5C13.5 6.67157 14.1716 6 15 6C15.8284 6 16.5 6.67157 16.5 7.5Z" fill="currentColor"/>
-                  <path d="M13.5 16.5C13.5 17.3284 12.8284 18 12 18C11.1716 18 10.5 17.3284 10.5 16.5C10.5 15.6716 11.1716 15 12 15C12.8284 15 13.5 15.6716 13.5 16.5Z" fill="currentColor"/>
-                  <path d="M10.5 7.5C10.5 8.32843 9.82843 9 9 9C8.17157 9 7.5 8.32843 7.5 7.5C7.5 6.67157 8.17157 6 9 6C9.82843 6 10.5 6.67157 10.5 7.5Z" fill="currentColor"/>
-                </svg>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content">
+            <h2>What is Pyragogy?</h2>
+            <p>
+              Pyragogy represents a paradigm shift in education—a movement that
+              combines the power of peer-to-peer learning with cutting-edge AI
+              technology to create learning experiences that are more engaging,
+              effective, and accessible.
+            </p>
+            <p>
+              We believe that the future of education lies not in traditional
+              hierarchical structures, but in horizontally organized communities
+              where learners collaboratively build knowledge while being
+              supported by AI tools that enhance human capabilities.
+            </p>
+
+            <div class="about-stats">
+              <div class="stat-item">
+                <div class="stat-number">100+</div>
+                <div class="stat-label">Learning Patterns</div>
               </div>
-              <div class="contact-details">
-                <h4>Join our Community</h4>
-                <p>Connect with peers on our Discord server or GitHub repository.</p>
-                <div class="contact-links">
-                  <a href="#" class="contact-link">Discord</a>
-                  <a href="#" class="contact-link">GitHub</a>
+              <div class="stat-item">
+                <div class="stat-number">5000+</div>
+                <div class="stat-label">Active Learners</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">42</div>
+                <div class="stat-label">Countries</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-image">
+            <img
+              src="assets/images/about-illustration.svg"
+              alt="Illustration showing people learning together with AI assistance"
+              width="450"
+              height="380"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chapters Preview Section -->
+    <section class="chapters-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Explore the Handbook</h2>
+          <p>
+            Dive into our comprehensive guide to peeragogy, organized into
+            easy-to-navigate chapters.
+          </p>
+        </div>
+
+        <div class="chapters-grid">
+          <a href="chapters/en/about-this-book.html" class="chapter-card">
+            <div class="chapter-number">01</div>
+            <h3>About This Book</h3>
+            <p>
+              An introduction to the handbook, its purpose, and how to use it
+              effectively.
+            </p>
+            <div class="chapter-arrow">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.16667 10H15.8333M15.8333 10L10 4.16667M15.8333 10L10 15.8333"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </a>
+
+          <a
+            href="chapters/en/peeragogy-in-a-nutshell.html"
+            class="chapter-card"
+          >
+            <div class="chapter-number">02</div>
+            <h3>Peeragogy in a Nutshell</h3>
+            <p>
+              The core concepts and principles of peer learning and
+              collaboration.
+            </p>
+            <div class="chapter-arrow">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.16667 10H15.8333M15.8333 10L10 4.16667M15.8333 10L10 15.8333"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </a>
+
+          <a href="chapters/en/pattern-catalog.html" class="chapter-card">
+            <div class="chapter-number">03</div>
+            <h3>Pattern Catalog</h3>
+            <p>
+              A comprehensive collection of proven patterns for effective peer
+              learning.
+            </p>
+            <div class="chapter-arrow">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.16667 10H15.8333M15.8333 10L10 4.16667M15.8333 10L10 15.8333"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </a>
+
+          <a href="chapters/en/motivation.html" class="chapter-card">
+            <div class="chapter-number">04</div>
+            <h3>Motivation</h3>
+            <p>
+              Understanding what drives engagement in peer learning
+              environments.
+            </p>
+            <div class="chapter-arrow">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.16667 10H15.8333M15.8333 10L10 4.16667M15.8333 10L10 15.8333"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </a>
+
+          <a href="chapters/en/ai-in-peer-learning.html" class="chapter-card">
+            <div class="chapter-number">05</div>
+            <h3>AI in Peer Learning</h3>
+            <p>
+              How artificial intelligence can enhance and support peer learning
+              environments.
+            </p>
+            <div class="chapter-arrow">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.16667 10H15.8333M15.8333 10L10 4.16667M15.8333 10L10 15.8333"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </a>
+
+          <a href="chapters/en/index.html" class="chapter-card view-all">
+            <h3>View All Chapters</h3>
+            <div class="chapter-arrow">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.16667 10H15.8333M15.8333 10L10 4.16667M15.8333 10L10 15.8333"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to transform how you learn?</h2>
+          <p>
+            Join our community of peer learners and discover the power of
+            AI-enhanced collaboration.
+          </p>
+          <div class="cta-buttons">
+            <a href="chapters/en/about-this-book.html" class="btn btn-primary"
+              >Get Started</a
+            >
+            <a href="#contact" class="btn btn-secondary">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>
+              Have questions about Pyragogy or want to get involved? We'd love
+              to hear from you!
+            </p>
+
+            <div class="contact-methods">
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M22 12C22 10.6868 21.7413 9.38647 21.2388 8.1732C20.7363 6.95991 19.9997 5.85752 19.0711 4.92893C18.1425 4.00035 17.0401 3.26375 15.8268 2.7612C14.6135 2.25866 13.3132 2 12 2C10.6868 2 9.38647 2.25866 8.1732 2.7612C6.95991 3.26375 5.85752 4.00035 4.92893 4.92893C3.05357 6.8043 2 9.34784 2 12C2 16.4183 4.94668 20.2272 9 21.5M19 16V21M16.5 18.5H21.5"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M16.5 7.5C16.5 8.32843 15.8284 9 15 9C14.1716 9 13.5 8.32843 13.5 7.5C13.5 6.67157 14.1716 6 15 6C15.8284 6 16.5 6.67157 16.5 7.5Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M13.5 16.5C13.5 17.3284 12.8284 18 12 18C11.1716 18 10.5 17.3284 10.5 16.5C10.5 15.6716 11.1716 15 12 15C12.8284 15 13.5 15.6716 13.5 16.5Z"
+                      fill="currentColor"
+                    />
+                    <path
+                      d="M10.5 7.5C10.5 8.32843 9.82843 9 9 9C8.17157 9 7.5 8.32843 7.5 7.5C7.5 6.67157 8.17157 6 9 6C9.82843 6 10.5 6.67157 10.5 7.5Z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                </div>
+                <div class="contact-details">
+                  <h4>Join our Community</h4>
+                  <p>
+                    Connect with peers on our Discord server or GitHub
+                    repository.
+                  </p>
+                  <div class="contact-links">
+                    <a href="#" class="contact-link">Discord</a>
+                    <a href="#" class="contact-link">GitHub</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 10.5C2 9.83696 2.26339 9.20107 2.73223 8.73223C3.20107 8.26339 3.83696 8 4.5 8H13.5C14.163 8 14.7989 8.26339 15.2678 8.73223C15.7366 9.20107 16 9.83696 16 10.5V19.5C16 20.163 15.7366 20.7989 15.2678 21.2678C14.7989 21.7366 14.163 22 13.5 22H4.5C3.83696 22 3.20107 21.7366 2.73223 21.2678C2.26339 20.7989 2 20.163 2 19.5V10.5Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M21.3176 14.4641L16.4551 9.60156H13.4551V12.6016L18.3176 17.4641C18.6105 17.757 18.947 17.9994 19.3176 18.1831C19.6881 18.3667 20.085 18.4626 20.4909 18.4626C20.8968 18.4626 21.2937 18.3667 21.6642 18.1831C22.0348 17.9994 22.3713 17.757 22.6642 17.4641C22.957 17.1712 23.1994 16.8348 23.3831 16.4642C23.5667 16.0936 23.6626 15.6968 23.6626 15.2909C23.6626 14.885 23.5667 14.4881 23.3831 14.1175C23.1994 13.7469 22.957 13.4105 22.6642 13.1176L21.3176 14.4641Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="contact-details">
+                  <h4>Subscribe to Our Newsletter</h4>
+                  <p>
+                    Stay updated with the latest developments and resources.
+                  </p>
+                  <form class="mini-newsletter-form">
+                    <div class="form-group">
+                      <input
+                        type="email"
+                        placeholder="Your email address"
+                        required
+                      />
+                      <button type="submit">Subscribe</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M21 5.5L12 13.5L3 5.5"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M3 5.5H21V18C21 18.2652 20.8946 18.5196 20.7071 18.7071C20.5196 18.8946 20.2652 19 20 19H4C3.73478 19 3.48043 18.8946 3.29289 18.7071C3.10536 18.5196 3 18.2652 3 18V5.5Z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M10.3611 12.5L3.1416 18.9819"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M20.8594 18.9805L13.6399 12.5"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </div>
+                <div class="contact-details">
+                  <h4>Email Us</h4>
+                  <p>Questions, feedback, or partnership inquiries?</p>
+a
+                  >
                 </div>
               </div>
             </div>
-            
-            <div class="contact-method">
-              <div class="contact-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M2 10.5C2 9.83696 2.26339 9.20107 2.73223 8.73223C3.20107 8.26339 3.83696 8 4.5 8H13.5C14.163 8 14.7989 8.26339 15.2678 8.73223C15.7366 9.20107 16 9.83696 16 10.5V19.5C16 20.163 15.7366 20.7989 15.2678 21.2678C14.7989 21.7366 14.163 22 13.5 22H4.5C3.83696 22 3.20107 21.7366 2.73223 21.2678C2.26339 20.7989 2 20.163 2 19.5V10.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M21.3176 14.4641L16.4551 9.60156H13.4551V12.6016L18.3176 17.4641C18.6105 17.757 18.947 17.9994 19.3176 18.1831C19.6881 18.3667 20.085 18.4626 20.4909 18.4626C20.8968 18.4626 21.2937 18.3667 21.6642 18.1831C22.0348 17.9994 22.3713 17.757 22.6642 17.4641C22.957 17.1712 23.1994 16.8348 23.3831 16.4642C23.5667 16.0936 23.6626 15.6968 23.6626 15.2909C23.6626 14.885 23.5667 14.4881 23.3831 14.1175C23.1994 13.7469 22.957 13.4105 22.6642 13.1176L21.3176 14.4641Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+          </div>
+
+          <div class="contact-form-container">
+            <h3>Send us a Message</h3>
+            <form class="contact-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
               </div>
-              <div class="contact-details">
-                <h4>Subscribe to Our Newsletter</h4>
-                <p>Stay updated with the latest developments and resources.</p>
-                <form class="mini-newsletter-form">
-                  <div class="form-group">
-                    <input type="email" placeholder="Your email address" required>
-                    <button type="submit">Subscribe</button>
-                  </div>
-                </form>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
               </div>
-            </div>
-            
-            <div class="contact-method">
-              <div class="contact-icon">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M21 5.5L12 13.5L3 5.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M3 5.5H21V18C21 18.2652 20.8946 18.5196 20.7071 18.7071C20.5196 18.8946 20.2652 19 20 19H4C3.73478 19 3.48043 18.8946 3.29289 18.7071C3.10536 18.5196 3 18.2652 3 18V5.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M10.3611 12.5L3.1416 18.9819" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M20.8594 18.9805L13.6399 12.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required />
               </div>
-              <div class="contact-details">
-                <h4>Email Us</h4>
-                <p>Questions, feedback, or partnership inquiries?</p>
-                <a href="mailto:contact@peergang.org" class="email-link">contact@peergang.org</a>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
               </div>
-            </div>
+
+              <button type="submit" class="btn btn-primary">
+                Send Message
+              </button>
+            </form>
           </div>
         </div>
-        
-        <div class="contact-form-container">
-          <h3>Send us a Message</h3>
-          <form class="contact-form">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
-        </div>
       </div>
-    </div>
-  </section>
-  
-  <!-- Import Footer Component -->
-  <div id="footer-container"></div>
-  
-  <!-- Import AI Sidebar Component -->
-  <div id="ai-sidebar-container"></div>
-  
-  <!-- Import Search Component -->
-  <div id="search-container"></div>
-  
-  <!-- JavaScript -->
-  <script src="assets/js/main.js"></script>
-  <script>
-    // Load components
-    document.addEventListener('DOMContentLoaded', function() {
-      // Load header
-      fetch('components/header.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('header-container').innerHTML = data;
-        });
-      
-      // Load footer
-      fetch('components/footer.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('footer-container').innerHTML = data;
-        });
-      
-      // Load AI sidebar
-      fetch('components/ai-sidebar.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('ai-sidebar-container').innerHTML = data;
-        });
-      
-      // Load search
-      fetch('components/search.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('search-container').innerHTML = data;
-        });
-    });
-  </script>
-</body>
+    </section>
+
+    <!-- Import Footer Component -->
+    <div id="footer-container"></div>
+
+    <!-- Import AI Sidebar Component -->
+    <div id="ai-sidebar-container"></div>
+
+    <!-- Import Search Component -->
+    <div id="search-container"></div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+    <script>
+      // Load components
+      document.addEventListener("DOMContentLoaded", function () {
+        // Load header
+        fetch("components/header.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("header-container").innerHTML = data;
+          });
+
+        // Load footer
+        fetch("components/footer.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("footer-container").innerHTML = data;
+          });
+
+        // Load AI sidebar
+        fetch("components/ai-sidebar.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("ai-sidebar-container").innerHTML = data;
+          });
+
+        // Load search
+        fetch("components/search.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("search-container").innerHTML = data;
+          });
+      });
+    </script>
+  </body>
 </html>
